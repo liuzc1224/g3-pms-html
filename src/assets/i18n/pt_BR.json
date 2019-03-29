@@ -1,0 +1,2641 @@
+{
+  "common": {
+    "clickShow": "Clique para ver",
+    "unit": "Real",
+    "workBench": "Plataforma de trabalho",
+    "orderTypeTxt": [
+      "Pagamento de uma vez",
+      "Pagamento parcelado de valor equivalente"
+    ],
+    "reviewOrderStatus": [
+      {
+        "name": "Espera por análise manual",
+        "value": 1
+      },
+      {
+        "name": "Aprovação da análise manual",
+        "value": 2
+      },
+      {
+        "name": "Recusa da análise manual",
+        "value": 3
+      },
+      {
+        "name": "Recusa da análise do sistema",
+        "value": 4
+      },
+      {
+        "name": "Perdeu validade",
+        "value": 5
+      }
+    ],
+    "auditOperaCommon":[
+      {
+        "name": "人工待审核",
+        "value": 1
+      },
+      {
+        "name": "人工审核通过",
+        "value": 2
+      },
+      {
+        "name": "人工拒绝",
+        "value": 3
+      }
+    ],
+    "auditOperaWords":{
+      "auditTitle":"信审工作台",
+      "atendance":"考勤",
+      "signIn":"签到",
+      "signOut":"签退",
+      "auditAllocatTime":"信审订单分配时间",
+      "remain":"剩余",
+      "startAllocate":"开始分配",
+      "signInTime":"请准时签到",
+      "signInWorking":"已开始工作，请签到",
+      "signInOver":"今日工作已结束",
+      "siginoutSystem":"系统已签退"
+    },
+    "auditOperaTable":{
+      "applyDate":"申请日期",
+      "auditOrderNo":"信审订单编号",
+      "phoneNumber":"手机号",
+      "userLevel":"用户等级",
+      "auditLimit":"审批额度(雷亚尔)",
+      "auditTerm":"审批期限(天)",
+      "auditOpition":"信审意见",
+      "operator":"操作人",
+      "auditValidityDate":"信审有效期",
+      "auditEffectDate":"信审生效日期",
+      "auditExpireDate":"信审到期日期",
+      "auditOrderStatus":"信审订单状态",
+      "opertion":"操作"
+    },
+    "auditTotalRecord":{
+      "auditOrderTotal":"信审订单总笔数",
+      "rejectNumberMachine":"机审拒绝笔数",
+      "artificialAuditPassCount":"人工审核通过笔数",
+      "rejectNumberManul":"人工审核拒绝笔数",
+      "noAuditNumberManul":"待人工审核笔数",
+      "effectNumber":"有效笔数",
+      "invalidNumber":"失效笔数"
+    },
+    "letter": {
+      "table": {
+        "headerInfo": [
+          "Data de solicitação",
+          "Número de proposta de análise",
+          "Número de celular",
+          "Classe do cliente",
+          "Período de validade de análise",
+          "Data de análise entra em vigor",
+          "Data de vencimento de análise",
+          "Status de proposta"
+        ]
+      }
+    },
+    "signStatus": {
+      "sign": "Sign in",
+      "signOut": "Sign out",
+      "signOutIng": "Sign outing",
+      "signEnd": "Signed out"
+    },
+    "totleLook": {
+      "totalDay": "Dias totais",
+      "orderCount": "Número total de ordens",
+      "ruleRefuseCount": "Recusa da revisão do sistema",
+      "passCount": "Usuários aprovados",
+      "unComplete": "Finalizado",
+      "alreadyComplete": "Não finalizado"
+    },
+    "tips": {
+      "operateFail": "Falha da operação",
+      "operateFailWithReason": "Falha da operação, razão: ",
+      "operateSuccess": "Sucesso da operação",
+      "fetchFail": "Falha de ganhar os dados",
+      "fetchFailReason": "Falha de ganhar os dados, razão: ",
+      "timeNotify": "Tempo do começo não maior que tempo do fim",
+      "inputMark": "Insira as notas",
+      "notEmpty": "Insira cada informação",
+      "overflow": "Valor não maior que valor a ser pago atual",
+      "moneyOverflow": "Valor da aprovação não maior que valor da solicitação",
+      "invalidOper": "Não pode fazer essa operação nesta situação",
+      "diffTime": "Tempo de emprestar não maior que tempo atual",
+      "minAuditMoney": "Montante mínimo de empréstimo de 500"
+    },
+    "checkTabs": ["Gerenciamento atual", "Registro histórico"],
+    "orderList": [
+      "Lista de proposta de empréstimo",
+      "Lista de proposta de análise"
+    ],
+    "companyName": "Sistema de gerenciamento do background",
+    "setting": "Configurar",
+    "logout": "Logout",
+    "languageSetting": "Configurar língua",
+    "refresh": "Atualizar",
+    "search": "Pesquisar",
+    "reset": "Reinstalar",
+    "total": "No total",
+    "pageUnit": "Unidades",
+    "copy": "Copiar",
+    "Long": "Longitude",
+    "Lat": "Latitude",
+    "operate": {
+      "name": "Operar",
+      "edit": "Editar",
+      "delete": "Excluir",
+      "save": "Preservar",
+      "sure": "Confirmar",
+      "next": "Prosseguir",
+      "close": "Fechar",
+      "cancel": "Cancelar",
+      "add": "Adicionar",
+      "deled": "Deletado"
+    },
+    "btnGroup": {
+      "a": "Ver detalhes",
+      "b": "Ver notas",
+      "c": "Registro da solicitação",
+      "d": "Registro do empréstimo",
+      "e": "Logout",
+      "f": "Revisar",
+      "g": "Aprovar",
+      "h": "Recusar",
+      "reviewRecord": "信审记录"
+    },
+    "validator": {
+      "notEmpty": "Não ser branco ou inserção errada"
+    },
+    "deleteToast": {
+      "title": "Confirmar excluir",
+      "tip": "Se excluir, os dados não podem ser recuperáveis "
+    },
+    "cashStatus": [
+      {
+        "desc": "Solicitação de saque",
+        "value": "1"
+      },
+      {
+        "desc": "Sucesso de libertação do empréstimo",
+        "value": "2"
+      },
+      {
+        "desc": "Falha de libertação do empréstimo",
+        "value": "3"
+      },
+      {
+        "desc": "Cancelamento de sacar",
+        "value": "4"
+      }
+    ],
+    "repayStatus": [
+      {
+        "desc": "Espera por pagar",
+        "value": 1
+      },
+      {
+        "desc": "Inadimplência",
+        "value": 2
+      },
+      {
+        "desc": "Pago e pagamento parcial",
+        "value": 3
+      },
+      {
+        "desc": "Pago e pagamento total",
+        "value": 4
+      },
+      {
+        "desc": "Vencido e não quitado",
+        "value": 5
+      },
+      {
+        "desc": "Vencido e quitado",
+        "value": 6
+      }
+    ],
+    "orderStatus": [
+      {
+        "desc": "Espera por revisão",
+        "value": 1
+      },
+      {
+        "desc": "Aprovação da revisão",
+        "value": 2
+      },
+      {
+        "desc": "Emprestando ao cliente",
+        "value": 3
+      },
+      {
+        "desc": "Espera por pagamento",
+        "value": 4
+      },
+      {
+        "desc": "Finalizado",
+        "value": 6
+      },
+      {
+        "desc": "Fecho manual/Cancelamento manual",
+        "value": 8
+      },
+      {
+        "desc": "Recusa da revisão",
+        "value": 9
+      },
+      {
+        "desc": "Fecho do sistema",
+        "value": 11
+      },
+      {
+        "desc": "Recusa da revisão do sistema",
+        "value": 12
+      },
+      {
+        "desc": "Falha de libertação do empréstimo",
+        "value": 13
+      }
+    ]
+  },
+  "login": {
+    "username": "Nome do usuário",
+    "password": "Senha",
+    "tips": {
+      "invalid": "Nome do usuário ou senha incorreta",
+      "empty": "Nome do usuário ou senha não branca"
+    },
+    "login": "Login"
+  },
+  "systemModule": {
+    "admin": {
+      "table": {
+        "userName": "Nome do usuário",
+        "realName": "Nome real",
+        "password": "Senha",
+        "mobile": "Número de celular",
+        "department": "Departamento",
+        "role": "Papel",
+        "remark": "Fazer notas"
+      },
+      "add": "Adicionar novo administrador ",
+      "edit": "Editar administrador",
+      "choseRole": "Selecione papel",
+      "choseDepartment": "Selecione departamento"
+    },
+    "role": {
+      "table": {
+        "roleName": "Nome do papel",
+        "count": "Número de pessoas",
+        "remark": "Fazer notas"
+      },
+      "add": "Adicionar papel",
+      "edit": "Editar papel"
+    },
+    "depart": {
+      "add": "Adicionar departamento paterno",
+      "makeNew": "Adicionar novo departamento",
+      "edit": "Editar departamento",
+      "form": {
+        "name": "Nome do departamento",
+        "remark": "Fazer notas"
+      }
+    }
+  },
+  "riskModule": {
+    "allocateState": [
+      {
+        "name": "Não distribuído",
+        "value": "0"
+      },
+      {
+        "name": "Distribuído",
+        "value": "1"
+      },
+      {
+        "name": "Acabar distribuição",
+        "value": "2"
+      }
+    ],
+    "searchTabStatus": [
+      {
+        "name": "Espera por revisão",
+        "value": "1"
+      },
+      {
+        "name": "Aprovar",
+        "value": "2"
+      },
+      {
+        "name": "Recusar",
+        "value": "9"
+      },
+      {
+        "name": "Recusa da revisão do sistema",
+        "value": "12"
+      }
+    ],
+    "searchTabStatus1": [
+      {
+        "name": "Espera por revisão",
+        "value": [1]
+      },
+      {
+        "name": "Aprovar",
+        "value": [2, 3, 4, 6, 13]
+      },
+      {
+        "name": "Recusar",
+        "value": [9]
+      },
+      {
+        "name": "Recusa da revisão do sistema",
+        "value": [12]
+      }
+    ],
+    "settingStatus": [
+      {
+        "name": "开启",
+        "value": 1
+      },
+      {
+        "name": "关闭",
+        "value": 0
+      }
+    ]
+  },
+  "financeModule": {
+    "totle": {
+      "table": {
+        "cashWithDrawDate": "Data de solicitação de saque",
+        "cashLoanDate": "Data de solicitação de empréstimo",
+        "letterOrderNo": "Número de proposta de análise",
+        "loanOrderNo": "Número de proposta de empréstimo",
+        "reqDate": "Data da solicitação",
+        "orderTotle": "Número total de ordens",
+        "refMachine": "Recusa da revisão do sistema",
+        "rushUser": "Usuários aprovados",
+        "limit": "Número de pessoas que fizeram sign in",
+        "beginTime": "Tempo do começo da distribuição",
+        "endTime": "Tempo do fim da distribuição",
+        "status": "Estado da distribuição",
+        "todayFinsh": "Finalizado hoje",
+        "todayNoFinsh": "Não finalizado hoje"
+      }
+    },
+    "shure": {
+      "table": {
+        "name": "Nome",
+        "loginStatus": "Estado de sign in",
+        "loginTime": "Tempo de sign in",
+        "logoutStatus": "Estado de sign out",
+        "logoutTime": "Tempo de sign out",
+        "noFinsh": "Número de revisão pendente"
+      },
+      "loginStatus": [
+        {
+          "name": "Signed in",
+          "value": 1
+        }
+      ],
+      "logoutStatus": [
+        {
+          "name": "Solicitar sign out",
+          "value": 0
+        },
+        {
+          "name": "Concordar sign out",
+          "value": 1
+        },
+        {
+          "name": "Recusar sign out",
+          "value": 2
+        }
+      ]
+    },
+    "list": {
+      "createTime": "Tempo de criação da proposta",
+      "RepayTimeShould": "Data de vencimento",
+      "startDate": "Selecione data de começo",
+      "endDate": "Selecione data de terminação",
+      "prompt": {
+        "letterReview": " Insira número da proposta de análise",
+        "orderNo": " Insira número da proposta de empréstimo",
+        "userName": " Insira nome do cliente",
+        "userNo": "Insira conta do cliente"
+      },
+      "title": "Lista de proposta de empréstimo",
+      "center": "Insira conteúdo",
+      "orderDetail": "Detalhe de proposta",
+      "paymentResult": [
+        {
+          "desc": "Sucesso de liberação do empréstimo",
+          "value": true
+        },
+        {
+          "desc": "Falha na liberação do empréstimo",
+          "value": false
+        }
+      ],
+      "type": [
+        {
+          "desc": "Pagamento de uma vez",
+          "value": 1,
+          "time": "Dia"
+        },
+        {
+          "desc": "Parcelamento- pagamento de valor equivalente",
+          "value": 2,
+          "time": "Mês"
+        }
+      ],
+      "detail": {
+        "letterReview": "Número da proposta de avaliação",
+        "orderNo": "Número da proposta de empréstimo",
+        "type": "Tipo de empréstimo",
+        "mobile": "Número de celular",
+        "userName": "Nome do cliente",
+        "userNo": "Conta do cliente",
+        "cashTime": "Tempo de saque",
+        "applyCash": "Valor do empréstimo(R$)",
+        "limit": "Prazo do empréstimo",
+        "operateResult": "Resultado de operação",
+        "operateTime": "Tempo de operação",
+        "operateName": "Operador",
+        "orderStatus": " Status de proposta"
+      },
+      "table": {
+        "orderNo": "Número da proposta",
+        "mobile": "Número de celular",
+        "loanMount": "Valor do empréstimo(Reais)",
+        "applyCash": "Valor de saque(R$)",
+        "loanInterest": "Juros do empréstimo(R$)",
+        "layInterest": "Multa(R$)",
+        "shouldRepay": "Valor a ser pago(Reais)",
+        "currentRepay": "Valor efectivo do pagamento",
+        "loanAccount": "Conta de empréstimo",
+        "holderName": "Nome do titular do cartão",
+        "orderStatus": "Estado da proposta",
+        "all": "Tudo",
+        "cashTime": "Tempo de saque",
+        "cashAccount": "Conta de saque",
+        "moneyUnit": "Reais",
+        "repayTime": "Tempo de emprestar",
+        "backName": "O nosso banco",
+        "payCode": "Código de levantamento",
+        "repayCode": "Código de pagamento",
+        "askTime": "Data de solicitação",
+        "userName": "Nome de usuário",
+        "idCard": "Número do RG",
+        "auditMoney": "Valor da aprovação",
+        "payMoney": "Valor de emprestar",
+        "paymentResult": "Resultado de emprestar",
+        "applyDate": "Data do empréstimo",
+        "repayDate": "Data do pagamento",
+        "realRepayMoney": "Valor do pagamento",
+        "limit": "Prazo do empréstimo",
+        "auditEmployeeName": "Funcionário de revisão",
+        "oper": "Operador",
+        "employeeName": "Nome",
+        "signTime": "Tempo de sign in",
+        "comment": "Comentário de avaliação",
+        "historyOrder": "Proposta histórica do empréstimo",
+        "historyRecordOrder": "历史信审订单"
+      },
+      "serach": [
+        {
+          "name": "Número de proposta do empréstimo",
+          "value": "orderNo"
+        },
+        {
+          "name": "Número de celular",
+          "value": "phoneNumber"
+        },
+        {
+          "name": "Banco de recebimento",
+          "value": "bankName"
+        },
+        {
+          "name": "Nome do titular do cartão",
+          "value": "userName"
+        }
+      ],
+      "loanStatus": [
+        {
+          "desc": "Sucesso de liberação do empréstimo",
+          "value": "2"
+        },
+        {
+          "desc": "Falha na liberação do empréstimo",
+          "value": "3"
+        },
+        {
+          "desc": "Espera por liberação",
+          "value": "1"
+        }
+      ],
+      "status1": [
+        {
+          "desc": "Lista de liberação do empréstimo",
+          "value": ""
+        },
+        {
+          "desc": "Espera por liberação",
+          "value": "1"
+        },
+        {
+          "desc": "Sucesso de liberação do empréstimo",
+          "value": "2"
+        },
+        {
+          "desc": "Falha na liberação do empréstimo",
+          "value": "3"
+        }
+      ],
+      "status": [
+        {
+          "name": "Solicitação de saque",
+          "value": "1",
+          "type": "loanList"
+        },
+        {
+          "name": "Sucesso de liberação do empréstimo",
+          "value": "2",
+          "type": "loanList"
+        },
+        {
+          "name": "Falha na liberação do empréstimo",
+          "value": "3",
+          "type": "loanList"
+        },
+        {
+          "name": "Cancelamento de saque",
+          "value": "4",
+          "type": "loanList"
+        },
+        {
+          "name": "Espera por pagar",
+          "value": "1",
+          "type": "repayList"
+        },
+        {
+          "name": "Pago e não quitado",
+          "value": "3",
+          "type": "repayList"
+        },
+        {
+          "name": "Pago e quitado",
+          "value": "4",
+          "type": "repayList"
+        },
+        {
+          "name": "Vencido e não quitado",
+          "value": "5",
+          "type": "repayList"
+        },
+        {
+          "name": "Vencido e quitado",
+          "value": "6",
+          "type": "repayList"
+        }
+      ],
+      "repayType": [
+        {
+          "name": "Transferênica eletrônica",
+          "value": "1"
+        }
+      ],
+      "reaymentResult": [
+        {
+          "name": "Sucesso",
+          "value": true
+        },
+        {
+          "name": "Falha",
+          "value": false
+        }
+      ],
+      "totalLoan": "Atual",
+      "classify": "Classificação",
+      "all": "Todas as propostas",
+      "makeLoan": "Emprestar",
+      "model": {
+        "title": "Confirmar Sucesso de libertação do empréstimo",
+        "choseStatus": "Selecione estado",
+        "choseRepayMethod": "Selecione maneira de liquidação",
+        "inputBankname": "Insira banco de abertura da conta",
+        "inputAccount": "Insira nossa conta",
+        "inputBillNo": "Insira número de série",
+        "inputRemark": "Insira as notas",
+        "inputPayCode": "Insira código de levantamento",
+        "inputRepayCode": "Insira código de pagamento",
+        "inputPayDate": "Insira tempo de emprestar",
+        "inputPayMoney": "Insira valor do empréstimo",
+        "status": "Estado da transação",
+        "bankName": "O nosso banco",
+        "account": "A nossa conta",
+        "billNo": "Número de série",
+        "remark": "Notas",
+        "remarkPrompt": "Insira as notas",
+        "repayType": "Maneira de emprestar",
+        "choseType": "Selecione maneira de emprestar",
+        "payCode": "Código de levantamento",
+        "repayCode": "Código de pagemento",
+        "payDate": "Tempo de emprestar",
+        "payMoney": "Valor do empréstimo",
+        "resuseRes": "Razão da recusa",
+        "reteatRes": "Razão do cancelamento",
+        "repayChannel": "Selecione canal de pagamento"
+      }
+    },
+    "serach": [
+      {
+        "name": "Número da proposta de análise",
+        "value": "creditOrderNo"
+      },
+      {
+        "name": "Número da proposta de empréstimo",
+        "value": "orderNo"
+      },
+      {
+        "name": "Número de celular",
+        "value": "phoneNumber"
+      },
+      {
+        "name": "Nome do cliente",
+        "value": "userName"
+      }
+    ],
+    "serach1": [
+      {
+        "name": "Número da proposta de análise",
+        "value": "creditOrderNo"
+      },
+      {
+        "name": "Número da proposta de empréstimo",
+        "value": "orderNo"
+      },
+      {
+        "name": "Número de celular",
+        "value": "userPhone"
+      },
+      {
+        "name": "Nome do cliente",
+        "value": "userName"
+      }
+    ],
+    "repayList": {
+      "type": [
+        {
+          "desc": "Pagamento de uma vez",
+          "value": 1,
+          "time": "Dia"
+        },
+        {
+          "desc": "Parcelamento- pagamento de valor equivalente",
+          "value": 2,
+          "time": "Mês"
+        }
+      ],
+      "status1": [
+        {
+          "name": "Espera por pagar",
+          "value": "1"
+        },
+        {
+          "name": "Pagamento parcial",
+          "value": "3"
+        },
+        {
+          "name": "Já quitado",
+          "value": "4"
+        },
+        {
+          "name": "Vencido e espera por pagar",
+          "value": "5"
+        },
+        {
+          "name": "Vencido e quitado",
+          "value": "6"
+        }
+      ],
+      "status2": [
+        {
+          "name": "Espera por pagar",
+          "value": "1"
+        },
+        {
+          "name": "Pagamento parcial",
+          "value": "3"
+        },
+        {
+          "name": "Quitado",
+          "value": "4"
+        },
+        {
+          "name": "Vencido e não pago",
+          "value": "5"
+        },
+        {
+          "name": "Vencido e quitado",
+          "value": "6"
+        },
+        {
+          "name": "Devolver dinheiro",
+          "value": "7"
+        },
+        {
+          "name": "Não entra em vigor",
+          "value": "8"
+        }
+      ],
+      "status": [
+        {
+          "name": "Espera por pagar",
+          "value": "1"
+        },
+        {
+          "name": "Pago e pagamento parcial",
+          "value": "3"
+        },
+        {
+          "name": "Pago e pagamento total",
+          "value": "4"
+        },
+        {
+          "name": "Vencido e não quitado",
+          "value": "5"
+        },
+        {
+          "name": "Vencido e quitado",
+          "value": "6"
+        }
+      ],
+      "serach": [
+        {
+          "name": "Número de proposta do empréstimo",
+          "value": "orderNo"
+        },
+        {
+          "name": "Número de celular",
+          "value": "userPhone"
+        },
+        {
+          "name": "Nome do mutuário",
+          "value": "userName"
+        },
+        {
+          "name": "Código de pagamento",
+          "value": "repayCode"
+        }
+      ],
+      "tabData": {
+        "letterReview": "Número da proposta de avaliação",
+        "orderNo": "Número da proposta de empréstimo",
+        "type": "Tipo de empréstimo",
+        "mobile": "Número de celular",
+        "userName": "Nome do cliente",
+        "number": "Parcela",
+        "periodRepayShould": "Valor a ser pago desta parcela（R$）",
+        "financingAmount": "Valor financiado（R$）",
+        "interest": "Juros（R$）",
+        "overdueFee": "Despesas por atraso（R$）",
+        "RepayTimeShould": "Data de vencimento",
+        "repayMount": "Valor pago（R$）",
+        "repayDate": "Última data de pagamento",
+        "orderStatus": "Status de proposta"
+      },
+      "detail": {
+        "all": "Lista de pagamento",
+        "repayShouldDate": "Data de vencimento",
+        "operator": "Operador",
+        "detail": "Detalhe de empréstimo",
+        "loanMount": "Valor do empréstimo",
+        "repayShould": "Valor a ser pago",
+        "orderNo": "Número de proposta",
+        "loanAccount": "Conta de recebimento",
+        "loanDate": "Data de solicitação",
+        "repayDate": "Data de pagamento",
+        "repayCode": "Código de pagamento",
+        "repayMount": "Valor pago",
+        "orderStatus": "Status de proposta"
+      },
+      "table": {
+        "repayChannel": "Canal de pagamento",
+        "repayCode": "Código de pagamento",
+        "payCode": "Código de emprestar",
+        "mobile": "Número de celular",
+        "loanMount": "Valor do empréstimo",
+        "moneyUnit": "Real",
+        "limit": "Prazo do empréstimo",
+        "limitUnit": "Dia",
+        "limitMonth": "Mês",
+        "repayDate": "Data de pagemento",
+        "repayShuold": "Valor a ser pago",
+        "repayTotal": "Valor do pagamento",
+        "status": "Estado da transação",
+        "remark": "Notas",
+        "repayType": "Maneira de pagamento",
+        "userName": "Nome do devedor",
+        "repayMethod": "Maneira de liquidação"
+      },
+      "oper": {
+        "hasClear": "Pago e pagamento total",
+        "noClear": "Pagamento parcial",
+        "makeClear": "Liquidar"
+      },
+      "operType": [
+        {
+          "name": "Quitado",
+          "value": true
+        },
+        {
+          "name": "Pagamento parcial",
+          "value": false
+        }
+      ],
+      "tips": {
+        "title": "Confirmar pagamento toal",
+        "desc": "Se confirmar pagamento total,os dados não podem ser alterados",
+        "changeMoney": "Alterar valor do pagamento",
+        "inputReayTotal": "Insira valor do pagamento"
+      },
+      "repayType": [
+        {
+          "name": "BOLETOS",
+          "value": 1
+        },
+        {
+          "name": "Conta corporativa",
+          "value": 2
+        }
+      ]
+    },
+    "detail": {
+      "operator": "Operator",
+      "detail": " Detalhes do empréstimo",
+      "loanMount": "Valor do empréstimo",
+      "repayShould": "Valor a ser pago",
+      "orderNo": "Número da proposta",
+      "loanAccount": "Conta do empréstimo",
+      "loanDate": "Data do empréstimo",
+      "repayDate": "Data do pagamento",
+      "repayCode": "Código do pagamento",
+      "repayMount": "Valor do pagamento",
+      "orderStatus": "Estado da proposta"
+    }
+  },
+  "usrModule": {
+    "list": {
+      "table": {
+        "userId": "ID do usuário",
+        "mobile": "Número de celular",
+        "realName": "Nome",
+        "idCard": "Número do RG",
+        "email": "Email",
+        "registeDate": "Tempo de registro",
+        "CPF": "CPF",
+        "regFrom": "Fonte de cadastro",
+        "inviteCode": "Código de convite",
+        "channelIdentify": "Identificação do canal",
+        "userAccount": "Conta de usuário",
+        "h5register": "Cadastro de H5",
+        "h5registerPlacerholder": "Insira identificação do canal de H5",
+        "inviteCodePlacerholder": "Insira identificação do código de convite",
+        "commonPlaceholder": "Insira conteúdo"
+      }
+    }
+  },
+  "orderModule": {
+    "order": {
+      "basicInfo": {
+        "title": "Informação básica",
+        "registerDate": "Data de registro",
+        "mobile": "Número de celular",
+        "sex": "Sexo",
+        "email": "E-mail",
+        "marray": "Situação do estado civil",
+        "degree": "Escolaridade",
+        "loanInfo": " Detalhes da proposta",
+        "actInfo": "Tempo da duração",
+        "step": "Processo",
+        "uinit": "第",
+        "step_unit": "Passo",
+        "stay": "Tempo da duração original(Milissegundo)",
+        "stayTrans": "Tempo da duração da transferir(Segundo)",
+        "userId": "ID do usuário",
+        "loginInfo": " Tempo de recente login"
+      },
+      "approveInfo": {
+        "title": "Inforamação da conta",
+        "overDueTotal": "Valor total do vencimento",
+        "borrowTotal": "Valor total do empréstimo",
+        "unReturnTotal": "Valor total a ser pago",
+        "checkUp": "Observar",
+        "auth": "Informação comprovante"
+      },
+      "auth": {
+        "photo": {
+          "title": "Informação da foto",
+          "front": "Foto da frente do RG",
+          "back": "foto do verso do RG",
+          "hand": "Foto do RG pegado na mão",
+          "income": "Prova da renda"
+        }
+      }
+    },
+    "record": {
+      "headerInfo": [
+        "Número de proposta de análise",
+        "Número de proposta de empréstimo",
+        "Tipo do empréstimo",
+        "Tempo de criação da proposta",
+        "Conta de usuário",
+        "Valor do empréstimo（R$）",
+        "Prazo do empréstimo",
+        "Valor a ser4 pago（R$）",
+        "Valor pago",
+        "Status de proposta",
+        "Operar"
+      ],
+      "basicUserInfo": [
+        {
+          "name": "Nome",
+          "reflect": "userName"
+        },
+        {
+          "name": "Sexo",
+          "reflect": "genderTxt"
+        },
+        {
+          "name": "Cidade de nascimento",
+          "reflect": "birthplace"
+        },
+        {
+          "name": "Data de nascimento",
+          "reflect": "birthdayStr"
+        },
+        {
+          "name": "Idade",
+          "reflect": "age"
+        },
+        {
+          "name": "Nome completo do pai",
+          "reflect": "fatherFirstName"
+        },
+        {
+          "name": "Nome completo da mãe",
+          "reflect": "motherFirstName"
+        }
+      ],
+      "basicUserCPFInfo": [
+        {
+          "name": "CPF",
+          "reflect": "cpf"
+        },
+        {
+          "name": "Número do RG",
+          "reflect": "idNumber"
+        },
+        {
+          "name": "Frente do RG",
+          "reflect": "front"
+        },
+        {
+          "name": "Verso do RG",
+          "reflect": "reverse"
+        }
+      ],
+      "askHeaderInfo": [
+        "Número da proposta",
+        "Data de solicitação",
+        "Valor do empréstimo(R$)",
+        " Prazo de solicitação(Dia)",
+        "Estado da solicitação"
+      ],
+      "detStatus": ["Yes", "No"]
+    },
+    "auth": {
+      "locDataSet": [
+        {
+          "name": "Tempo de recente login",
+          "reflect": "createTime",
+          "pip": "dataFormat"
+        },
+        {
+          "name": "Localização de recente login",
+          "reflect": "area",
+          "pip": "nullPipe"
+        },
+        {
+          "name": "Endereço de IP",
+          "reflect": "ipAddress",
+          "pip": "nullPipe"
+        },
+        {
+          "name": " Equipamento de login",
+          "reflect": "deviceId",
+          "pip": "nullPipe"
+        }
+      ],
+      "baseInfo": [
+        {
+          "name": "Nome",
+          "reflect": "username",
+          "pip": "nullPipe"
+        },
+        {
+          "name": "RG",
+          "reflect": "idNumber",
+          "pip": "nullPipe"
+        },
+        {
+          "name": "Sexo",
+          "reflect": "gender",
+          "pip": "SexPipe"
+        },
+        {
+          "name": "Data de nascimento",
+          "reflect": "birthday",
+          "pip": "dataFormat"
+        },
+        {
+          "name": "Naturalidade",
+          "reflect": "birthplace",
+          "pip": "nullPipe"
+        },
+        {
+          "name": "Estado civil",
+          "reflect": "maritalStatus",
+          "pip": "MarryPipe"
+        },
+        {
+          "name": "Escolaridade",
+          "reflect": "educationBackground",
+          "pip": "EduPipe"
+        },
+        {
+          "name": "E-mail",
+          "reflect": "email",
+          "pip": "nullPipe"
+        }
+      ],
+      "familyInfo": [
+        {
+          "name": "Nome do pai",
+          "reflect": "fatherName",
+          "pip": "nullPipe"
+        },
+        {
+          "name": "Nome da mãe ",
+          "reflect": "motherName",
+          "pip": "nullPipe"
+        },
+        {
+          "name": "Telefone residencial",
+          "reflect": "homeTelephone",
+          "pip": "nullPipe"
+        },
+        {
+          "name": "Endereço residencial",
+          "reflect": "homeAddress",
+          "pip": "nullPipe"
+        }
+      ],
+      "workInfo": [
+        {
+          "name": "Prova da renda",
+          "reflect": "incomeSource",
+          "pip": "workFromPipe"
+        },
+        {
+          "name": "Nome da empresa",
+          "reflect": "company",
+          "pip": "nullPipe"
+        },
+        {
+          "name": "Endereço da empresa",
+          "reflect": "companyAddress",
+          "pip": "nullPipe"
+        },
+        {
+          "name": "Posto do trabalho",
+          "reflect": "position",
+          "pip": "nullPipe"
+        }
+      ],
+      "friendInfo": {
+        "friend0": "Contato",
+        "friend1": " Contato de emergência 1",
+        "friend2": "Contato de emergênica 2",
+        "friend3": "Contato de emergênica 3",
+        "call0": "importado/não importado",
+        "call1": "Telefone de contato 1",
+        "call2": "Telefone de contato 2",
+        "call3": "Telefone de contato 3"
+      },
+      "setAccount": [
+        {
+          "银行": "Contato de emergênica 3",
+          "reflect": "gender",
+          "pip": "nullPipe"
+        },
+        {
+          "name": "Telefone de contato 3",
+          "reflect": "gender",
+          "pip": "nullPipe"
+        },
+        {
+          "name": "Número de cartão",
+          "reflect": "gender",
+          "pip": "nullPipe"
+        }
+      ]
+    }
+  },
+  "enums": {
+    "relation": [
+      {
+        "name": "Pai",
+        "value": "1"
+      },
+      {
+        "name": "Mãe",
+        "value": "2"
+      },
+      {
+        "name": "Cônjuge",
+        "value": "3"
+      },
+      {
+        "name": "Filho/a",
+        "value": "4"
+      },
+      {
+        "name": "Colega",
+        "value": "5"
+      },
+      {
+        "name": "Amigo/a",
+        "value": "6"
+      },
+      {
+        "name": "Familiar",
+        "value": "7"
+      }
+    ],
+    "socialRole": [
+      {
+        "name": "Aprosentado com pensão",
+        "value": "1"
+      },
+      {
+        "name": "Aprosentado sem pensão",
+        "value": "2"
+      },
+      {
+        "name": "Profissão liberal",
+        "value": "3"
+      },
+      {
+        "name": "Dona de casa",
+        "value": "4"
+      },
+      {
+        "name": "Funcionário do contrato oficial",
+        "value": "5"
+      },
+      {
+        "name": "Empregado doméstico",
+        "value": "6"
+      },
+      {
+        "name": "Empregador",
+        "value": "7"
+      },
+      {
+        "name": "Estudante",
+        "value": "8"
+      },
+      {
+        "name": "Função pública",
+        "value": "9"
+      }
+    ],
+    "incomeType": [
+      {
+        "name": "Dinheiro à vista",
+        "value": "1"
+      },
+      {
+        "name": "Transferência bancária",
+        "value": "2"
+      },
+      {
+        "name": "Cheque",
+        "value": "3"
+      }
+    ],
+    "well": [
+      {
+        "name": "1 ano",
+        "value": "1"
+      },
+      {
+        "name": "2 anos",
+        "value": "2"
+      },
+      {
+        "name": "3 anos e superior",
+        "value": "3"
+      }
+    ],
+    "degree": [
+      {
+        "name": "Ensino fundamental",
+        "value": "1"
+      },
+      {
+        "name": "Ensino médio",
+        "value": "2"
+      },
+      {
+        "name": "Ensino superior(Universidade tradicional)",
+        "value": "3"
+      },
+      {
+        "name": "Ensino superior(Universidade de ensino profissional)",
+        "value": "4"
+      },
+      {
+        "name": "Ensino superior(Universidade aberta)",
+        "value": "5"
+      },
+      {
+        "name": "Mestrado",
+        "value": "6"
+      },
+      {
+        "name": "Doutorado",
+        "value": "7"
+      }
+    ],
+    "sex": [
+      {
+        "name": "Masculino",
+        "value": "1"
+      },
+      {
+        "name": "Feminino",
+        "value": "2"
+      }
+    ],
+    "marray": [
+      {
+        "name": "Solteiro/a",
+        "value": "1"
+      },
+      {
+        "name": "Casado/a",
+        "value": "2"
+      },
+      {
+        "name": "Divorciado/a",
+        "value": "3"
+      }
+    ],
+    "incomeSource": [
+      {
+        "name": "Sem trabalho sem pensão",
+        "value": "1"
+      },
+      {
+        "name": "Sem trabalho com pensão",
+        "value": "2"
+      },
+      {
+        "name": "Trabalho a tempo inteiro",
+        "value": "3"
+      },
+      {
+        "name": "Trabalho a tempo parcial",
+        "value": "4"
+      },
+      {
+        "name": "Auto-emprego",
+        "value": "5"
+      },
+      {
+        "name": "Outra fonte da renda",
+        "value": "6"
+      }
+    ]
+  },
+  "orderList": {
+    "allList": {
+      "orderDetails": "ver detalhe de proposta",
+      "dayType": {
+        "day": "Dia",
+        "month": "Mês"
+      },
+      "status": [
+        {
+          "name": "Falha na liberação do empréstimo",
+          "value": "13"
+        },
+        {
+          "name": "Em liberação",
+          "value": "14"
+        },
+        {
+          "name": "Espera por pagar",
+          "value": "1"
+        },
+        {
+          "name": "Pago e não quitado",
+          "value": "3"
+        },
+        {
+          "name": "Já quitado",
+          "value": "4"
+        },
+        {
+          "name": " Vencido e não pago",
+          "value": "5"
+        },
+        {
+          "name": "Vencido e quitado",
+          "value": "6"
+        },
+        {
+          "name": "展期结清",
+          "value": "9"
+        },
+        {
+          "name": "逾期展期结清",
+          "value": "10"
+        }
+      ],
+      "loanStatus": [
+        {
+          "name": "Em liberação",
+          "value": "3"
+        },
+        {
+          "name": "Espera por pagar",
+          "value": "4"
+        },
+        {
+          "name": "Finalizado",
+          "value": "6"
+        },
+        {
+          "name": "Falha de libertação do empréstimo",
+          "value": "13"
+        }
+      ],
+      "table": {
+        "letterReview": "Número da proposta de avaliação",
+        "orderNo": "Número da proposta de empréstimo",
+        "createTime": "Data de criação da proposta de empréstimo",
+        "userNo": "Conta do cliente",
+        "userName": "Nome do cliente",
+        "applyCash": "Valor do empréstimo(R$)",
+        "limit": "Prazo do empréstimo",
+        "applyTime": "Data de empréstimo",
+        "period": "Parcela",
+        "repayTimeShould": "Data de vencimento",
+        "repayMoneyShould": "Valor a ser pago(R$)",
+        "dueDay": "Dias do atraso",
+        "realRepayMoney": "Valor pago",
+        "repaymentDate": "Última data de pagamento",
+        "orderStatus": "Status da proposta"
+      },
+      "opera": {
+        "pass": "Aprovar",
+        "operate": "Operação",
+        "auditAmount": " Valor da aprovação",
+        "comment": "Comentário de revisão",
+        "retreat": "Cancelar",
+        "refuse": "Recusar"
+      },
+      "enum": {
+        "risk": [
+          {
+            "name": "Aprovar",
+            "value": "2"
+          },
+          {
+            "name": "Recusar",
+            "value": "9"
+          },
+          {
+            "name": "Cancelar",
+            "value": "1"
+          }
+        ],
+        "refuse": [
+          {
+            "name": "Endereço da residênica não correspondente com endereço em SPC",
+            "value": "1"
+          },
+          {
+            "name": "Foto do RG não clara",
+            "value": "2"
+          },
+          {
+            "name": "Informação na foto do RG não correspondente com envio do cliente"
+          },
+          {
+            "name": "Foto do RG não correspondente com foto do devedor na foto do RG pegado na mão",
+            "value": "4"
+          },
+          {
+            "name": "Frente do RG ou verso do RG não correspondente com que na foto do RG pegado na mão",
+            "value": "5"
+          },
+          {
+            "name": "Frente do RG ou verso do RG não correspondente com que na foto do RG pegado na mão",
+            "value": "6"
+          },
+          {
+            "name": "Outros(Insira razão por si próprio)",
+            "value": "7"
+          }
+        ],
+        "retreat": [
+          {
+            "name": "Endereço da residênica não correspondente com endereço em SPC",
+            "value": "1"
+          },
+          {
+            "name": "Foto do RG não clara",
+            "value": "2"
+          },
+          {
+            "name": "Informação na foto do RG não correspondente com envio do cliente"
+          },
+          {
+            "name": "Foto do RG não correspondente com foto do devedor na foto do RG pegado na mão",
+            "value": "4"
+          },
+          {
+            "name": "Frente do RG ou verso do RG não correspondente com que na foto do RG pegado na mão",
+            "value": "5"
+          },
+          {
+            "name": "Frente do RG ou verso do RG não correspondente com que na foto do RG pegado na mão",
+            "value": "6"
+          },
+          {
+            "name": "Outros(Insira razão por si próprio)",
+            "value": "7"
+          }
+        ]
+      }
+    }
+  },
+  "orderDetail": {
+    "bankInfo": {
+      "accountId": "ID da conta",
+      "bankCardNum": "Número do cartão bancário",
+      "bankId": "ID do banco",
+      "createTime": "Tempo de criação",
+      "idCardNum": " Número do RG",
+      "modifyTime": "Tempo da alteração",
+      "status": "Estado",
+      "userName": "Nome",
+      "bankName": "Nome do banco"
+    }
+  },
+  "bankModule": {
+    "list": {
+      "bankName": "Nome do banco",
+      "bankCode": "Número do banco",
+      "singleLimit": "Limite do montante de cada transação",
+      "dailyLimit": "Limite do montante diariamente",
+      "icon": "Ícone"
+    }
+  },
+  "authModule": {
+    "userDetailLoginVO": {
+      "title": "Localização da posição",
+      "list": [
+        {
+          "name": "Tempo de recente login",
+          "reflect": "createTime"
+        },
+        {
+          "name": "Localização de recente login",
+          "reflect": "area"
+        },
+        {
+          "name": "Endereço do IP",
+          "reflect": "ipAddress"
+        },
+        {
+          "name": "Equipamento de login",
+          "reflect": "deviceId"
+        }
+      ]
+    },
+    "userDetailCreditInfoVO": {
+      "title": "Comparação com informação da investigação do crédito",
+      "list": [
+        {
+          "name": "Nome ",
+          "reflect": "username"
+        },
+        {
+          "name": "CPF",
+          "reflect": "cpf"
+        },
+        {
+          "name": "Sexo",
+          "reflect": "gender"
+        },
+        {
+          "name": "Data de nascimento",
+          "reflect": "birthday"
+        }
+      ],
+      "list2": [
+        {
+          "name": "Idade",
+          "reflect": "age"
+        },
+        {
+          "name": "Nome completo da mãe",
+          "reflect": "motherName"
+        },
+        {
+          "name": "Informação do endereço ",
+          "reflect": "currentResidential"
+        },
+        {
+          "name": " CEP",
+          "reflect": "residentialPostcode"
+        }
+      ]
+    },
+    "userDetailOtherInfoVO": {
+      "title": "Outras informações básicas",
+      "list": [
+        {
+          "name": "Nome simples",
+          "reflect": "usernameShort"
+        },
+        {
+          "name": "Nome completo do pai",
+          "reflect": "fatherName"
+        },
+        {
+          "name": "Número de celular",
+          "reflect": "phoneNumber"
+        },
+        {
+          "name": "Situação da educação",
+          "reflect": "educationBackground"
+        },
+        {
+          "name": "Endereço de naturalidade"
+        },
+        {
+          "name": "Telefone fixo da residência atual",
+          "reflect": "homeTelephone"
+        },
+        {
+          "name": "Tempo na residência atual",
+          "reflect": "residentialDuration"
+        },
+        {
+          "name": "Estado civil",
+          "reflect": "maritalStatus"
+        }
+      ],
+      "list2": [
+        {
+          "name": "email",
+          "reflect": "usernameShort"
+        },
+        {
+          "name": "Número do RG",
+          "reflect": "fatherName"
+        },
+        {
+          "name": "Foto da frente do RG",
+          "reflect": "phoneNumber"
+        },
+        {
+          "name": "Foto do verso do RG",
+          "reflect": "educationBackground"
+        },
+        {
+          "name": "Foto do RG pegado na mão",
+          "reflect": "birthplace"
+        },
+        {
+          "name": "Número de eleitor",
+          "reflect": "homeTelephone"
+        },
+        {
+          "name": "Emissão do CPF",
+          "reflect": "residentialDuration"
+        },
+        {
+          "name": "Tempo de atualização do CPF",
+          "reflect": "maritalStatus"
+        }
+      ]
+    },
+    "userDetailContactVOS": {
+      "title": "Contato de emergênica",
+      "list": [
+        {
+          "name": "Contato de emergênica",
+          "reflect": "createTime"
+        },
+        {
+          "name": "Nome",
+          "reflect": "area"
+        },
+        {
+          "name": "Relação",
+          "reflect": "ipAddress"
+        },
+        {
+          "name": " Maneira de contato",
+          "reflect": "deviceId"
+        }
+      ]
+    },
+    "userDetailWorkVO": {
+      "title": "Situação do trabalho",
+      "list": [
+        {
+          "name": "Trabalhar ou não",
+          "reflect": "createTime"
+        },
+        {
+          "name": "Ocupação social",
+          "reflect": "area"
+        },
+        {
+          "name": "Principal fonte da renda"
+        },
+        {
+          "name": "Renda mensal",
+          "reflect": "deviceId"
+        },
+        {
+          "name": "Maneira de receber o pagamento",
+          "reflect": "area"
+        },
+        {
+          "name": "Data de pagamento",
+          "reflect": "ipAddress"
+        },
+        {
+          "name": "Extracto da renda",
+          "reflect": "deviceId"
+        }
+      ]
+    },
+    "userDetailBorrowInfoVO": {
+      "title": "Informacão do empréstimo",
+      "list": [
+        {
+          "name": "Uso do empréstimo",
+          "reflect": "createTime"
+        },
+        {
+          "name": "Valor do empréstimo",
+          "reflect": "area"
+        },
+        {
+          "name": "Prazo do empréstimo",
+          "reflect": "ipAddress"
+        }
+      ]
+    },
+    "creditDefaultVOS": {
+      "title": "Informação da inadimplência",
+      "list": [
+        {
+          "name": "Data inclusão",
+          "reflect": "createTime"
+        },
+        {
+          "name": "Data vencimento",
+          "reflect": "area"
+        },
+        {
+          "name": "Contrato/Fatura",
+          "reflect": "ipAddress"
+        },
+        {
+          "name": "Comprador/Fiador/Avalista",
+          "reflect": "createTime"
+        },
+        {
+          "name": "Valor",
+          "reflect": "area"
+        },
+        {
+          "name": "Associado/Credor",
+          "reflect": "ipAddress"
+        },
+        {
+          "name": "Cidade/UF origem",
+          "reflect": "area"
+        },
+        {
+          "name": "Origem",
+          "reflect": "ipAddress"
+        }
+      ]
+    },
+    "consultaRealizadaVO": {
+      "title": "Número de consulta do número de consulta da investigação do crédito",
+      "list": [
+        {
+          "name": "Data de consulta",
+          "reflect": "createTime"
+        },
+        {
+          "name": "Funcionário/Agênica"
+        },
+        {
+          "name": "Cidade",
+          "reflect": "ipAddress"
+        },
+        {
+          "name": "Origem de consulta",
+          "reflect": "createTime"
+        }
+      ]
+    },
+    "spcScoreVO": {
+      "title": "Investigação do crédito",
+      "list": [
+        {
+          "name": "Socre do crédito ",
+          "reflect": "createTime"
+        },
+        {
+          "name": "Classe do crédito ",
+          "reflect": "area"
+        }
+      ]
+    }
+  },
+  "loanOrderDetails": {
+    "type": {
+      "0": "Dia",
+      "1": "Mês"
+    },
+    "title": "Detalhe da proposta de empréstimo",
+    "onetime": "Pagamento de uma vez",
+    "staging": "Parcelamento- pagamento de valor equivalente",
+    "list": [
+      {
+        "name": "Número da proposta de avaliação",
+        "reflect": "creditOrderNo"
+      },
+      {
+        "name": "Número da proposta de empréstimo",
+        "reflect": "orderNo"
+      },
+      {
+        "name": "Tipo do empréstimo",
+        "reflect": "orderType"
+      },
+      {
+        "name": "Tempo de criação/Tempo de saque da proposta",
+        "reflect": "stringCreateTime"
+      },
+      {
+        "name": "Data de empréstimo",
+        "reflect": "payDateStr"
+      },
+      {
+        "name": "Valor do empréstimo",
+        "reflect": "auditMoney"
+      },
+      {
+        "name": "Prazo do empréstimo",
+        "reflect": "loanDays"
+      },
+      {
+        "name": "Taxa de juros ao dia",
+        "reflect": "lendRate"
+      },
+      {
+        "name": "Taxa de juros da avaliação ao mês",
+        "reflect": "monthAuditCharge"
+      },
+      {
+        "name": "Taxa de serviço técnico ao mês",
+        "reflect": "monthTechnologyCharge"
+      },
+      {
+        "name": "IOF",
+        "reflect": "vlrIOF"
+      },
+      {
+        "name": "Valor a ser pago(R$)",
+        "reflect": "currentRealRepay"
+      },
+      {
+        "name": "Multa por atraso",
+        "reflect": "overDueRate"
+      },
+      {
+        "name": "Mora por atraso ao mês",
+        "reflect": "dueMonthDelayRate"
+      }
+    ],
+    "list2": [
+      {
+        "name": "Número de proposta de avaliação",
+        "reflect": "creditOrderNo"
+      },
+      {
+        "name": "Número de proposta de empréstimo",
+        "reflect": "orderNo"
+      },
+      {
+        "name": "Tipo do empréstimo",
+        "reflect": "orderType"
+      },
+      {
+        "name": "Tempo de criação/Tempo de saque",
+        "reflect": "stringCreateTime"
+      },
+      {
+        "name": "Data de empréstimo",
+        "reflect": "payDateStr"
+      },
+      {
+        "name": "Valor do empréstimo",
+        "reflect": "auditMoney"
+      },
+      {
+        "name": "Prazo do empréstimo",
+        "reflect": "loanMonths"
+      },
+      {
+        "name": "Taxa de juros ao mês",
+        "reflect": "lendRate"
+      },
+      {
+        "name": "Taxa de juros da avaliação ao mês",
+        "reflect": "monthAuditCharge"
+      },
+      {
+        "name": "Taxa de serviço técnico ao mês",
+        "reflect": "monthTechnologyCharge"
+      },
+      {
+        "name": "IOF",
+        "reflect": "vlrIOF"
+      },
+      {
+        "name": "Valor a ser pago(R$)",
+        "reflect": "currentRealRepay"
+      },
+      {
+        "name": "Valor a ser pago da parcela(R$)",
+        "reflect": "amountPerPeriod"
+      },
+      {
+        "name": "Multa por atraso",
+        "reflect": "overDueRate"
+      },
+      {
+        "name": "Mora por atraso ao mês",
+        "reflect": "dueMonthDelayRate"
+      }
+    ]
+  },
+  "withdrawalDetail": {
+    "title": "Conta de recebimento",
+    "type": {
+      "1": "Conta corrente",
+      "2": "Conta poupança"
+    },
+    "list": [
+      {
+        "name": "Banco",
+        "reflect": "bankName"
+      },
+      {
+        "name": "Número de agência",
+        "reflect": "institutionNumber"
+      },
+      {
+        "name": "Tipo de conta",
+        "reflect": "accountType"
+      },
+      {
+        "name": "Número de conta",
+        "reflect": "accountNumber"
+      },
+      {
+        "name": "Dígito de conta",
+        "reflect": "accountCode"
+      }
+    ]
+  },
+  "loanDetails": {
+    "title": "Detalhe de liberação do empréstimo",
+    "type": "Gasto/ liberação",
+    "list": [
+      { "name": "Número serial" },
+      { "name": "Tempo de criação" },
+      { "name": "Tipo de circulação" },
+      { "name": "Valor(R$)" },
+      { "name": "Resultado de operação" },
+      { "name": "Tempo de operação" },
+      { "name": "Operador" },
+      { "name": "Notas" }
+    ]
+  },
+  "repaymentDetails": {
+    "title": "Detalhe de pagamento",
+    "type": "Receita/Pagamento",
+    "operationResult": {
+      "0": "Sucesso",
+      "1": "Falha"
+    },
+    "operator": {
+      "0": "BMP",
+      "1": "administrador do sistema"
+    },
+    "status": {
+      "1": "Espera por pagar",
+      "3": "Pagamento parcial",
+      "4": "Quitado",
+      "5": "Vencido e não pago",
+      "6": "Vencido e quitado",
+      "7": "Devolver dinheiro",
+      "8": "Não entra em vigor"
+    },
+    "list": [
+      { "name": "Parcela" },
+      { "name": "Valor a ser pago" },
+      { "name": "Valor financiado" },
+      { "name": "Juros" },
+      { "name": "Despesas por atraso" },
+      { "name": "Valor pago" },
+      { "name": "Status de proposta" }
+    ],
+    "list1": [
+      { "name": "Parcela" },
+      { "name": "Número serial" },
+      { "name": "Tempo de criação" },
+      { "name": "Tipo de circulação" },
+      { "name": "Valor" },
+      { "name": "Resultado de operação" },
+      { "name": "Tempo de operação" },
+      { "name": "Operador" },
+      { "name": "Notas" }
+    ]
+  },
+  "newOrderDetail": {
+    "title": "Informações sobre proposta",
+    "list": [
+      {
+        "name": "Número de proposta do empréstimo",
+        "reflect": "orderNo"
+      },
+      {
+        "name": "Tempo de criação da proposta",
+        "reflect": "stringCreateTime"
+      },
+      {
+        "name": "Estado da proposta",
+        "reflect": "status"
+      },
+      {
+        "name": "Valor do empréstimo",
+        "reflect": "auditMoney"
+      },
+      {
+        "name": "Prazo do empréstimo",
+        "reflect": "loanDays"
+      },
+      {
+        "name": "Taxa de juros diária",
+        "reflect": "lendRate"
+      },
+      {
+        "name": "Juros do empréstimo（R$）",
+        "reflect": "lendRateMoney"
+      },
+      {
+        "name": "IOF(R$)",
+        "reflect": "vlrIOF"
+      }
+    ],
+    "list2": [
+      {
+        "name": " Data de pagamento planejada",
+        "reflect": "stringPlanRepaymentDate"
+      },
+      {
+        "name": "Valor a ser pago（Valor a ser pago）",
+        "reflect": "currentRepay"
+      },
+      {
+        "name": "Multa",
+        "reflect": "overDueFine"
+      },
+      {
+        "name": "Valor efectivo do pagamento（R$）",
+        "reflect": "realRepayMoney"
+      }
+    ]
+  },
+  "newAccountDetail": {
+    "title": "Conta de saque",
+    "list": [
+      {
+        "name": "Banco de recebimento"
+      },
+      {
+        "name": "Número de conta",
+        "reflect": "bankCardNum"
+      },
+      {
+        "name": "Titular",
+        "reflect": "userName"
+      },
+      {
+        "name": "Número da conta",
+        "reflect": "userName"
+      },
+      {
+        "name": "Dígito da conta",
+        "reflect": "userName"
+      }
+    ]
+  },
+  "newRepaymentDetail": {
+    "title": [
+      "Estado da operação da proposta ",
+      "Tempo da operação",
+      "Resultado da operação ",
+      "Operador"
+    ]
+  },
+  "default": {
+    "history": "Estatística de dados históricos",
+    "today": "Estatística de dados hoje ",
+    "seven": " Estatística de dados nos últimos 7 dias ",
+    "cols": {
+      "his": {
+        "artificialAuditPassCount": "proposta aprovada pela revisão manual",
+        "auditPassCount": "Número total da aprovação",
+        "borrowUserCount": "Número do pedido do empréstimo ",
+        "dataOfDay": "Data de dados",
+        "dueAmount": "Valor total do vencimento",
+        "payAmount": "Valor total da libertação",
+        "planRepayAmount": "Valor total a ser pago",
+        "registerUserCount": " Número de usuários registrados",
+        "repayAmount": "Valor total já pago",
+        "systemAuditPassCount": " proposta aprovada pelo sistema",
+        "unRepayAmount": "Valor total não pago",
+        "withdrawDepositAmount": "Valor total de saque",
+        "withdrawDepositCount": "Número de saque",
+        "auditTotalAmount": "Valor total da aprovação da revisão"
+      },
+      "today": {
+        "artificialAuditPassCount": "proposta aprovada pela revisão manual",
+        "auditPassCount": "Número total de aprovação",
+        "borrowUserCount": "Número do pedido do empréstimo ",
+        "payAmount": "Valor total da libertação",
+        "registerUserCount": "Número de usuários registrados",
+        "systemAuditPassCount": "proposta aprovada pelo sistema"
+      }
+    }
+  },
+  "coupon": {
+    "title": "Gerenciar cupom",
+    "Remarks": "Cupons podem ser definidos para reduzir taxas de juros",
+    "add": "Criar nova atividade",
+    "view": "Ver regras de uso",
+    "search": "Pesquisar",
+    "inputContent": "Insira conteúdo...",
+    "delete": "Impossível recuperar após deletar",
+    "deleteToast": "Confirmar deletar",
+    "pushToast": "Push do APP",
+    "ruleToast": "Regras de uso do cupom",
+    "push": "Enviar as mensagens para os usuários que pegaram mas não usam cupom（Push e centro de informação）",
+    "list": {
+      "table": {
+        "couponId": "ID de cupom",
+        "couponName": "Nome de cupom",
+        "createTime": "Tempo de criação",
+        "receiveType": "Tipo de aquisição",
+        "offerType": "Tipo de benefício",
+        "preferentialConditions": "Condições preferenciais",
+        "circulation": "Quantidade de emissão",
+        "received": "Pegado",
+        "used": "Usado",
+        "effectiveTime": " Tempo válido",
+        "validityPeriod": "Período de validade",
+        "emergencySuspension": "Suspensão de emergência",
+        "Status": "Status de atividade"
+      },
+      "activityStatus": {
+        "allActivities": "Todas as atividades",
+        "noActivityStarted": "Atividade não começada",
+        "ongoingActivities": "Atividade em andamento",
+        "endedActivity": "Atividade terminada",
+        "suspendedActivity": "Atividade suspensa"
+      },
+      "offer": {
+        "offerType": "Tipo de benefício",
+        "interestReduction": "Redução de juros",
+        "interestrateReduction": "Redução de taxa de juros",
+        "dayFree": "Isenção de dias"
+      },
+      "receive": {
+        "registrationCoupon": "Cupom de cadastro",
+        "receiveType": "Tipo de aquisição",
+        "systemDistribution": "Push orientado",
+        "activityAcquisition": "Benefício exclusivo de atividade",
+        "initiativeReceive": "Pegar por iniciativa própria"
+      },
+      "couponIdname": {
+        "couponId": "ID de atividade",
+        "couponName": "Nome de atividade"
+      },
+      "btnGroup": {
+        "couponStting": "Configurar cupom",
+        "appPush": "Push de app"
+      },
+      "setting": {
+        "description": "Descrição de cupom",
+        "preferentialConditions": "Condições preferenciais",
+        "descriptionContent": "Esta descrição será mostrada ao consumidor, por favor insira cuidadosamente......",
+        "collection": "Desde pegar",
+        "effective": "Válido",
+        "activityCrowd": "Multidão de atividades",
+        "limitedPerPerson": "Uma pessoa limite de",
+        "zhang": "cupons",
+        "loan": "Valor real do empréstimo chega",
+        "nothreshold": "Sem exigência",
+        "interestReduction": "Redução de juros",
+        "interest": "Aproveite juros"
+      },
+      "type": {
+        "day": "Dia",
+        "week": "Semana",
+        "month": "Mês",
+        "year": "Ano"
+      },
+      "crowd": {
+        "allUser": "Todos os usuários",
+        "newUser": "Novos usuários",
+        "oldUser": "Usuários antigos"
+      },
+      "prompt": {
+        "selectCrowd": "Selecione multidão",
+        "receiveType": "Tipo de aquisição",
+        "offerType": "Tipo de benefício",
+        "allActivities": "Todas as atividades"
+      },
+      "status": {
+        "noStarted": "Não começado",
+        "ongoing": "Em andamento",
+        "ended": "Acabado",
+        "suspended": "Suspenso"
+      },
+      "offertips": {
+        "payMoney": "Valor do empréstimo",
+        "interestReduction": "Redução de taxa de juros de",
+        "dayFree": "dias de isenção de juros",
+        "dailyInterestRate": "Taxa de juros ao dia",
+        "lendRateMoney": "Juros do empréstimo"
+      },
+      "ruleInfo": {
+        "CouponList": {
+          "desc": "Lista de gerenciamento de cupom",
+          "info": {
+            "one": "Depois de atividade nova-criada de cupom ser concluída, botão de pausa de emergência é fechado por padrão.",
+            "two": "Lista de cupons, decrescente de acordo com data de criação",
+            "three": "Status de atividade \"não iniciado\" \"em andamento\" \"fechado\", abrir botão de pausa de emergência, \"em andamento\" se torna em \"suspenso\""
+          }
+        },
+        "preferentialConditions": {
+          "desc": "Condições preferenciais",
+          "info": {
+            "amount": "Valor de desconto",
+            "remarks": "Notas"
+          }
+        },
+        "display": {
+          "desc": "Apresentação de cupom、Regra de pegar",
+          "info": {
+            "a": "Status de ID",
+            "b": "Tipo de cupom",
+            "c": "Formato de apresentacão",
+            "d": "Tempo válido",
+            "e": "Botão de suspender",
+            "f": "Cupom restante",
+            "g": "Apresentação de APP",
+            "h": "Botão de pegar",
+            "i": "Status de uso",
+            "j": " Formato de lista de cupom",
+            "k": "Aviso"
+          },
+          "notArrived": "Não chegado",
+          "vouchers": "Lista de cupom",
+          "inside": "Dentro",
+          "passed": "Passado",
+          "shutDown": "Fechar",
+          "open": "Começar",
+          "visible": "Visível",
+          "invisible": "Invisível",
+          "clickable": "clicável",
+          "notClickable": "não clicável",
+          "notActive": "Não entra em vigor",
+          "effective": "Válido",
+          "invalid": "Inválido",
+          "pendingNormal": "Esperar por pegar- normal",
+          "haveFinished": " Acabou",
+          "expired": "Expirou",
+          "stats": " Sucesso de pagar/Falha ao pegar"
+        },
+        "directionalPush": {
+          "desc": "Push orientado",
+          "discountPopup": "Pop-up de benefício"
+        },
+        "usageRules": {
+          "desc": "Regra de uso",
+          "info": {
+            "a": "limite de um por uma proposta",
+            "b": "Na página de detalhe de saque, use segundo os requisitos",
+            "c": "Ver em detalhe de proposta após finalização de proposta"
+          }
+        }
+      }
+    }
+  },
+  "channel": {
+    "title": "Gerenciarpromoção de canais - código de convite",
+    "h5Title": "Gerenciar promoção de canais-H5",
+    "prompt": {
+      "channelCode": "Insira os dois primeiros dígitos de código de convite",
+      "channelName": "Insira nome do canal",
+      "channelProvider": "Insira provedor de canal",
+      "channelBranchName": "Insira nome doramo de canal",
+      "invitationCode": "Insira código de convite",
+      "Id": "Insira número de canal",
+      "link": "Insira link",
+      "contactNumber": "Insira telefone de contato",
+      "channelId": "Insira ID de canal",
+      "streetAddress": "Insira endereço da rua",
+      "contact": "Insira contato",
+      "error": "Número do canal repetido,reinsira",
+      "unusedInvitationCode": "Código de convite não usado",
+      "generateNumber": "Quantidade de geração",
+      "piece": "Unidade",
+      "generate": "Insira quantidade de geração"
+    },
+    "tabData": {
+      "channelId": "ID de canal",
+      "channelProvider": "Provedor de canal",
+      "channelNumber": "Número de canal",
+      "channelStatus": "Status de canal",
+      "link": "Link"
+    },
+    "channelList": {
+      "name": "Nome de canal",
+      "id": "Número de canal",
+      "selectChannelBranch": "Ver ramo do canal"
+    },
+    "channelStatus": {
+      "disable": "Parar",
+      "open": "Começar"
+    },
+    "btn": {
+      "reset": "Reinstalar",
+      "add": "Adicionar canal"
+    },
+    "channelBranch": {
+      "status": "Status de ramo do canal",
+      "streetAddress": "Endereço da rua",
+      "btn": {
+        "add": "Adicionar ramo de canal",
+        "generate": "Gerarrápido código de convite",
+        "export": "Exportar por quantidade",
+        "ex": "Exportar",
+        "import": "Importar por quantidade"
+      },
+      "tabData": {
+        "invitationCode": "Código de convite",
+        "name": "Nome de ramo do canal",
+        "contact": "Contato",
+        "contactNumber": "Telefone de contato",
+        "status": "Status do canal"
+      }
+    }
+  },
+  "reportModule": {
+    "channeldata": {
+      "channelType": [
+        {
+          "name": "Estatística de canal- código de convite",
+          "value": 1
+        },
+        {
+          "name": "Estatística de canal- código de convite- H5",
+          "value": 2
+        }
+      ],
+      "startDate": "Data de começo",
+      "endDate": "Data de terminação",
+      "table": {
+        "id": "ID de canal",
+        "name": "Provedor de canal",
+        "channelName": "Nome de canal",
+        "channelBranchName": "Nome da Filial do Canal",
+        "invitationCode": "Código de convite",
+        "download": "Pessoas que fazem download",
+        "registered": "Pessoas cadastradas",
+        "link": "Link de canal",
+        "firstLoanApplication": "Pessoas que fazem primeira solicitação",
+        "firstLoanReviewPassed": "Pessoas aprovadas no primeiro empréstimo",
+        "firstLoanWithdrawal": "Pessoas que sacam primeiro empréstimo",
+        "completeTheFirstLoan": "Pessoas que finalizaram primeiro empréstimo",
+        "completeTheSecondLoan": "Pessoas que finalizaram segundo empréstimo",
+        "completeMultiLoan": "Pessoas que finalizaram vários empréstimos",
+        "successfulRepayment": "Propostas pagas",
+        "firstLoanOverdue": "Pessoas que venceram o prazo no primeiro empréstimo",
+        "M1IsOverdue": "Propostas vencidas de M1",
+        "M2IsOverdue": "Propostas vencidas de M2",
+        "M3IsOverdue": "Propostas vencidas de M3"
+      }
+    }
+  },
+  "productCenter": {
+    "product": {
+      "inputPrompt": "Insira nome do produto de empréstimo",
+      "title": "Configurar produto de empréstimo",
+      "add": "Adicionar produto de empréstimo",
+      "take": "Acrescentado em",
+      "day": "Dia",
+      "month": "Mês",
+      "increment": "",
+      "msg": {
+        "amount": "Insira montante de empréstimo correto segundo as regras",
+        "period": "Insira prazo de emprétimo correto segundo as regras"
+      },
+      "input": [
+        {
+          "desc": "ID do produto",
+          "value": "id"
+        },
+        {
+          "desc": "Nome do produto",
+          "value": "name"
+        }
+      ],
+      "prompt": "Insira conteúdo...",
+      "list": {
+        "id": "ID de produto de empréstimo",
+        "name": "Nome do produto de empréstimo",
+        "type": "Categoria do produto de empréstimo",
+        "creationTime": "Tempo de criação",
+        "updateTime": "Tempo de atualização",
+        "amount": "Montante disponível",
+        "period": "Prazo do empréstimo",
+        "loanRate": "Taxa de juros",
+        "latePayment": "Multa por atraso",
+        "deferredFee": "Mora por atraso ao mês",
+        "state": "Status",
+        "lendRate": "Taxa de juros ao dia",
+        "lendRate1": "Taxa de juros ao mês",
+        "annualRate": "Taxas de juros ao ano",
+        "annualRate1": "Taxas de juros ao ano",
+        "technology": "Taxa de serviço técnico ao mês",
+        "review": "Taxa de avaliação ao mês",
+        "day": "Dias de isenção de juros"
+      },
+      "type1": [
+        {
+          "desc": "Pagamento de uma vez",
+          "value": 1,
+          "time": "Dia",
+          "interestRate":"juros ao dia"
+        },
+        {
+          "desc": "Parcelamento- pagamento de valor equivalente",
+          "value": 2,
+          "time": "Mês",
+          "interestRate":"juros ao mês"
+        }
+      ],
+      "type": [
+        {
+          "desc": "Pagamento de uma vez",
+          "value": 1,
+          "time": "Dia"
+        }
+      ],
+      "state": [
+        {
+          "desc": "Começar",
+          "value": 1
+        },
+        {
+          "desc": "Parar",
+          "value": 2
+        }
+      ]
+    },
+    "userLevel": {
+      "title": "Configurar classe do cliente",
+      "add": "Adicionar classe do cliente",
+      "input": [
+        {
+          "desc": "ID de classe do cliente",
+          "value": "id"
+        },
+        {
+          "desc": "Nome de classe do cliente",
+          "value": "name"
+        }
+      ],
+      "prompt": "Insira conteúdo...",
+      "list": {
+        "id": "ID de classe do cliente",
+        "name": "Nome de classe do cliente",
+        "creationTime": "Tempo de criação",
+        "updateTime": "Tempo de atualiazação",
+        "rule": "Regra",
+        "period": "Prazo do empréstimo",
+        "month": "Taxa de juros ao mês",
+        "product": "Produto de empréstimo aplicável",
+        "state": "Status"
+      },
+      "state": [
+        {
+          "desc": "Em uso",
+          "value": 1
+        },
+        {
+          "desc": "Suspenso",
+          "value": 2
+        }
+      ]
+    }
+  },
+  "reviewRiskList": {
+    "searchModule": {
+      "effectTime": "生效日期",
+      "orderNo": "信审订单号",
+      "lv": "用户等级",
+      "excel": "导出成Excel",
+      "reviewListAll": "信审列表"
+    },
+    "manageModule": {
+      "goAttendance": "Ver presença",
+      "allot": "Distribuir",
+      "common": "Analisador",
+      "chooseCommon": "Selecione analisador",
+      "functionName": "Nome de função",
+      "tips": "Notas",
+      "status": "Situação atual",
+      "riskSetting": "Configuração de parâmetro comercial",
+      "isopen": "se começa ou não",
+      "uncheck": "Dias de isenção de verificação",
+      "open": "Começar",
+      "close": "Fechar"
+    },
+    "tableModule": {
+      "applyDateStr": "申请日期",
+      "creditOrderNo": "信审订单号",
+      "userPhone": "手机号",
+      "userGrade": "用户等级",
+      "approveAmount": "不分期审批额度",
+      "approveDate": "不分期审批期限",
+      "fapproveAmount": "分期审批额度",
+      "fapproveDate": "分期审批期限",
+      "approveDays": "信审有效期",
+      "approveEffectDay": "信审生效日期",
+      "approveExpDay": "信审到期日期",
+      "adminName": "信审管理员",
+      "commonName": "信审人员",
+      "creditIdea": "信审意见",
+      "status": "订单状态"
+    },
+    "riskReportTable":{
+          "auditDate": "审核日期",
+          "auditOrderTotal": "信审订单总笔数",
+          "applyNumberToday": "当日申请笔数",
+          "rejectNumberMachine": "机审拒绝笔数",
+          "passNumberManul": "人工审核通过笔数",
+          "rejectNumberManul": "人工审核拒绝笔数",
+          "totalAuditManul": "人工审核总笔数",
+          "auditWorkers": "审核工作人数",
+          "totalworkingHours": "总工时",
+          "perCapitalAudit": "人均审核笔数/时",
+          "auditedNumberToday": "当日完成审核笔数",
+          "auditingNumberToday": "当日未完成审核笔数"
+        },
+    "recordModule": {
+      "operationType": "订单操作",
+      "operationResult": "操作",
+      "stringOperationTime": "操作时间",
+      "operationRemark": "备注",
+      "operationEmployeeName": "操作人"
+    },
+    "passModule": {
+      "userLv": "用户等级",
+      "minAccount": "最低额度",
+      "maxAccount": "最高额度",
+      "productType": "产品类型",
+      "passTitle": "通过审核",
+      "relustTitle": "审核拒绝",
+      "resetTitle": "审核撤回",
+      "err1": "审核额度大于产品额度上限",
+      "err2": "审核额度小于产品额度下限",
+      "err3": "审核额度最小值大于最大值",
+      "twoProductList": [
+        {
+          "name": "贷款产品名称",
+          "reject": "loanProductName"
+        },
+        {
+          "name": "产品类型",
+          "reject": "loanProductTypeStr"
+        },
+        {
+          "name": "借款额度(REAL)",
+          "reject": "loanQuotaStr"
+        },
+        {
+          "name": "额度递增倍数",
+          "reject": "loanQuotaIncrease"
+        },
+        {
+          "name": "借款期限",
+          "reject": "loanTermStr"
+        },
+        {
+          "name": "天数递增倍数",
+          "reject": "loanTermIncrease"
+        },
+        {
+          "name": "借款月利率",
+          "reject": "loanRate"
+        },
+        {
+          "name": "滞纳金",
+          "reject": "overDueFine"
+        },
+        {
+          "name": "延期费用",
+          "reject": "overDueFineDelay"
+        }
+      ],
+      "oneProductList": [
+        {
+          "name": "贷款产品名称",
+          "reject": "loanProductName"
+        },
+        {
+          "name": "产品类型",
+          "reject": "loanProductTypeStr"
+        },
+        {
+          "name": "借款额度(REAL)",
+          "reject": "loanQuotaStr"
+        },
+        {
+          "name": "额度递增倍数",
+          "reject": "loanQuotaIncrease"
+        },
+        {
+          "name": "借款期限",
+          "reject": "loanTermStr"
+        },
+        {
+          "name": "天数递增倍数",
+          "reject": "loanTermIncrease"
+        },
+        {
+          "name": "借款日利率",
+          "reject": "loanRate"
+        },
+        {
+          "name": "逾期日利率",
+          "reject": "overDueFineDelay"
+        }
+      ]
+    }
+  }
+}

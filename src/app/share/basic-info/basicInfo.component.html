@@ -1,0 +1,104 @@
+<div class="c-content-wrap" *ngIf = 'userInfo'>
+    <div nz-col class="gutter-row" nzSpan="6">
+        <div class="c-flex-row-start c-info-wrap">
+            <div class="c-info-title">
+                {{ "orderModule.order.basicInfo.registerDate" | translate }} :
+            </div>
+            <div class="c-info-content">
+                {{ userInfo.createTime | dateFormat }}
+            </div>
+        </div>
+    
+        <div class="c-flex-row-start c-info-wrap">
+            <div class="c-info-title">
+                {{ "orderModule.order.basicInfo.userId" | translate }} :
+            </div>
+            <div class="c-info-content">
+                {{ userInfo.id }}
+            </div>
+        </div>
+    
+        <div class="c-flex-row-start c-info-wrap">
+            <div class="c-info-title">
+                {{ "orderModule.order.basicInfo.mobile" | translate }} :
+            </div>
+            <div class="c-info-content">
+                {{ userInfo.phoneNumber }}
+            </div>
+        </div>
+    
+        <div class="c-flex-row-start c-info-wrap">
+            <div class="c-info-title">
+                {{ "orderModule.order.basicInfo.email" | translate }} :
+            </div>
+            <div class="c-info-content">
+                {{ userInfo.email }}
+            </div>
+        </div>
+    </div>
+    
+<!--
+    <div class="c-flex-row-start c-info-wrap">
+        <div class="c-info-title">
+            {{ "orderModule.order.basicInfo.sex" | translate }} :
+        </div>
+        <div class="c-info-content">
+            {{ userInfo.gender | SexPipe }}
+        </div>
+    </div> -->
+<!--
+    <div class="c-flex-row-start c-info-wrap">
+        <div class="c-info-title">
+            {{ "orderModule.order.basicInfo.marray" | translate }} :
+        </div>
+        <div class="c-info-content">
+            {{ userInfo.maritalStatus | MarryPipe }}
+        </div>
+    </div> -->
+<!--
+    <div class="c-flex-row-start c-info-wrap">
+        <div class="c-info-title">
+            {{ "orderModule.order.basicInfo.degree" | translate }} :
+        </div>
+        <div class="c-info-content">
+            {{ userInfo.educationBackground | EduPipe }}
+        </div>
+    </div> -->
+    <div nz-col class="gutter-row" nzSpan="6">
+        <div class="c-flex-row-start c-info-wrap">
+            <div class="c-info-title">
+                {{ "usrModule.list.table.regFrom" | translate }} :
+            </div>
+            <div class="c-info-content">
+                {{ userInfo.registerSource }}
+            </div>
+        </div>
+    
+        <div class="c-flex-row-start c-info-wrap">
+            <div class="c-info-title">
+                {{ "usrModule.list.table.CPF" | translate }} :
+            </div>
+            <div class="c-info-content">
+                {{ userInfo.cpf}}
+            </div>
+        </div>
+    
+        <div class="c-flex-row-start c-info-wrap">
+            <div class="c-info-title">
+                {{ "orderModule.order.approveInfo.auth" | translate }} :
+            </div>
+            <div style="color: #1890ff ; cursor: pointer;" class="c-info-content" (click) = 'goToAuth()'>
+                {{ "orderModule.order.approveInfo.checkUp" | translate }}
+            </div>
+        </div>
+    
+        <div class="c-flex-row-start c-info-wrap">
+            <div class="c-info-title">
+                {{ "usrModule.list.table.userAccount" | translate }} :
+            </div>
+            <div class="c-info-content">
+                {{ userInfo.bankCardNum}}
+            </div>
+        </div>
+    </div>
+</div>

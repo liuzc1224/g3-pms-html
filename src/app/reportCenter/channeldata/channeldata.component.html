@@ -1,0 +1,110 @@
+<div class="c-content-wrap">
+  <div class="c-search-wrap">
+    <div class="c-search-group c-search-border">
+      <div class="c-search-itemRight">
+        <ul class="sectionList c-flex-row-start" style="flex-wrap:wrap;height: auto;">
+          <li
+            *ngFor = 'let item of channelType'
+            (click) = 'changeStatus(item["value"])'
+            [ngClass]='{"active-tag" : (item.value == chType)}'
+            style="white-space:nowrap;margin-bottom: 10px;">
+            {{ item['name'] }}
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="c-search-group">
+      <!-- <nz-month-picker nzShowTime></<nz-month-picker> -->
+      <div class="c-search-item">
+        <div class="c-search-itemLeft">
+          {{ "reportModule.channeldata.startDate" | translate}}:
+        </div>
+        <div class="c-search-itemRight">
+          <nz-date-picker  [(ngModel)]="searchModel.startDate"></nz-date-picker>
+        </div>
+      </div>
+      <div class="c-search-item">
+        <div class="c-search-itemLeft">
+          {{ "reportModule.channeldata.endDate" | translate}}:
+        </div>
+        <div class="c-search-itemRight">
+          <nz-date-picker [(ngModel)]="searchModel.endDate"></nz-date-picker>
+        </div>
+      </div>
+    </div>
+
+    <div class="c-search-group">
+      <div *ngIf="chType==1" class="c-search-item">
+        <div class="c-search-itemLeft">
+          {{ "channel.tabData.channelNumber" | translate}}:
+        </div>
+        <div class="c-search-itemRight">
+          <input nz-input type="text" class="left" [(ngModel)] = 'searchModel.serialNumber' [placeholder] = '"channel.prompt.Id" | translate' >
+        </div>
+      </div>
+      <div *ngIf="chType==1" class="c-search-item">
+        <div class="c-search-itemLeft">
+          {{ "channel.channelBranch.tabData.invitationCode" | translate}}:
+        </div>
+        <div class="c-search-itemRight">
+          <input nz-input type="text" class="left" [(ngModel)] = 'searchModel.invitationCode' [placeholder] = '"channel.prompt.invitationCode" | translate' >
+        </div>
+      </div>
+      <div *ngIf="chType==1" class="c-search-item">
+        <div class="c-search-itemLeft">
+          {{ "channel.channelBranch.tabData.name" | translate}}:
+        </div>
+        <div class="c-search-itemRight">
+          <input nz-input type="text" class="left" [(ngModel)] = 'searchModel.channelBranchName' [placeholder] = '"channel.prompt.channelBranchName" | translate' >
+        </div>
+      </div>
+
+
+
+      <div *ngIf="chType==2" class="c-search-item">
+        <div class="c-search-itemLeft">
+          {{ "channel.channelList.name" | translate}}:
+        </div>
+        <div class="c-search-itemRight">
+          <input nz-input type="text" class="left" [(ngModel)] = 'searchModel.name' [placeholder] = '"channel.prompt.channelName" | translate' >
+        </div>
+      </div>
+      <div *ngIf="chType==2" class="c-search-item">
+        <div class="c-search-itemLeft">
+          {{ "channel.tabData.channelId" | translate}}:
+        </div>
+        <div class="c-search-itemRight">
+          <input nz-input type="text" class="left" [(ngModel)] = 'searchModel.id' [placeholder] = '"channel.prompt.channelId" | translate' >
+        </div>
+      </div>
+    </div>
+
+    <div class="c-search-btnGroup">
+      <button nz-button nzType="primary" (click)='search() '>
+        {{ "common.search" | translate}}
+      </button>
+      <button style="margin-left: 20px;" nz-button (click)='reset() '>
+        {{ "common.reset" | translate}}
+      </button>
+    </div>
+  </div>
+  <button nz-button (click)='exportChannel() ' style="margin-bottom: 10px">
+    {{ "channel.channelBranch.btn.export" | translate}}
+  </button>
+  <c-table [tableData]='tableData'>
+  </c-table>
+  <!--<div class="c-pag">-->
+    <!--<nz-pagination [nzShowTotal]="totalTemplate" (nzPageIndexChange)='pageChange($event , "page")' (nzPageSizeChange) = 'pageChange($event , "size")' [nzPageIndex]="searchModel.currentPage"  [nzTotal]="totalSize" nzShowSizeChanger nzShowQuickJumper></nz-pagination>-->
+    <!--<ng-template #totalTemplate let-total>-->
+              <!--<span>-->
+                  <!--{{ "common.total" | translate }}-->
+              <!--</span>-->
+      <!--<span>-->
+                  <!--{{ totalSize }}-->
+              <!--</span>-->
+      <!--<span>-->
+                  <!--{{ "common.pageUnit" | translate }}-->
+              <!--</span>-->
+    <!--</ng-template>-->
+  <!--</div>-->
+</div>

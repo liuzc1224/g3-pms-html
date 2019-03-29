@@ -1,0 +1,80 @@
+<div class="c-content-wrap">
+  <div class="c-search-wrap">
+    <div class="risk_report_total" *ngIf="creditCount">
+      <ul>
+        <li>
+          <span>{{creditCount.creditOrderCount}}</span>
+          <p>{{"common.auditTotalRecord.auditOrderTotal" | translate}}</p>
+        </li>
+        <li>
+          <span>{{creditCount.machineTrialRefuseCount }}</span>
+          <p>{{"common.auditTotalRecord.rejectNumberMachine" | translate}}</p>
+        </li>
+        <li>
+          <span>{{creditCount.manualAuditPassCount }}</span>
+          <p>{{"common.auditTotalRecord.artificialAuditPassCount" | translate}}</p>
+        </li>
+        <li>
+          <span>{{creditCount.manualAuditRefuseCount }}</span>
+          <p>{{"common.auditTotalRecord.rejectNumberManul" | translate}}</p>
+        </li>
+        <li>
+          <span>{{creditCount.waitManualAuditCount }}</span>
+          <p>{{"common.auditTotalRecord.noAuditNumberManul" | translate}}</p>
+        </li>
+        <li>
+          <span>{{creditCount.effectiveCount }}</span>
+          <p>{{"common.auditTotalRecord.effectNumber" | translate}}</p>
+        </li>
+        <li>
+          <span>{{creditCount.loseEfficacyCount }}</span>
+          <p>{{"common.auditTotalRecord.invalidNumber" | translate}}</p>
+        </li>
+      </ul>
+    </div>
+    <div class="c-search-group" style="flex-wrap:wrap;">
+      <!-- <nz-month-picker nzShowTime></<nz-month-picker> -->
+      <!-- 申请日期 -->
+      <div class="c-search-item" style="margin-bottom:15px;">
+        <div class="c-search-itemLeft">
+          {{ "financeModule.list.table.askTime" | translate}}:
+        </div>
+        <div class="c-search-itemRight">
+          <nz-date-picker [nzPlaceHolder]='" "' [(ngModel)]="searchModel.auditStartDate"></nz-date-picker>
+          <span style="color:#999"> ~ </span>
+          <nz-date-picker [nzPlaceHolder]='" "' [(ngModel)]="searchModel.auditEndDate"></nz-date-picker>
+        </div>
+      </div>
+
+    </div>
+    <div class="c-search-btnGroup">
+      <button nz-button nzType="primary" (click)='search() '>
+        {{ "common.search" | translate}}
+      </button>
+      <button style="margin:0 20px;" nz-button (click)='reset() '>
+        {{ "common.reset" | translate}}
+      </button>
+    </div>
+  </div>
+
+  <c-table [tableData]='tableData'>
+  </c-table>
+  <div class="c-pag">
+    <nz-pagination [nzShowTotal]="totalTemplate" (nzPageIndexChange)='pageChange($event , "page")' (nzPageSizeChange)='pageChange($event , "size")'
+      [nzPageIndex]="searchModel.currentPage" [nzTotal]="totalSize" nzShowSizeChanger nzShowQuickJumper></nz-pagination>
+    <ng-template #totalTemplate let-total>
+      <span>
+        {{ "common.total" | translate }}
+      </span>
+      <span>
+        {{ totalSize }}
+      </span>
+      <span>
+        {{ "common.pageUnit" | translate }}
+      </span>
+    </ng-template>
+  </div>
+</div>
+
+
+

@@ -1,0 +1,111 @@
+::ng-deep .ant-collapse-borderless>.ant-collapse-item{
+    border: none !important;
+}
+
+::ng-deep .ant-collapse-header{
+    background-color: rgba(24, 144, 255, 0.92);
+    border-radius: 5px !important;
+    color: #fff !important;
+}
+
+.card-img-box{
+    width: 100%;
+    display: flex;
+    display: -webkit-flex;
+    flex-wrap: wrap;
+    div{
+        flex-direction: column ;
+        justify-content: flex-start ;
+        align-items: flex-start ;
+        width: 51%;
+        flex-wrap: wrap ;
+        img{
+            width: 100%;
+
+        }
+    }
+}
+
+.auth-table-wrap{
+    margin-top: 40px;
+    table{
+        width: 100%;
+        table-layout:fixed ;
+    }
+    .th-title{
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+        background: red;
+        color: rgba(0,0,0,.85);
+        background: #fafafa;
+        border-bottom: 1px solid #ccc;
+        margin: 0;
+        text-align: center;
+        font-size: 16px;
+
+    }
+    tr{
+        border-bottom: 1px solid #ccc;
+    }
+    // tr:first-child{
+    //     border-top: 1px solid #ccc;
+    // }
+    td{
+        width: 12.5%;
+        height: 50px;
+        line-height: 23px;
+        border-right: 1px solid #ccc;
+        padding: 5px;
+        text-align: center;
+        word-wrap:break-word;
+        font-size: 12px;
+    }
+    .spf-info{
+        background: #ccc;
+    }
+    .tr-tlt{
+        font-weight:900;
+        font-size: 14px;
+    }
+}
+
+.address-list-wrap{
+    position: fixed;
+    width: 800px;
+    height: 500px;
+    background: #fff;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    overflow: auto;
+    .call-list{
+        border-bottom: 1px solid #ccc;
+        font-size: 26px;
+        height: 60px;
+        display: flex;
+        display: -webkit-flex;
+        text-align: center;
+        margin: 0;
+        span{
+            flex: 1;
+            height: 100%;
+            line-height: 60px;
+        }
+    }
+}
+.call-mask{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,.7);
+    z-index: 99;
+}
+.img-info{
+    margin-bottom: 20px ;
+}

@@ -1,0 +1,94 @@
+<ul class="check-tabs">
+  <!-- 当前管理 -->
+  <li (click)="tabsCheck(true)" [ngClass]="{'active': tabsIsActive}">{{ ('common.checkTabs' | translate)[0] }}</li>
+  <!-- 信审管理 -->
+  <li (click)="tabsCheck(false)" [ngClass]="{'active': !tabsIsActive}">{{ ('common.checkTabs' | translate)[1] }}</li>
+</ul>
+<div class="c-content-wrap">
+  <div class="c-search-wrap">
+    <div class="c-search-group c-search-border">
+      <div class="c-search-itemLeft">
+        {{ "financeModule.list.classify" | translate}}:
+      </div>
+      <div class="c-search-itemRight">
+        <ul class="sectionList c-flex-row-start">
+          <li (click)='changeStatus( null )' [ngClass]='{"active-tag" : null == searchModel.signOutState}'>
+            {{ "financeModule.list.all" | translate}}
+          </li>
+          <li *ngFor='let item of statusEnum' (click)='changeStatus(item.value)' [ngClass]='{"active-tag" : item.value == searchModel.signOutState}'>
+            {{ item.name }}
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="c-search-group">
+      <!-- <nz-month-picker nzShowTime></<nz-month-picker> -->
+      <div class="c-search-item">
+        <div class="c-search-itemLeft">
+          {{ "financeModule.list.table.signTime" | translate}}:
+        </div>
+        <div class="c-search-itemRight">
+          <nz-date-picker [nzPlaceHolder]='" "' [(ngModel)]="searchModel.signInStartTime"></nz-date-picker>
+          <span style="color:#999"> ~ </span>
+          <nz-date-picker [nzPlaceHolder]='" "' [(ngModel)]="searchModel.signInEndTime"></nz-date-picker>
+        </div>
+
+        <div class="c-search-item" style="margin-left: 20px">
+          <div class="c-search-itemLeft">
+            {{ "financeModule.list.table.employeeName" | translate}}:
+          </div>
+          <div class="c-search-itemRight">
+            <input nz-input type="text" [(ngModel)]='searchModel.employeeName'>
+          </div>
+        </div>
+
+        <button style="margin-left: 30px" nz-button nzType="primary" (click)='search() '>
+          {{ "common.search" | translate}}
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+
+
+  <div *ngIf="tabsIsActive">
+    <c-table [tableData]='tableData'>
+    </c-table>
+    <div class="c-pag">
+      <nz-pagination [nzShowTotal]="totalTemplate" (nzPageIndexChange)='pageChange($event , "page")' (nzPageSizeChange)='pageChange($event , "size")'
+        [nzPageIndex]="searchModel.currentPage" [nzTotal]="totalSize" nzShowSizeChanger nzShowQuickJumper></nz-pagination>
+      <ng-template #totalTemplate let-total>
+        <span>
+          {{ "common.total" | translate }}
+        </span>
+        <span>
+          {{ totalSize }}
+        </span>
+        <span>
+          {{ "common.pageUnit" | translate }}
+        </span>
+      </ng-template>
+    </div>
+  </div>
+
+  <div *ngIf="!tabsIsActive">
+    <c-table [tableData]='tableData'>
+    </c-table>
+    <div class="c-pag">
+      <nz-pagination [nzShowTotal]="totalTemplate" (nzPageIndexChange)='pageChange($event , "page")' (nzPageSizeChange)='pageChange($event , "size")'
+        [nzPageIndex]="searchModel.currentPage" [nzTotal]="totalSize" nzShowSizeChanger nzShowQuickJumper></nz-pagination>
+      <ng-template #totalTemplate let-total>
+        <span>
+          {{ "common.total" | translate }}
+        </span>
+        <span>
+          {{ totalSize }}
+        </span>
+        <span>
+          {{ "common.pageUnit" | translate }}
+        </span>
+      </ng-template>
+    </div>
+  </div>
+</div>

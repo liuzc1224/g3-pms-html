@@ -1,0 +1,313 @@
+<div class="infoWrap">
+  <auth #auth> </auth>
+  <div class="c-flex-row-center btnGroupWrap" style="margin-top: 20px">
+    <div *ngIf="para['from'] == 'riskList' && para['status'] == '1'">
+      <button
+        (click)="showModal('risk', false, 'pass')"
+        class="c-btn-width operBtns"
+        nz-button
+        nzType="primary"
+        style="margin-right: 30px"
+      >
+        {{ "orderList.allList.opera.pass" | translate }}
+      </button>
+    </div>
+
+    <div *ngIf="para['from'] == 'riskList' && para['status'] == '1'">
+      <button
+        (click)="showModal('risk', false, 'refuse')"
+        class="c-btn-width operBtns"
+        nz-button
+        nzType="primary"
+        style="margin-right: 30px"
+      >
+        {{ "orderList.allList.opera.refuse" | translate }}
+      </button>
+    </div>
+
+    <div
+      *ngIf="permission && para['from'] == 'riskList' && para['status'] == '2'"
+    >
+      <button
+        (click)="showModal('risk', true, 'retreat')"
+        class="c-btn-width operBtns"
+        nz-button
+        nzType="primary"
+      >
+        {{ "orderList.allList.opera.retreat" | translate }}
+      </button>
+    </div>
+  </div>
+</div>
+
+<nz-modal
+  *ngIf="para['from'] == 'riskList'"
+  [(nzVisible)]="riskMark"
+  [nzTitle]="riskTitle"
+  [nzContent]="riskContent"
+  [nzFooter]="riskFooter"
+  (nzOnCancel)="riskMark = false"
+>
+  <ng-template #riskTitle>
+    <span> {{ "orderList.allList.opera.operate" | translate }} </span>
+  </ng-template>
+
+  <ng-template #riskContent>
+    <form nz-form [nzLayout]="'inline'" [formGroup]="riskForm">
+      <nz-form-item class="c-formSec">
+        <nz-form-label [nzSm]="7" nzRequired nzFor="status">
+          {{ "financeModule.list.model.status" | translate }}
+        </nz-form-label>
+        <nz-form-control [nzSm]="16" [nzOffset]="1">
+          <nz-select
+            [nzPlaceHolder]="'financeModule.list.model.choseStatus' | translate"
+            nzAllowClear
+            formControlName="status"
+            [nzDisabled]="true"
+            id="status"
+          >
+            <div>
+              <nz-option
+                [nzValue]="3"
+                [nzLabel]="'reviewRiskList.passModule.relustTitle' | translate"
+                *ngIf="para.status == 1"
+              >
+              </nz-option>
+            </div>
+            <div>
+              <nz-option
+                [nzValue]="3"
+                [nzLabel]="'reviewRiskList.passModule.resetTitle' | translate"
+                *ngIf="para.status == 2"
+              >
+              </nz-option>
+            </div>
+          </nz-select>
+          <nz-form-explain
+            *ngIf="
+              riskForm.get('status').dirty && riskForm.get('status').errors
+            "
+          >
+            <span> {{ "financeModule.list.table.status" | translate }} </span>
+            <span> {{ "common.validator.notEmpty" | translate }} </span>
+          </nz-form-explain>
+        </nz-form-control>
+      </nz-form-item>
+      <!-- 拒绝原因 撤回原因 -->
+      <nz-form-item class="c-formSec" *ngIf="showRefuse">
+        <nz-form-label [nzSm]="7" nzRequired nzFor="creditIdea">
+          {{ "financeModule.list.model.resuseRes" | translate }}
+        </nz-form-label>
+        <nz-form-control [nzSm]="16" [nzOffset]="1">
+          <nz-select
+            [nzPlaceHolder]="'financeModule.list.model.resuseRes' | translate"
+            nzAllowClear
+            formControlName="creditIdea"
+            id="status"
+          >
+            <div *ngFor="let item of refuse_enum; let idx = index">
+              <nz-option [nzValue]="item.value" [nzLabel]="item.name">
+              </nz-option>
+            </div>
+          </nz-select>
+          <nz-form-explain
+            *ngIf="
+              riskForm.get('creditIdea').dirty &&
+              riskForm.get('creditIdea').errors
+            "
+          >
+            <span>
+              {{ "financeModule.list.model.resuseRes" | translate }}
+            </span>
+            <span> {{ "common.validator.notEmpty" | translate }} </span>
+          </nz-form-explain>
+        </nz-form-control>
+      </nz-form-item>
+      <!-- 撤回原因 -->
+      <nz-form-item class="c-formSec" *ngIf="showTreat">
+        <nz-form-label [nzSm]="7" nzRequired nzFor="creditIdea">
+          {{ "financeModule.list.model.reteatRes" | translate }}
+        </nz-form-label>
+        <nz-form-control [nzSm]="16" [nzOffset]="1">
+          <nz-select
+            [nzPlaceHolder]="'financeModule.list.model.reteatRes' | translate"
+            nzAllowClear
+            formControlName="creditIdea"
+            id="status"
+          >
+            <div *ngFor="let item of retreat_enum; let idx = index">
+              <nz-option [nzValue]="item.value" [nzLabel]="item.name">
+              </nz-option>
+            </div>
+          </nz-select>
+          <nz-form-explain
+            *ngIf="
+              riskForm.get('creditIdea').dirty &&
+              riskForm.get('creditIdea').errors
+            "
+          >
+            <span>
+              {{ "financeModule.list.model.reteatRes" | translate }}
+            </span>
+            <span> {{ "common.validator.notEmpty" | translate }} </span>
+          </nz-form-explain>
+        </nz-form-control>
+      </nz-form-item>
+
+      <!-- 备注 -->
+      <nz-form-item class="c-formSec">
+        <nz-form-label [nzSm]="7" nzFor="creditIdeaRemark">
+          {{ "orderList.allList.opera.comment" | translate }}
+        </nz-form-label>
+        <nz-form-control [nzSm]="16" [nzOffset]="1">
+          <textarea
+            nz-input
+            formControlName="creditIdeaRemark"
+            cols="6"
+            rows="4"
+            [placeholder]="'orderList.allList.opera.comment' | translate"
+            id="msgText"
+          ></textarea>
+          <nz-form-explain
+            *ngIf="
+              riskForm.get('creditIdeaRemark').dirty &&
+              riskForm.get('creditIdeaRemark').errors
+            "
+          >
+            <span> {{ "orderList.allList.opera.comment" | translate }} </span>
+            <span> {{ "common.validator.notEmpty" | translate }} </span>
+          </nz-form-explain>
+        </nz-form-control>
+      </nz-form-item>
+    </form>
+  </ng-template>
+
+  <ng-template #riskFooter>
+    <button nz-button nzType="primary" (click)="makeOrderCheck($event)">
+      {{ "common.operate.sure" | translate }}
+    </button>
+
+    <button nz-button nzType="default" (click)="riskMark = false">
+      {{ "common.operate.close" | translate }}
+    </button>
+  </ng-template>
+</nz-modal>
+
+<nz-modal
+  *ngIf="para['from'] == 'riskList'"
+  [(nzVisible)]="passMark"
+  [nzTitle]="passTitle"
+  [nzContent]="passContent"
+  [nzFooter]="passFooter"
+  (nzOnCancel)="closeOrder()"
+  [nzWidth]="900"
+>
+  <ng-template #passTitle>
+    <span> {{ "reviewRiskList.passModule.passTitle" | translate }} </span>
+  </ng-template>
+  <ng-template #passContent>
+    <nz-form-item class="c-formSec" style="width:100%">
+      <nz-form-label [nzSm]="4">
+        {{ "reviewRiskList.passModule.userLv" | translate }}
+      </nz-form-label>
+      <nz-form-control [nzSm]="19" [nzOffset]="1">
+        {{ classe }}
+      </nz-form-control>
+    </nz-form-item>
+    <form nz-form [nzLayout]="'inline'" [formGroup]="passForm">
+      <div formArrayName="passVOS">
+        <div
+          *ngFor="let item of passVOS.controls; let k = index"
+          [formGroupName]="k"
+        >
+          <!-- 产品详情 -->
+          <nz-form-item class="c-formSec" style="width:100%">
+            <nz-form-label [nzSm]="4">
+              {{ "reviewRiskList.passModule.productType" | translate }}
+            </nz-form-label>
+            <nz-form-control [nzSm]="19" [nzOffset]="1">
+              <nz-table
+                #smallTable
+                nzSize="small"
+                [nzData]="product_enum"
+                [nzShowPagination]="false"
+              >
+                <thead>
+                  <tr>
+                    <th
+                      *ngFor="
+                        let one of product_enum[k]['loanProductType'] === 1
+                          ? onePro_enum
+                          : twoPro_enum
+                      "
+                    >
+                      {{ one.name }}
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td
+                      *ngFor="
+                        let one of product_enum[k]['loanProductType'] === 1
+                          ? onePro_enum
+                          : twoPro_enum
+                      "
+                    >
+                      {{ product_enum[k][one.reject] || "" }}
+                    </td>
+                  </tr>
+                </tbody>
+              </nz-table>
+            </nz-form-control>
+          </nz-form-item>
+          <!-- 审批金额最小 -->
+          <nz-form-item class="c-formSec" style="width:100%">
+            <nz-form-label nzRequired [nzSm]="4">
+              {{ "reviewRiskList.passModule.minAccount" | translate }}
+            </nz-form-label>
+            <nz-form-control [nzSm]="9" [nzOffset]="1">
+              <input
+                type="text"
+                oninput="value=value.replace(/[^\d]/g,'')"
+                nz-input
+                formControlName="approveAmountMin"
+                [placeholder]="
+                  'orderList.allList.opera.auditAmount' | translate
+                "
+              />
+            </nz-form-control>
+          </nz-form-item>
+
+          <!-- 审批金额最大 -->
+          <nz-form-item class="c-formSec" style="width:100%">
+            <nz-form-label nzRequired [nzSm]="4">
+              {{ "reviewRiskList.passModule.maxAccount" | translate }}
+            </nz-form-label>
+            <nz-form-control [nzSm]="9" [nzOffset]="1">
+              <input
+                type="text"
+                oninput="value=value.replace(/[^\d]/g,'')"
+                nz-input
+                formControlName="approveAmountMax"
+                [placeholder]="
+                  'orderList.allList.opera.auditAmount' | translate
+                "
+              />
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+      </div>
+    </form>
+  </ng-template>
+
+  <ng-template #passFooter>
+    <button nz-button nzType="primary" (click)="makeOrderCheck($event, 'pass')">
+      {{ "common.operate.sure" | translate }}
+    </button>
+
+    <button nz-button nzType="default" (click)="closeOrder()">
+      {{ "common.operate.close" | translate }}
+    </button>
+  </ng-template>
+</nz-modal>

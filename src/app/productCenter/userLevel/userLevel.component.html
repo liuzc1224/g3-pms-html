@@ -1,0 +1,120 @@
+<div class="c-content-wrap">
+  <div class="half-block">
+    <div class="title">
+      {{ "productCenter.userLevel.title" | translate }}
+      <div class="c-btnGroup">
+        <button nz-button  (click) = 'add() '>
+          {{ "productCenter.userLevel.add" | translate}}
+        </button>
+      </div>
+    </div>
+    <div class="c-search-Group">
+      <nz-select class="left" [(ngModel)]="inputValue">
+        <nz-option *ngFor="let option of inputData;" [nzLabel]="option['desc']" [nzValue]="option['value']"></nz-option>
+      </nz-select>
+      <input nz-input *ngIf="inputValue==='id'" type="tel" name="tel" [(ngModel)]="searchModel.id" class="left"  [placeholder] = '"productCenter.product.prompt" | translate' (keyup)="keyupId()" >
+      <input nz-input *ngIf="inputValue==='name'" type="text" class="left" [(ngModel)]="searchModel.userRank" [placeholder] = '"productCenter.product.prompt" | translate' >
+      <button nz-button class="left"  nzType="primary" (click) = 'search() '>
+        {{ "common.search" | translate}}
+      </button>
+    </div>
+  </div>
+  <c-table [tableData] = 'tableData' style="margin-top: 20px">
+  </c-table>
+  <div class="c-pag">
+    <nz-pagination [nzShowTotal]="totalTemplate" (nzPageIndexChange)='pageChange($event , "page")' (nzPageSizeChange) = 'pageChange($event , "size")' [nzPageIndex]="searchModel.currentPage"  [nzTotal]="totalSize" nzShowSizeChanger nzShowQuickJumper></nz-pagination>
+    <ng-template #totalTemplate let-total>
+  <span>
+  {{ "common.total" | translate }}
+  </span>
+      <span>
+  {{ totalSize }}
+  </span>
+      <span>
+  {{ "common.pageUnit" | translate }}
+  </span>
+    </ng-template>
+  </div>
+
+  <nz-modal [(nzVisible)]="isDelete" [nzTitle]="'common.deleteToast.title' | translate" (nzOnCancel)="deleteCancel()" (nzOnOk)="deleteOk()" [nzOkLoading]="isDeleteLoading">
+    <p>{{"common.deleteToast.tip"  | translate }}！</p>
+  </nz-modal>
+
+
+  <nz-modal
+    [(nzVisible)]="isVisible"
+    [nzTitle]='"productCenter.userLevel.title" | translate'
+    [nzOkText]='"common.setting" | translate'
+    [nzCancelText]='"common.operate.cancel" | translate'
+    (nzOnOk)="handleOk()"
+    (nzOnCancel)="handleCancel()"
+    [nzOkLoading]="isOkLoading"
+  >
+    <div class="formChannel">
+      <form nz-form [nzLayout]="'block'" [formGroup]="validForm">
+        <nz-form-item class='formSec'>
+          <nz-form-control>
+            <p>
+              <span class="label">*{{ "productCenter.userLevel.list.name" | translate}}</span>
+              <input
+                type="text"
+                nz-input
+                formControlName="userRank"
+                id="userRank"
+                [placeholder] = '"productCenter.userLevel.prompt" | translate'
+                class="left"
+              >
+            </p>
+            <nz-form-explain *ngIf="validForm.get('userRank').dirty && validForm.get('userRank').errors">
+            </nz-form-explain>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item class='formSec' style="margin-top: -10px">
+          <nz-form-control>
+            <p>
+              <span class="label">*{{ "productCenter.userLevel.list.product" | translate}}</span>
+              <nz-select
+                class="left"
+                nzMode="tags"
+                formControlName="loanProductNames"
+                [nzPlaceHolder] = '"productCenter.userLevel.prompt" | translate'
+                id="loanProductNames"
+                >
+                <div *ngIf="crowd!=={}">
+                  <nz-option *ngFor="let key of objectKeys(crowd)" [nzLabel]="crowd[key]" [nzValue]="key"></nz-option>
+                </div>
+              </nz-select>
+            </p>
+            <nz-form-explain *ngIf="validForm.get('loanProductNames').dirty && validForm.get('loanProductNames').errors">
+            </nz-form-explain>
+          </nz-form-control>
+        </nz-form-item>
+
+        <nz-form-item class='formSec'>
+          <nz-form-control>
+            <p>
+              <span class="label">*{{ "productCenter.userLevel.list.rule" | translate}}</span>
+              <textarea nz-input
+                class="left"
+                formControlName="userRule"
+                [placeholder] = '"coupon.list.setting.description" | translate'
+                [maxlength]="500" ></textarea>
+            </p>
+          </nz-form-control>
+
+        </nz-form-item>
+
+        <nz-form-item class='formSec'>
+          <nz-form-control>
+            <p>
+              <span class="label">*{{ "productCenter.userLevel.list.state" | translate}}</span>
+              <nz-select formControlName="status" class="left" id="status">
+                <nz-option *ngFor="let option of StateData" [nzLabel]="option['desc']" [nzValue]="option['value']"></nz-option>
+              </nz-select>
+            </p>
+          </nz-form-control>
+        </nz-form-item>
+      </form>
+    </div>
+  </nz-modal>
+</div>

@@ -1,0 +1,120 @@
+<div class="c-content-wrap">
+  <div class="title">
+    {{ "financeModule.list.title" | translate }}
+  </div>
+    <div class="c-search-wrap">
+        <div class="c-search-group c-search-border">
+            <!--<div class="c-search-itemLeft">-->
+                <!--{{ "financeModule.list.classify" | translate}}:-->
+            <!--</div>-->
+            <!--<div class="c-search-itemRight">-->
+                <ul class="sectionList c-flex-row-start c-flex-auto-wrap">
+                    <li
+                        (click) = 'changeStatus("13,14,1,3,4,5,6")'
+                        [ngClass]='{"active-tag" : "13,14,1,3,4,5,6" == searchModel.status}'
+                    >
+                        {{ "financeModule.list.all" | translate}}
+                    </li>
+                    <li
+                        *ngFor = 'let item of statusEnum'
+                        (click) = 'changeStatus(item.value)'
+                        [ngClass]='{"active-tag" : item.value == searchModel.status}'>
+                        {{ item.name }}
+                    </li>
+                </ul>
+            <!--</div>-->
+        </div>
+        <div class="c-search-group">
+          <div class="c-search-item">
+              <div class="c-search-itemLeft">
+                  {{ "financeModule.list.createTime" | translate}}:
+              </div>
+              <div class="c-search-itemRight">
+                  <nz-date-picker [nzPlaceHolder] = '"financeModule.list.startDate" | translate' [(ngModel)]="searchModel.createTimeStart"></nz-date-picker>
+                  <span style="color:#999"> ~ </span>
+                  <nz-date-picker [nzPlaceHolder] = '"financeModule.list.endDate" | translate' [(ngModel)]="searchModel.createTimeEnd"></nz-date-picker>
+              </div>
+          </div>
+          <div class="c-search-item">
+            <div class="c-search-itemLeft">
+              {{ "financeModule.list.RepayTimeShould" | translate}}:
+            </div>
+            <div class="c-search-itemRight">
+              <nz-date-picker [nzPlaceHolder] = '"financeModule.list.startDate" | translate' [(ngModel)]="searchModel.planRepaymentDateStart"></nz-date-picker>
+              <span style="color:#999"> ~ </span>
+              <nz-date-picker [nzPlaceHolder] = '"financeModule.list.endDate" | translate' [(ngModel)]="searchModel.planRepaymentDateEnd"></nz-date-picker>
+            </div>
+          </div>
+        </div>
+        <div class="c-search-group">
+            <div class="c-search-item">
+                <div class="c-search-itemLeft">
+                    {{ "financeModule.list.detail.letterReview" | translate}}:
+                </div>
+                <div class="c-search-itemRight">
+                    <input nz-input [placeholder] = '"financeModule.list.prompt.letterReview" | translate' type="text" [(ngModel)] = 'searchModel.creditOrderNo'>
+                </div>
+            </div>
+
+            <div class="c-search-item">
+                <div class="c-search-itemLeft">
+                    {{ "financeModule.list.detail.orderNo" | translate}}:
+                </div>
+                <div class="c-search-itemRight">
+                    <input nz-input [placeholder] = '"financeModule.list.prompt.orderNo" | translate' type="text" [(ngModel)] ='searchModel.orderNo'>
+                </div>
+            </div>
+
+            <div class="c-search-item">
+                <div class="c-search-itemLeft">
+                    {{ "financeModule.list.detail.userNo" | translate}}:
+                </div>
+                <div class="c-search-itemRight">
+                    <input nz-input type="text" [placeholder] = '"financeModule.list.prompt.userNo" | translate' [(ngModel)] = 'searchModel.userId'>
+                </div>
+            </div>
+
+            <div class="c-search-item">
+                <div class="c-search-itemLeft">
+                    {{ "financeModule.list.detail.userName" | translate}}:
+                </div>
+                <div class="c-search-itemRight">
+                    <input nz-input type="text" [placeholder] = '"financeModule.list.prompt.userName" | translate' [(ngModel)] = 'searchModel.userName'>
+                </div>
+            </div>
+            <!-- <div class="c-search-item">
+                <div class="c-search-itemLeft">
+                    {{ "financeModule.list.table.holderName" | translate}}:
+                </div>
+                <div class="c-search-itemRight">
+                    <input nz-input type="text">
+                </div>
+            </div> -->
+        </div>
+      <div class="c-search-btnGroup">
+            <button nz-button nzType="primary"  (click) = 'getList() '>
+                {{ "common.search" | translate}}
+            </button>
+            <button style="margin-left: 20px;" nz-button (click) = 'reset() '>
+                {{ "common.reset" | translate}}
+            </button>
+      </div>
+    </div>
+
+    <c-table [tableData] = 'tableData'>
+    </c-table>
+    <div class="c-pag">
+        <nz-pagination [nzShowTotal]="totalTemplate" (nzPageIndexChange)='pageChange($event , "page")' (nzPageSizeChange) = 'pageChange($event , "size")' [nzPageIndex]="searchModel.currentPage"  [nzTotal]="totalSize" nzShowSizeChanger nzShowQuickJumper></nz-pagination>
+        <ng-template #totalTemplate let-total>
+            <span>
+                {{ "common.total" | translate }}
+            </span>
+            <span>
+                {{ totalSize }}
+            </span>
+            <span>
+                {{ "common.pageUnit" | translate }}
+            </span>
+        </ng-template>
+    </div>
+</div>

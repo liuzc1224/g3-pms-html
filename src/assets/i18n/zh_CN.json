@@ -1,0 +1,3279 @@
+{
+  "common": {
+    "clickShow": "点击查看",
+    "unit": "雷亚尔",
+    "workBench": "工作台",
+    "orderTypeTxt":["一次性还款付清","分期等额还款"],
+    "reviewOrderStatus": [
+      {
+        "name": "人工待审核",
+        "value": 1
+      },
+      {
+        "name": "人工审核通过",
+        "value": 2
+      },
+      {
+        "name": "人工审核拒绝",
+        "value": 3
+      },
+      {
+        "name": "机审拒绝",
+        "value": 4
+      },
+      {
+        "name": "失效",
+        "value": 5
+      }
+    ],
+    "collectOrderStatus": [
+      {
+        "name": "未还",
+        "value": 1
+      },
+      {
+        "name": "坏账",
+        "value": 2
+      },
+      {
+        "name": "部分还款",
+        "value": 3
+      },
+      {
+        "name": "已还已结清",
+        "value": 4
+      },
+      {
+        "name": "逾期未结清",
+        "value": 5
+      },
+      {
+        "name": "逾期已结清",
+        "value": 6
+      },
+      {
+        "name": "退款",
+        "value": 7
+      },
+      {
+        "name": "未生效",
+        "value": 8
+      },
+      {
+        "name": "展期结清",
+        "value": 9
+      },
+      {
+        "name": "逾期展期结清",
+        "value": 10
+      }
+    ],
+    "auditOperaCommon":[
+      {
+        "name": "人工待审核",
+        "value": 1
+      },
+      {
+        "name": "人工审核通过",
+        "value": 2
+      },
+      {
+        "name": "人工拒绝",
+        "value": 3
+      }
+    ],
+    "auditOperaWords":{
+      "auditTitle":"信审工作台",
+      "atendance":"考勤",
+      "signIn":"签到",
+      "signOut":"签退",
+      "auditAllocatTime":"信审订单分配时间",
+      "remain":"剩余",
+      "startAllocate":"开始分配",
+      "signInTime":"请准时签到",
+      "signInWorking":"已开始工作，请签到",
+      "signInOver":"今日工作已结束",
+      "siginoutSystem":"系统已签退"
+    },
+    "auditOperaTable":{
+      "applyDate":"申请日期",
+      "auditOrderNo":"信审订单编号",
+      "phoneNumber":"手机号",
+      "userLevel":"用户等级",
+      "auditLimit":"审批额度(雷亚尔)",
+      "auditTerm":"审批期限(天)",
+      "auditOpition":"信审意见",
+      "operator":"操作人",
+      "auditValidityDate":"信审有效期",
+      "auditEffectDate":"信审生效日期",
+      "auditExpireDate":"信审到期日期",
+      "auditOrderStatus":"信审订单状态",
+      "opertion":"操作"
+    },
+    "auditTotalRecord":{
+      "auditOrderTotal":"信审订单总笔数",
+      "rejectNumberMachine":"机审拒绝笔数",
+      "artificialAuditPassCount":"人工审核通过笔数",
+      "rejectNumberManul":"人工审核拒绝笔数",
+      "noAuditNumberManul":"待人工审核笔数",
+      "effectNumber":"有效笔数",
+      "invalidNumber":"失效笔数"
+    },
+    "letter":{
+      "table":{
+        "headerInfo":[
+          "申请日期",
+          "信审订单编号",
+          "手机号",
+          "用户等级",
+          "信审有效期",
+          "信审生效日期",
+          "信审到期日期",
+          "订单状态"
+        ]
+      }
+    },
+    "signStatus": {
+      "sign": "签到",
+      "signOut": "签退",
+      "signOutIng": "签退中",
+      "signEnd": "已签退"
+    },
+    "totleLook": {
+      "totalDay": "总天数",
+      "orderCount": "订单总数",
+      "ruleRefuseCount": "机审拒绝",
+      "passCount": "通过用户",
+      "unComplete": "已完成",
+      "alreadyComplete": "未完成"
+    },
+    "tips": {
+      "operateFail": "操作失败",
+      "operateFailWithReason": "操作失败 , 原因 : ",
+      "operateSuccess": "操作成功",
+      "fetchFail": "获取数据失败",
+      "fetchFailReason": "获取数据失败 , 原因 : ",
+      "timeNotify": "开始时间不能大于结束时间",
+      "inputMark": "请输入备注",
+      "notEmpty": "请输入每一项信息",
+      "overflow": "金额不可大于当前应还金额",
+      "moneyOverflow": "审批金额不可大于申请金额",
+      "invalidOper": "当前状态不可进行此操作",
+      "diffTime": "放款时间不能大于当前时间",
+      "minAuditMoney": "借款金额最低为500"
+    },
+    "checkTabs": ["当前管理", "历史记录"],
+    "orderList": ["借款订单列表", "信审订单列表"],
+    "companyName": "后台管理系统",
+    "setting": "设置",
+    "logout": "退出",
+    "languageSetting": "语言设置",
+    "refresh": "刷新",
+    "search": "搜索",
+    "reset": "重置",
+    "ex": "导出",
+    "total": "总计",
+    "pageUnit": "条",
+    "copy": "复制",
+    "Long": "经度",
+    "Lat": "纬度",
+    "operate": {
+      "name": "操作",
+      "edit": "编辑",
+      "delete": "删除",
+      "save": "保存",
+      "sure": "确定",
+      "next": "下一步",
+      "close": "关闭",
+      "cancel": "取消",
+      "add": "新增",
+      "deled": "已删除"
+    },
+    "btnGroup": {
+      "a": "查看详情",
+      "b": "查看备注",
+      "c": "申请记录",
+      "d": "借款记录",
+      "e": "退出",
+      "f": "审核",
+      "g": "通过",
+      "h": "拒绝",
+      "reviewRecord": "信审记录"
+    },
+    "validator": {
+      "notEmpty": "不能为空或输入不正确"
+    },
+    "deleteToast": {
+      "title": "确认删除",
+      "tip": "一旦删除, 该数据将不可恢复"
+    },
+    "cashStatus": [
+      {
+        "desc": "申请提现",
+        "value": 1
+      },
+      {
+        "desc": "提现成功",
+        "value": 2
+      },
+      {
+        "desc": "提现失败",
+        "value": 3
+      },
+      {
+        "desc": "提现取消",
+        "value": 4
+      }
+    ],
+    "repayStatus": [
+      {
+        "desc": "待还款",
+        "value": 1
+      },
+      {
+        "desc": "坏账",
+        "value": 2
+      },
+      {
+        "desc": "部分还款",
+        "value": 3
+      },
+      {
+        "desc": "已还已结清",
+        "value": 4
+      },
+      {
+        "desc": "逾期未结清",
+        "value": 5
+      },
+      {
+        "desc": "逾期已结清",
+        "value": 6
+      }
+    ],
+    "orderStatus": [
+      {
+        "desc": "待审核",
+        "value": 1
+      },
+      {
+        "desc": "审核通过",
+        "value": 2
+      },
+      {
+        "desc": "提现/打款中",
+        "value": 3
+      },
+      {
+        "desc": "待还款",
+        "value": 4
+      },
+      {
+        "desc": "已完成",
+        "value": 6
+      },
+      {
+        "desc": "手动关闭/取消",
+        "value": 8
+      },
+      {
+        "desc": "审批拒绝",
+        "value": 9
+      },
+      {
+        "desc": "系统关闭",
+        "value": 11
+      },
+      {
+        "desc": "机审拒绝",
+        "value": 12
+      },
+      {
+        "desc": "放款失败",
+        "value": 13
+      }
+    ]
+  },
+  "login": {
+    "username": "用户名",
+    "password": "密码",
+    "tips": {
+      "invalid": "用户名或密码不正确",
+      "empty": "用户名或密码不能为空"
+    },
+    "login": "登录"
+  },
+  "atendanceModule":{
+    "page":{
+      "signinDate":"签到日期",
+      "auditWorker":"信审人员"
+    },
+    "table":{
+      "auditWorkerAccount":"信审人员账户",
+      "auditWorkerRealName":"信审人员真实姓名",
+      "signinTime":"签到时间",
+      "signOutTime":"签出时间",
+      "allocateTotal":"总分配笔数",
+      "auditedNumber":"审核笔数",
+      "unauditNumber":"未审核笔数",
+      "workingHour":"工时",
+      "perHourAuditNumber":"审核笔数/时"
+    }
+  },
+  "systemModule": {
+    "admin": {
+      "table": {
+        "userName": "用户名",
+        "realName": "真实姓名",
+        "password": "密码",
+        "mobile": "手机号",
+        "department": "部门",
+        "role": "角色",
+        "remark": "备注"
+      },
+      "add": "新增管理员",
+      "edit": "编辑管理员",
+      "choseRole": "选择所属角色",
+      "choseDepartment": "选择所属部门"
+    },
+    "role": {
+      "table": {
+        "roleName": "角色名",
+        "count": "人数",
+        "remark": "备注"
+      },
+      "add": "新增角色",
+      "edit": "编辑角色"
+    },
+    "depart": {
+      "add": "新增父级部门",
+      "makeNew": "新增部门",
+      "edit": "编辑部门",
+      "form": {
+        "name": "部门名称",
+        "remark": "备注"
+      }
+    }
+  },
+  "riskModule": {
+    "allocateState": [
+      {
+        "name": "未分配",
+        "value": "0"
+      },
+      {
+        "name": "已分配",
+        "value": "1"
+      },
+      {
+        "name": "结束分配",
+        "value": "2"
+      }
+    ],
+    "searchTabStatus": [
+      {
+        "name": "待审核",
+        "value": "1"
+      },
+      {
+        "name": "通过",
+        "value": "2"
+      },
+      {
+        "name": "拒绝",
+        "value": "9"
+      },
+      {
+        "name": "机审拒绝",
+        "value": "12"
+      }
+    ],
+    "searchTabStatus1": [
+      {
+        "name": "待审核",
+        "value": [1]
+      },
+      {
+        "name": "通过",
+        "value": [2, 3, 4, 6, 13]
+      },
+      {
+        "name": "拒绝",
+        "value": [9]
+      },
+      {
+        "name": "机审拒绝",
+        "value": [12]
+      }
+    ],
+    "settingStatus": [
+      {
+        "name": "开启",
+        "value": 1
+      },
+      {
+        "name": "关闭",
+        "value": 0
+      }
+    ]
+  },
+  "financeModule": {
+    "totle": {
+      "table": {
+        "cashWithDrawDate": "申请提现日期",
+        "cashLoanDate": "申请借款日期",
+        "letterOrderNo": "信审订单编号",
+        "loanOrderNo": "借款订单编号",
+        "reqDate": "申请日期",
+        "orderTotle": "订单总数",
+        "refMachine": "机审拒绝",
+        "rushUser": "通过用户",
+        "limit": "已签到人数",
+        "beginTime": "分配开始时间",
+        "endTime": "分配截止时间",
+        "status": "分配状态",
+        "todayFinsh": "当日已完成",
+        "todayNoFinsh": "当日未完成"
+      }
+    },
+    "shure": {
+      "table": {
+        "name": "姓名",
+        "loginStatus": "签到状态",
+        "loginTime": "签到时间",
+        "logoutStatus": "签出状态",
+        "logoutTime": "签出时间",
+        "noFinsh": "未审核数"
+      },
+      "loginStatus": [
+        {
+          "name": "已签到",
+          "value": 1
+        }
+      ],
+      "logoutStatus": [
+        {
+          "name": "申请签退",
+          "value": 0
+        },
+        {
+          "name": "同意签退",
+          "value": 1
+        },
+        {
+          "name": "拒绝签退",
+          "value": 2
+        }
+      ]
+    },
+    "list": {
+      "createTime": "订单创建时间",
+      "loanType": "请选择借款类型",
+      "RepayTimeShould": "应还日期",
+      "startDate": "请选择开始日期",
+      "endDate": "请选择结束日期",
+      "prompt": {
+        "letterReview": "请输入信审订单编号",
+        "orderNo": "请输入借款订单编号",
+        "userName": "请输入用户姓名",
+        "userNo": "请输入用户账户"
+      },
+      "title": "借款订单列表",
+      "center": "请输入内容",
+      "orderDetail": "订单详情",
+      "paymentResult": [
+        {
+          "desc": "放款成功",
+          "value": true
+        },
+        {
+          "desc": "放款失败",
+          "value": false
+        }
+      ],
+      "type": [
+        {
+          "desc": "一次性还本付息",
+          "value": 1,
+          "name": "PETTY_LOAN",
+          "time": "天"
+        },
+        {
+          "desc": "分期-等额还款",
+          "value": 2,
+          "name": "INSTALLMENT",
+          "time": "月"
+        }
+      ],
+      "detail": {
+        "letterReview": "信审订单编号",
+        "orderNo": "借款订单编号",
+        "type": "借款类型",
+        "mobile": "手机号",
+        "userName": "用户姓名",
+        "userNo": "用户账户",
+        "cashTime": "提现时间",
+        "applyCash": "借款金额(雷亚尔)",
+        "limit": "借款期限",
+        "operateResult": "操作结果",
+        "operateTime": "操作时间",
+        "operateName": "操作人",
+        "orderStatus": "订单状态"
+      },
+      "table": {
+        "creditOrderNo": "信审订单编号",
+        "orderNo": "借款订单编号",
+        "mobile": "手机号",
+        "loanMount": "借款金额(雷亚尔)",
+        "applyCash": "提现金额(雷亚尔)",
+        "loanInterest": "借款利息(雷亚尔)",
+        "layInterest": "罚息(雷亚尔)",
+        "shouldRepay": "应还金额(雷亚尔)",
+        "currentRepay": "实际还款金额",
+        "loanAccount": "借款账户",
+        "holderName": "持卡人姓名",
+        "orderStatus": "订单状态",
+        "all": "全部",
+        "cashTime": "提现时间",
+        "cashAccount": "提现账号",
+        "moneyUnit": "雷亚尔",
+        "repayTime": "放款时间",
+        "backName": "我方银行",
+        "payCode": "取款码",
+        "repayCode": "还款码",
+        "askTime": "申请日期",
+        "userName": "用户名",
+        "idCard": "身份证号",
+        "auditMoney": "审批金额",
+        "payMoney": "放款金额",
+        "paymentResult": "放款结果",
+        "applyDate": "借款日期",
+        "repayDate": "还款日期",
+        "realRepayMoney": "还款金额",
+        "limit": "借款期限",
+        "auditEmployeeName": "审核人员",
+        "oper": "操作人",
+        "employeeName": "姓名",
+        "signTime": "签到时间",
+        "comment": "审核意见",
+        "historyOrder": "历史借款订单",
+        "historyRecordOrder": "历史信审订单"
+      },
+      "serach": [
+        {
+          "name": "借款订单编号",
+          "value": "orderNo"
+        },
+        {
+          "name": "手机号",
+          "value": "phoneNumber"
+        },
+        {
+          "name": "取款银行",
+          "value": "bankName"
+        },
+        {
+          "name": "持卡人姓名",
+          "value": "userName"
+        }
+      ],
+      "loanStatus": [
+        {
+          "desc": "放款成功",
+          "value": "2"
+        },
+        {
+          "desc": "放款失败",
+          "value": "3"
+        },
+        {
+          "desc": "待放款",
+          "value": "1"
+        }
+      ],
+      "status1": [
+        {
+          "desc": "放款列表",
+          "value": ""
+        },
+        {
+          "desc": "待放款",
+          "value": "1"
+        },
+        {
+          "desc": "放款成功",
+          "value": "2"
+        },
+        {
+          "desc": "放款失败",
+          "value": "3"
+        }
+      ],
+      "status": [
+        {
+          "name": "申请提现",
+          "value": "1",
+          "type": "loanList"
+        },
+        {
+          "name": "放款成功",
+          "value": "2",
+          "type": "loanList"
+        },
+        {
+          "name": "放款失败",
+          "value": "3",
+          "type": "loanList"
+        },
+        {
+          "name": "提现取消",
+          "value": "4",
+          "type": "loanList"
+        },
+        {
+          "name": "待还款",
+          "value": "1",
+          "type": "repayList"
+        },
+        {
+          "name": "部分还款",
+          "value": "3",
+          "type": "repayList"
+        },
+        {
+          "name": "已还已结清",
+          "value": "4",
+          "type": "repayList"
+        },
+        {
+          "name": "逾期未结清",
+          "value": "5",
+          "type": "repayList"
+        },
+        {
+          "name": "逾期已结清",
+          "value": "6",
+          "type": "repayList"
+        }
+      ],
+      "repayType": [
+        {
+          "name": "电子转账",
+          "value": "1"
+        }
+      ],
+      "reaymentResult": [
+        {
+          "name": "成功",
+          "value": 2
+        },
+        {
+          "name": "失败",
+          "value": false
+        }
+      ],
+      "totalLoan": "当前",
+      "classify": "类别",
+      "all": "全部订单",
+      "makeLoan": "放款",
+      "model": {
+        "title": "确认放款成功",
+        "choseStatus": "请选择状态",
+        "choseRepayMethod": "请选择结算方式",
+        "inputBankname": "请输入开户银行",
+        "inputAccount": "请输入我方账户",
+        "inputBillNo": "请输入流水号",
+        "inputRemark": "请输入备注",
+        "inputPayCode": "请输入取款码",
+        "inputRepayCode": "请输入还款码",
+        "inputPayDate": "请输入放款时间",
+        "inputPayMoney": "请输入借款金额",
+        "status": "交易状态",
+        "bankName": "我方银行",
+        "account": "我方账户",
+        "billNo": "流水号",
+        "remark": "备注",
+        "remarkPrompt": "请输入备注",
+        "repayType": "放款方式",
+        "choseType": "请选择放款方式",
+        "payCode": "取款码",
+        "repayCode": "还款码",
+        "payDate": "放款时间",
+        "payMoney": "借款金额",
+        "resuseRes": "拒绝原因",
+        "reteatRes": "撤回原因",
+        "repayChannel": "请选择还款渠道"
+      }
+    },
+    "serach": [
+      {
+        "name": "信审订单编号",
+        "value": "creditOrderNo"
+      },
+      {
+        "name": "借款订单编号",
+        "value": "orderNo"
+      },
+      {
+        "name": "手机号",
+        "value": "phoneNumber"
+      },
+      {
+        "name": "用户姓名",
+        "value": "userName"
+      }
+    ],
+    "serach1": [
+      {
+        "name": "信审订单编号",
+        "value": "creditOrderNo"
+      },
+      {
+        "name": "借款订单编号",
+        "value": "orderNo"
+      },
+      {
+        "name": "手机号",
+        "value": "userPhone"
+      },
+      {
+        "name": "用户姓名",
+        "value": "userName"
+      }
+    ],
+    "repayList": {
+      "type": [
+        {
+          "desc": "一次性还本付息",
+          "value": 1,
+          "time": "天"
+        },
+        {
+          "desc": "分期-等额还款",
+          "value": 2,
+          "time": "月"
+        }
+      ],
+      "status1": [
+        {
+          "name": "待还款",
+          "value": "1"
+        },
+        {
+          "name": "部分还款",
+          "value": "3"
+        },
+        {
+          "name": "已结清",
+          "value": "4"
+        },
+        {
+          "name": "逾期待还款",
+          "value": "5"
+        },
+        {
+          "name": "逾期已结清",
+          "value": "6"
+        }
+      ],
+      "status2": [
+        {
+          "name": "待还款",
+          "value": "1"
+        },
+        {
+          "name": "部分还款",
+          "value": "3"
+        },
+        {
+          "name": "已结清",
+          "value": "4"
+        },
+        {
+          "name": "逾期待还款",
+          "value": "5"
+        },
+        {
+          "name": "逾期已结清",
+          "value": "6"
+        },
+        {
+          "name": "退款",
+          "value": "7"
+        },
+        {
+          "name": "未生效",
+          "value": "8"
+        }
+      ],
+      "status": [
+        {
+          "name": "待还款",
+          "value": "1"
+        },
+        {
+          "name": "部分还款",
+          "value": "3"
+        },
+        {
+          "name": "已还已结清",
+          "value": "4"
+        },
+        {
+          "name": "逾期未结清",
+          "value": "5"
+        },
+        {
+          "name": "逾期已结清",
+          "value": "6"
+        }
+      ],
+      "serach": [
+        {
+          "name": "订单号",
+          "value": "orderNo"
+        },
+        {
+          "name": "手机号",
+          "value": "userPhone"
+        },
+        {
+          "name": "借款人姓名",
+          "value": "userName"
+        },
+        {
+          "name": "还款码",
+          "value": "repayCode"
+        }
+      ],
+      "tabData": {
+        "letterReview": "信审订单编号",
+        "orderNo": "借款订单编号",
+        "type": "借款类型",
+        "mobile": "手机号",
+        "userName": "用户姓名",
+        "periodsNumber": "期数",
+        "periodRepayShould": "本期应还金额（R$）",
+        "financingAmount": "融资金额（R$）",
+        "interest": "利息（R$）",
+        "overdueFee": "逾期费用（R$）",
+        "RepayTimeShould": "应还日期",
+        "repayMount": "实际还款金额（雷亚尔）",
+        "repayDate": "最近还款日期",
+        "orderStatus": "订单状态"
+      },
+      "detail": {
+        "all": "还款列表",
+        "repayShouldDate": "应还日期",
+        "operator": "操作人",
+        "detail": "借款明细",
+        "loanMount": "借款金额",
+        "repayShould": "应还金额",
+        "orderNo": "借款订单编号",
+        "loanAccount": "借款账户",
+        "loanDate": "借款日期",
+        "repayDate": "还款日期",
+        "repayCode": "还款编码",
+        "repayMount": "还款金额",
+        "orderStatus": "订单状态"
+      },
+      "table": {
+        "repayChannel": "还款渠道",
+        "repayCode": "还款码",
+        "payCode": "放款码",
+        "mobile": "手机号",
+        "loanMount": "借款金额",
+        "moneyUnit": "雷亚尔",
+        "limit": "借款期限",
+        "limitUnit": "天",
+        "limitMonth": "月",
+        "repayDate": "还款日期",
+        "repayShuold": "应还金额",
+        "repayTotal": "还款金额",
+        "status": "交易状态",
+        "remark": "备注",
+        "repayType": "还款方式",
+        "userName": "借款人姓名",
+        "repayMethod": "结算方式"
+      },
+      "oper": {
+        "hasClear": "结清",
+        "noClear": "部分还款",
+        "makeClear": "结算"
+      },
+      "operType": [
+        {
+          "name": "结清",
+          "value": true
+        },
+        {
+          "name": "部分还款",
+          "value": false
+        }
+      ],
+      "tips": {
+        "title": "确认结清",
+        "desc": "一旦确认结清,数据将不可更改",
+        "changeMoney": "修改还款金额",
+        "inputReayTotal": "请输入还款金额"
+      },
+      "repayType": [
+        {
+          "name": "BOLETOS",
+          "value": 1
+        },
+        {
+          "name": "公司账户",
+          "value": 2
+        }
+      ]
+    },
+    "detail": {
+      "operator": "操作人",
+      "detail": "借款明细",
+      "loanMount": "借款金额",
+      "repayShould": "应还金额",
+      "orderNo": "借款订单编号",
+      "loanAccount": "借款账户",
+      "loanDate": "借款日期",
+      "repayDate": "还款日期",
+      "repayCode": "还款编码",
+      "repayMount": "还款金额",
+      "orderStatus": "订单状态"
+    }
+  },
+  "usrModule": {
+    "list": {
+      "table": {
+        "userId": "用户ID",
+        "mobile": "手机号",
+        "realName": "姓名",
+        "idCard": "身份证号",
+        "email": "邮箱",
+        "registeDate": "注册时间",
+        "CPF": "CPF",
+        "regFrom": "注册来源",
+        "inviteCode": "邀请码",
+        "channelIdentify": "渠道标识",
+        "userAccount": "用户账户",
+        "h5register": "H5注册",
+        "h5registerPlacerholder": "请输入H5渠道标识",
+        "inviteCodePlacerholder": "请输入邀请码标识",
+        "commonPlaceholder": "请输入内容"
+      }
+    }
+  },
+  "orderModule": {
+    "order": {
+      "basicInfo": {
+        "title": "基本信息",
+        "registerDate": "注册日期",
+        "mobile": "手机号",
+        "sex": "性别",
+        "email": "邮箱",
+        "marray": "婚姻状况",
+        "degree": "学历",
+        "loanInfo": "订单详情",
+        "actInfo": "停留时间",
+        "step": "步骤",
+        "uinit": "第",
+        "step_unit": "步",
+        "stay": "原始停留时间(毫秒)",
+        "stayTrans": "转换停留时间(秒)",
+        "userId": "用户ID",
+        "loginInfo": "最近登录时间"
+      },
+      "approveInfo": {
+        "title": "账户信息",
+        "overDueTotal": "逾期总金额",
+        "borrowTotal": "借款总额",
+        "unReturnTotal": "待还总额",
+        "checkUp": "查看",
+        "auth": "认证信息"
+      },
+      "auth": {
+        "photo": {
+          "title": "照片信息",
+          "front": "身份照正面",
+          "back": "身份照反面",
+          "hand": "手持照片",
+          "income": "收入证明"
+        }
+      }
+    },
+    "record": {
+      "headerInfo": [
+        "信审订单编号",
+        "借款订单编号",
+        "借款类型",
+        "订单创建日期",
+        "用户账户",
+        "借款金额（比索）",
+        "借款期限",
+        "应还金额（比索）",
+        "订单状态",
+        "操作"
+      ],
+      "basicUserInfo": [
+        {
+          "name": "姓名",
+          "reflect": "userName"
+        },
+        {
+          "name": "性别",
+          "reflect": "genderTxt"
+        },
+        {
+          "name": "出生地",
+          "reflect": "birthplace"
+        },
+        {
+          "name": "出生日期",
+          "reflect": "birthdayStr"
+        },
+        {
+          "name": "年龄",
+          "reflect": "age"
+        },
+        {
+          "name": "父亲全名",
+          "reflect": "fatherFirstName"
+        },
+        {
+          "name": "母亲全名",
+          "reflect": "motherFirstName"
+        }
+      ],
+      "basicUserCPFInfo": [
+        {
+          "name": "CPF",
+          "reflect": "cpf"
+        },
+        {
+          "name": "RG号码",
+          "reflect": "idNumber"
+        },
+        {
+          "name": "RG正面",
+          "reflect": "front"
+        },
+        {
+          "name": "RG反面",
+          "reflect": "reverse"
+        }
+      ],
+      "askHeaderInfo": [
+        "订单号",
+        "申请日期",
+        "申请金额(雷亚尔)",
+        "申请期限(天)",
+        "申请状态"
+      ],
+      "detStatus": ["是", "否"]
+    },
+    "auth": {
+      "locDataSet": [
+        {
+          "name": "最近登录时间",
+          "reflect": "createTime",
+          "pip": "dataFormat"
+        },
+        {
+          "name": "最近登录定位",
+          "reflect": "area",
+          "pip": "nullPipe"
+        },
+        {
+          "name": "IP地址",
+          "reflect": "ipAddress",
+          "pip": "nullPipe"
+        },
+        {
+          "name": "登录设备号",
+          "reflect": "deviceId",
+          "pip": "nullPipe"
+        }
+      ],
+      "baseInfo": [
+        {
+          "name": "姓名",
+          "reflect": "username",
+          "pip": "nullPipe"
+        },
+        {
+          "name": "RG",
+          "reflect": "idNumber",
+          "pip": "nullPipe"
+        },
+        {
+          "name": "性别",
+          "reflect": "gender",
+          "pip": "SexPipe"
+        },
+        {
+          "name": "出生年月",
+          "reflect": "birthday",
+          "pip": "dataFormat"
+        },
+        {
+          "name": "出生地",
+          "reflect": "birthplace",
+          "pip": "nullPipe"
+        },
+        {
+          "name": "婚姻状况",
+          "reflect": "maritalStatus",
+          "pip": "MarryPipe"
+        },
+        {
+          "name": "学历",
+          "reflect": "educationBackground",
+          "pip": "EduPipe"
+        },
+        {
+          "name": "电子邮箱",
+          "reflect": "email",
+          "pip": "nullPipe"
+        }
+      ],
+      "familyInfo": [
+        {
+          "name": "父亲姓名",
+          "reflect": "fatherName",
+          "pip": "nullPipe"
+        },
+        {
+          "name": "母亲姓名",
+          "reflect": "motherName",
+          "pip": "nullPipe"
+        },
+        {
+          "name": "家庭电话",
+          "reflect": "homeTelephone",
+          "pip": "nullPipe"
+        },
+        {
+          "name": "家庭地址",
+          "reflect": "homeAddress",
+          "pip": "nullPipe"
+        }
+      ],
+      "workInfo": [
+        {
+          "name": "收入来源",
+          "reflect": "incomeSource",
+          "pip": "workFromPipe"
+        },
+        {
+          "name": "公司名称",
+          "reflect": "company",
+          "pip": "nullPipe"
+        },
+        {
+          "name": "公司地址",
+          "reflect": "companyAddress",
+          "pip": "nullPipe"
+        },
+        {
+          "name": "岗位",
+          "reflect": "position",
+          "pip": "nullPipe"
+        }
+      ],
+      "friendInfo": {
+        "friend0": "通讯录",
+        "friend1": "紧急联系人1",
+        "friend2": "紧急联系人2",
+        "friend3": "紧急联系人3",
+        "call0": "已导入/未导入",
+        "call1": "联系人电话1",
+        "call2": "联系人电话2",
+        "call3": "联系人电话3"
+      },
+      "setAccount": [
+        {
+          "银行": "紧急联系人3",
+          "reflect": "gender",
+          "pip": "nullPipe"
+        },
+        {
+          "name": "联系人电话3",
+          "reflect": "gender",
+          "pip": "nullPipe"
+        },
+        {
+          "name": "卡号",
+          "reflect": "gender",
+          "pip": "nullPipe"
+        }
+      ]
+    }
+  },
+  "enums": {
+    "relation": [
+      {
+        "name": "父亲",
+        "value": "1"
+      },
+      {
+        "name": "母亲",
+        "value": "2"
+      },
+      {
+        "name": "配偶",
+        "value": "3"
+      },
+      {
+        "name": "子女",
+        "value": "4"
+      },
+      {
+        "name": "同事",
+        "value": "5"
+      },
+      {
+        "name": "朋友",
+        "value": "6"
+      },
+      {
+        "name": "亲属",
+        "value": "7"
+      }
+    ],
+    "socialRole": [
+      {
+        "name": "退休有养老金",
+        "value": "1"
+      },
+      {
+        "name": "退休无养老金",
+        "value": "2"
+      },
+      {
+        "name": "自由职业",
+        "value": "3"
+      },
+      {
+        "name": "家庭主妇",
+        "value": "4"
+      },
+      {
+        "name": "有正式合同员工",
+        "value": "5"
+      },
+      {
+        "name": "家庭佣人",
+        "value": "6"
+      },
+      {
+        "name": "雇主",
+        "value": "7"
+      },
+      {
+        "name": "学生",
+        "value": "8"
+      },
+      {
+        "name": "公职人员",
+        "value": "9"
+      }
+    ],
+    "incomeType": [
+      {
+        "name": "现金",
+        "value": "1"
+      },
+      {
+        "name": "银行转账",
+        "value": "2"
+      },
+      {
+        "name": "支票",
+        "value": "3"
+      }
+    ],
+    "well": [
+      {
+        "name": "1年",
+        "value": "1"
+      },
+      {
+        "name": "2年",
+        "value": "2"
+      },
+      {
+        "name": "三年及以上",
+        "value": "3"
+      }
+    ],
+    "degree": [
+      {
+        "name": "初级教育",
+        "value": "1"
+      },
+      {
+        "name": "中等教育",
+        "value": "2"
+      },
+      {
+        "name": "高等教育(传统性大学)",
+        "value": "3"
+      },
+      {
+        "name": "高等教育(高等职业教育大学)",
+        "value": "4"
+      },
+      {
+        "name": "高等教育(开放大学)",
+        "value": "5"
+      },
+      {
+        "name": "硕士",
+        "value": "6"
+      },
+      {
+        "name": "博士",
+        "value": "7"
+      }
+    ],
+    "sex": [
+      {
+        "name": "男",
+        "value": "1"
+      },
+      {
+        "name": "女",
+        "value": "2"
+      }
+    ],
+    "marray": [
+      {
+        "name": "单身",
+        "value": "1"
+      },
+      {
+        "name": "已婚",
+        "value": "2"
+      },
+      {
+        "name": "离婚",
+        "value": "3"
+      }
+    ],
+    "incomeSource": [
+      {
+        "name": "无工作无抚恤金",
+        "value": "1"
+      },
+      {
+        "name": "无工作有抚恤金",
+        "value": "2"
+      },
+      {
+        "name": "全职工作",
+        "value": "3"
+      },
+      {
+        "name": "兼职工作",
+        "value": "4"
+      },
+      {
+        "name": "自主创业",
+        "value": "5"
+      },
+      {
+        "name": "其它收入来源",
+        "value": "6"
+      }
+    ]
+  },
+  "orderList": {
+    "allList": {
+      "orderDetails": "查看订单详情",
+      "dayType": {
+        "day": "天",
+        "month": "月"
+      },
+      "status": [
+        {
+          "name": "放款失败",
+          "value": "13"
+        },
+        {
+          "name": "放款中",
+          "value": "14"
+        },
+        {
+          "name": "待还款",
+          "value": "1"
+        },
+        {
+          "name": "部分待还款",
+          "value": "3"
+        },
+        {
+          "name": "已结清",
+          "value": "4"
+        },
+        {
+          "name": "逾期待还款",
+          "value": "5"
+        },
+        {
+          "name": "逾期已结清",
+          "value": "6"
+        },
+        {
+          "name": "展期结清",
+          "value": "9"
+        },
+        {
+          "name": "逾期展期结清",
+          "value": "10"
+        }
+      ],
+      "loanStatus": [
+        {
+          "name": "放款中",
+          "value": "3"
+        },
+        {
+          "name": "待还款",
+          "value": "4"
+        },
+        {
+          "name": "已完成",
+          "value": "6"
+        },
+        {
+          "name": "放款失败",
+          "value": "13"
+        }
+      ],
+      "table": {
+        "letterReview": "信审订单编号",
+        "orderNo": "借款订单编号",
+        "createTime": "借款订单创建日期",
+        "userNo": "用户账户",
+        "userName": "用户姓名",
+        "applyCash": "借款金额(雷亚尔)",
+        "limit": "借款期限",
+        "applyTime": "实际借款日期",
+        "period": "期",
+        "repayTimeShould": "应还日期",
+        "repayMoneyShould": "应还金额(雷亚尔)",
+        "applyMoney": "申请金额",
+        "applyMonth": "申请期数",
+        "appreciationMoney": "增值税金额",
+        "appreciationRate": "增值税率",
+        "currentRealRepay": "实际应还",
+        "lendRate": "借款利率",
+        "lendRateMoney": "借款利息",
+        "loanDays": "借款天数",
+        "modifyTime": "修改时间",
+        "overDueRate": "逾期利率",
+        "overDueRateMoney": "违约",
+        "payDate": "放款时间",
+        "productId": "商品编号",
+        "status": "订单状态",
+        "statusDesc": "订单状态描述",
+        "userId": "用户编号",
+        "userIdNo": "用户身份证号",
+        "userPhone": "用户电话号码",
+        "totalPeriod": "总期数",
+        "dueDay": "逾期天数",
+        "realRepayMoney": "实际还款金额",
+        "repaymentDate": "最近还款日期",
+        "orderStatus": "订单状态"
+      },
+      "opera": {
+        "pass": "通过",
+        "operate": "操作",
+        "auditAmount": "审批金额",
+        "comment": "审核意见",
+        "retreat": "撤回",
+        "refuse": "拒绝"
+      },
+      "enum": {
+        "risk": [
+          {
+            "name": "通过",
+            "value": "2"
+          },
+          {
+            "name": "拒绝",
+            "value": "9"
+          },
+          {
+            "name": "撤回",
+            "value": "1"
+          }
+        ],
+        "refuse": [
+          {
+            "name": "借款人居住地址与SPC抽取地址不符",
+            "value": "1"
+          },
+          {
+            "name": "RG照片不清晰",
+            "value": "2"
+          },
+          {
+            "name": "RG照片信息与客户提交信息不符",
+            "value": "3"
+          },
+          {
+            "name": "RG证件照片与RG持证拍照图上借款人照片不符",
+            "value": "4"
+          },
+          {
+            "name": "RG持证拍照照片中的RG正面 或RG反面不符",
+            "value": "5"
+          },
+          {
+            "name": "RG持证拍照借款人照片与职业身份不符",
+            "value": "6"
+          },
+          {
+            "name": "其他（自己填写原因）",
+            "value": "7"
+          }
+        ],
+        "retreat": [
+          {
+            "name": "借款人居住地址与SPC抽取地址不符",
+            "value": "1"
+          },
+          {
+            "name": "RG照片不清晰",
+            "value": "2"
+          },
+          {
+            "name": "RG照片信息与客户提交信息不符",
+            "value": "3"
+          },
+          {
+            "name": "RG证件照片与RG持证拍照图上借款人照片不符",
+            "value": "4"
+          },
+          {
+            "name": "RG持证拍照照片中的RG正面 或RG反面不符",
+            "value": "5"
+          },
+          {
+            "name": "RG持证拍照借款人照片与职业身份不符",
+            "value": "6"
+          },
+          {
+            "name": "其他（自己填写原因）",
+            "value": "7"
+          }
+        ]
+      }
+    }
+  },
+  "orderDetail": {
+    "bankInfo": {
+      "accountId": "账户ID",
+      "bankCardNum": "银行卡号",
+      "bankId": "银行id",
+      "createTime": "创建时间",
+      "idCardNum": "身份证号码",
+      "modifyTime": "修改时间",
+      "status": "状态",
+      "userName": "姓名",
+      "bankName": "银行名称"
+    }
+  },
+  "bankModule": {
+    "list": {
+      "bankName": "银行名称",
+      "bankCode": "银行编码",
+      "singleLimit": "单次限额",
+      "dailyLimit": "单日限额",
+      "icon": "图标"
+    }
+  },
+  "authModule": {
+    "userDetailLoginVO": {
+      "title": "位置定位",
+      "list": [
+        {
+          "name": "最近登录时间",
+          "reflect": "createTime"
+        },
+        {
+          "name": "最近登录定位",
+          "reflect": "area"
+        },
+        {
+          "name": "IP地址",
+          "reflect": "ipAddress"
+        },
+        {
+          "name": "登录设备号",
+          "reflect": "deviceId"
+        }
+      ]
+    },
+    "userDetailCreditInfoVO": {
+      "title": "征信基本信息对比",
+      "list": [
+        {
+          "name": "姓名",
+          "reflect": "username"
+        },
+        {
+          "name": "CPF",
+          "reflect": "cpf"
+        },
+        {
+          "name": "性别",
+          "reflect": "gender"
+        },
+        {
+          "name": "出生日期",
+          "reflect": "birthday"
+        }
+      ],
+      "list2": [
+        {
+          "name": "年龄",
+          "reflect": "age"
+        },
+        {
+          "name": "母亲全名",
+          "reflect": "motherName"
+        },
+        {
+          "name": "地址信息",
+          "reflect": "currentResidential"
+        },
+        {
+          "name": "邮编",
+          "reflect": "residentialPostcode"
+        }
+      ]
+    },
+    "userDetailOtherInfoVO": {
+      "title": "其他基本信息",
+      "list": [
+        {
+          "name": "昵称",
+          "reflect": "usernameShort"
+        },
+        {
+          "name": "父亲全名",
+          "reflect": "fatherName"
+        },
+        {
+          "name": "手机号码",
+          "reflect": "phoneNumber"
+        },
+        {
+          "name": "教育情况",
+          "reflect": "educationBackground"
+        },
+        {
+          "name": "出生地址",
+          "reflect": "birthplace"
+        },
+        {
+          "name": "现居住地固话",
+          "reflect": "homeTelephone"
+        },
+        {
+          "name": "现居住时长",
+          "reflect": "residentialDuration"
+        },
+        {
+          "name": "婚姻状况",
+          "reflect": "maritalStatus"
+        }
+      ],
+      "list2": [
+        {
+          "name": "email",
+          "reflect": "usernameShort"
+        },
+        {
+          "name": "RG号码",
+          "reflect": "fatherName"
+        },
+        {
+          "name": "RG正面照",
+          "reflect": "phoneNumber"
+        },
+        {
+          "name": "RG反面照",
+          "reflect": "educationBackground"
+        },
+        {
+          "name": "手持RG照",
+          "reflect": "birthplace"
+        },
+        {
+          "name": "选民号",
+          "reflect": "homeTelephone"
+        },
+        {
+          "name": "CPF签发地",
+          "reflect": "residentialDuration"
+        },
+        {
+          "name": "CPF更新时间",
+          "reflect": "maritalStatus"
+        }
+      ]
+    },
+    "userDetailContactVOS": {
+      "title": "紧急联系人",
+      "list": [
+        {
+          "name": "紧急联系人",
+          "reflect": "createTime"
+        },
+        {
+          "name": "姓名",
+          "reflect": "area"
+        },
+        {
+          "name": "关系",
+          "reflect": "ipAddress"
+        },
+        {
+          "name": "联系方式",
+          "reflect": "deviceId"
+        }
+      ]
+    },
+    "userDetailWorkVO": {
+      "title": "工作情况",
+      "list": [
+        {
+          "name": "是否工作",
+          "reflect": "createTime"
+        },
+        {
+          "name": "社会身份",
+          "reflect": "area"
+        },
+        {
+          "name": "主要收入来源",
+          "reflect": "ipAddress"
+        },
+        {
+          "name": "月薪",
+          "reflect": "deviceId"
+        },
+        {
+          "name": "发薪方式",
+          "reflect": "area"
+        },
+        {
+          "name": "发薪日期",
+          "reflect": "ipAddress"
+        },
+        {
+          "name": "薪资流水",
+          "reflect": "deviceId"
+        }
+      ]
+    },
+    "userDetailBorrowInfoVO": {
+      "title": "借款信息",
+      "list": [
+        {
+          "name": "借款用途",
+          "reflect": "createTime"
+        },
+        {
+          "name": "借款金额",
+          "reflect": "area"
+        },
+        {
+          "name": "借款期限",
+          "reflect": "ipAddress"
+        }
+      ]
+    },
+    "creditDefaultVOS": {
+      "title": "征信违约信息",
+      "list": [
+        {
+          "name": "登记日期",
+          "reflect": "createTime"
+        },
+        {
+          "name": "违约日期",
+          "reflect": "area"
+        },
+        {
+          "name": "合同号/法律条款",
+          "reflect": "ipAddress"
+        },
+        {
+          "name": "买主/保证/担保人",
+          "reflect": "createTime"
+        },
+        {
+          "name": "价值",
+          "reflect": "area"
+        },
+        {
+          "name": "相关人员/ 债权人",
+          "reflect": "ipAddress"
+        },
+        {
+          "name": "城市/洲",
+          "reflect": "area"
+        },
+        {
+          "name": "违约来源",
+          "reflect": "ipAddress"
+        }
+      ]
+    },
+    "consultaRealizadaVO": {
+      "title": "征信访问次数",
+      "list": [
+        {
+          "name": "访问日期",
+          "reflect": "createTime"
+        },
+        {
+          "name": "人员/机构",
+          "reflect": "area"
+        },
+        {
+          "name": "城市",
+          "reflect": "ipAddress"
+        },
+        {
+          "name": "访问来源",
+          "reflect": "createTime"
+        }
+      ]
+    },
+    "spcScoreVO": {
+      "title": "征信信用",
+      "list": [
+        {
+          "name": "征信评分",
+          "reflect": "createTime"
+        },
+        {
+          "name": "征信等级",
+          "reflect": "area"
+        }
+      ]
+    }
+  },
+  "loanOrderDetails": {
+    "type": {
+      "0": "天",
+      "1": "月"
+    },
+    "title": "借款订单详情",
+    "onetime": "一次性还本付息",
+    "staging": "分期-等额还款",
+    "list": [
+      {
+        "name": "关联的信审订单编号",
+        "reflect": "creditOrderNo"
+      },
+      {
+        "name": "借款订单编号",
+        "reflect": "orderNo"
+      },
+      {
+        "name": "借款类型",
+        "reflect": "orderType"
+      },
+      {
+        "name": "订单创建时间/提现时间",
+        "reflect": "stringCreateTime"
+      },
+      {
+        "name": "借款日期",
+        "reflect": "payDateStr"
+      },
+      {
+        "name": "借款金额",
+        "reflect": "auditMoney"
+      },
+      {
+        "name": "借款期限",
+        "reflect": "loanDays"
+      },
+      {
+        "name": "借款日利率",
+        "reflect": "lendRate"
+      },
+      {
+        "name": "每月审核服务费率",
+        "reflect": "monthAuditCharge"
+      },
+      {
+        "name": "每月技术服务费率",
+        "reflect": "monthTechnologyCharge"
+      },
+      {
+        "name": "联邦税",
+        "reflect": "vlrIOF"
+      },
+      {
+        "name": "应还金额（雷亚尔）",
+        "reflect": "currentRealRepay"
+      },
+      {
+        "name": "逾期滞纳金",
+        "reflect": "overDueRate"
+      },
+      {
+        "name": "逾期每月延误费用",
+        "reflect": "dueMonthDelayRate"
+      }
+    ],
+    "list2": [
+      {
+        "name": "关联的信审订单编号",
+        "reflect": "creditOrderNo"
+      },
+      {
+        "name": "借款订单编号",
+        "reflect": "orderNo"
+      },
+      {
+        "name": "借款类型",
+        "reflect": "orderType"
+      },
+      {
+        "name": "订单创建时间/提现时间",
+        "reflect": "stringCreateTime"
+      },
+      {
+        "name": "借款日期",
+        "reflect": "payDateStr"
+      },
+      {
+        "name": "借款金额",
+        "reflect": "auditMoney"
+      },
+      {
+        "name": "借款期限",
+        "reflect": "loanMonths"
+      },
+      {
+        "name": "借款月利率",
+        "reflect": "lendRate"
+      },
+      {
+        "name": "每月审核服务费率",
+        "reflect": "monthAuditCharge"
+      },
+      {
+        "name": "每月技术服务费率",
+        "reflect": "monthTechnologyCharge"
+      },
+      {
+        "name": "联邦税",
+        "reflect": "vlrIOF"
+      },
+      {
+        "name": "应还金额（雷亚尔）",
+        "reflect": "currentRealRepay"
+      },
+      {
+        "name": "每期应还金额（雷亚尔）",
+        "reflect": "amountPerPeriod"
+      },
+      {
+        "name": "逾期滞纳金",
+        "reflect": "overDueRate"
+      },
+      {
+        "name": "逾期每月延误费用",
+        "reflect": "dueMonthDelayRate"
+      }
+    ]
+  },
+  "withdrawalDetail": {
+    "title": "取款账户",
+    "type": {
+      "1": "现金账户",
+      "2": "储蓄卡账户"
+    },
+    "list": [
+      {
+        "name": "银行",
+        "reflect": "bankName"
+      },
+      {
+        "name": "机构号",
+        "reflect": "institutionNumber"
+      },
+      {
+        "name": "账户类型",
+        "reflect": "accountType"
+      },
+      {
+        "name": "账户号",
+        "reflect": "accountNumber"
+      },
+      {
+        "name": "账户码",
+        "reflect": "accountCode"
+      }
+    ]
+  },
+  "loanDetails": {
+    "title": "放款详情",
+    "type": "支出/放款",
+    "operator": {
+      "0": "BMP",
+      "1": "系统管理员"
+    },
+    "paymentResult": {
+      "true": "成功",
+      "false": "失败"
+    },
+    "list": [
+      { "name": "流水号" },
+      { "name": "创建时间" },
+      { "name": "流转类型" },
+      { "name": "金额(R$)" },
+      { "name": "操作结果" },
+      { "name": "操作时间" },
+      { "name": "操作人" },
+      { "name": "备注" }
+    ]
+  },
+  "repaymentDetails": {
+    "title": "还款详情",
+    "type": "收入/还款",
+    "operationResult": {
+      "0": "成功",
+      "1": "失败"
+    },
+    "operator": {
+      "0": "BMP",
+      "1": "系统管理员"
+    },
+    "status": {
+      "1": "待还款",
+      "2": "坏账",
+      "3": "部分还款",
+      "4": "已结清",
+      "5": "逾期待还款",
+      "6": "逾期已结清",
+      "7": "退款",
+      "8": "未生效"
+    },
+    "list": [
+      { "name": "期数" },
+      { "name": "应还金额" },
+      { "name": "融资金额" },
+      { "name": "利息" },
+      { "name": "逾期费用" },
+      { "name": "实际还款金额" },
+      { "name": "订单状态" }
+    ],
+    "list1": [
+      { "name": "期数" },
+      { "name": "流水号" },
+      { "name": "创建时间" },
+      { "name": "流转类型" },
+      { "name": "金额" },
+      { "name": "操作结果" },
+      { "name": "操作时间" },
+      { "name": "操作人" },
+      { "name": "备注" }
+    ]
+  },
+  "newOrderDetail": {
+    "title": "订单相关信息",
+    "list": [
+      {
+        "name": "借款订单编号",
+        "reflect": "orderNo"
+      },
+      {
+        "name": "订单创建时间",
+        "reflect": "stringCreateTime"
+      },
+      {
+        "name": "订单状态",
+        "reflect": "status"
+      },
+      {
+        "name": "借款金额",
+        "reflect": "auditMoney"
+      },
+      {
+        "name": "借款期限",
+        "reflect": "loanDays"
+      },
+      {
+        "name": "借款日利率",
+        "reflect": "lendRate"
+      },
+      {
+        "name": "借款利息（雷亚尔）",
+        "reflect": "lendRateMoney"
+      },
+      {
+        "name": "联邦税费（雷亚尔）",
+        "reflect": "vlrIOF"
+      }
+    ],
+    "list2": [
+      {
+        "name": "计划还款日期",
+        "reflect": "stringPlanRepaymentDate"
+      },
+      {
+        "name": "应还金额（雷亚尔）",
+        "reflect": "currentRepay"
+      },
+      {
+        "name": "违约金",
+        "reflect": "overDueFine"
+      },
+      {
+        "name": "实际还款金额（雷亚尔）",
+        "reflect": "realRepayMoney"
+      }
+    ]
+  },
+  "newAccountDetail": {
+    "title": "提现账户",
+    "list": [
+      {
+        "name": "到账银行",
+        "reflect": "bankName"
+      },
+      {
+        "name": "支行号",
+        "reflect": "institutionNumber"
+      },
+      {
+        "name": "账户类型",
+        "reflect": "accountType"
+      },
+      {
+        "name": "账户号",
+        "reflect": "accountNumber"
+      },
+      {
+        "name": "账户码",
+        "reflect": "accountCode"
+      }
+    ]
+  },
+  "newRepaymentDetail": {
+    "title": ["订单操作状态", "操作时间", "操作结果", "操作人"]
+  },
+  "default": {
+    "history": "历史数据统计",
+    "today": "今日数据统计",
+    "seven": "近七天数据统计",
+    "cols": {
+      "his": {
+        "artificialAuditPassCount": "人工审核通过笔数",
+        "auditPassCount": "审核通过总笔数",
+        "borrowUserCount": "借款申请笔数",
+        "dataOfDay": "数据所属日期",
+        "dueAmount": "逾期总额",
+        "payAmount": "放款总额",
+        "planRepayAmount": "应还款总额",
+        "registerUserCount": "注册用户数",
+        "repayAmount": "已还款总额",
+        "systemAuditPassCount": "系统直放笔数",
+        "unRepayAmount": "未偿还总额",
+        "withdrawDepositAmount": "提现总额",
+        "withdrawDepositCount": "提现笔数",
+        "auditTotalAmount": "审核通过总额 "
+      },
+      "today": {
+        "artificialAuditPassCount": "人工审核通过数",
+        "auditPassCount": "审核通过总笔数",
+        "borrowUserCount": "借款申请笔数",
+        "payAmount": "放款总额",
+        "registerUserCount": "注册用户数",
+        "systemAuditPassCount": "系统直放笔数"
+      }
+    }
+  },
+  "coupon": {
+    "title": "优惠券管理",
+    "Remarks": "优惠券可设定减利率",
+    "add": "新建活动",
+    "view": "查看使用规则",
+    "search": "搜索",
+    "inputContent": "请输入内容...",
+    "delete": "删除之后不可恢复",
+    "deleteToast": "确定删除",
+    "pushToast": "app推送",
+    "ruleToast": "优惠券使用规则",
+    "push": "确定向已领券未使用用户推送消息（个推、消息中心）",
+    "list": {
+      "table": {
+        "couponId": "优惠券ID",
+        "couponName": "优惠券名称",
+        "createTime": "创建时间",
+        "receiveType": "领取类型",
+        "offerType": "优惠类型",
+        "preferentialConditions": "优惠条件",
+        "circulation": "发行量",
+        "received": "已领取",
+        "used": "已使用",
+        "effectiveTime": "有效时间",
+        "validityPeriod": "有效期",
+        "emergencySuspension": "紧急暂停",
+        "Status": "活动状态"
+      },
+      "activityStatus": {
+        "allActivities": "全部活动",
+        "noActivityStarted": "未开始活动",
+        "ongoingActivities": "进行中活动",
+        "endedActivity": "已结束活动",
+        "suspendedActivity": "暂停中活动"
+      },
+      "offer": {
+        "offerType": "优惠类型",
+        "interestReduction": "减利息",
+        "interestrateReduction": "减利率",
+        "dayFree": "免天数"
+      },
+      "receive": {
+        "registrationCoupon": "注册优惠券",
+        "receiveType": "领取类型",
+        "systemDistribution": "定向推送",
+        "activityAcquisition": "活动专享",
+        "initiativeReceive": "主动领取"
+      },
+      "couponIdname": {
+        "couponId": "活动Id",
+        "couponName": "活动名称"
+      },
+      "btnGroup": {
+        "couponStting": "设置优惠券",
+        "appPush": "app推送"
+      },
+      "setting": {
+        "description": "优惠券描述",
+        "preferentialConditions": "优惠条件",
+        "descriptionContent": "该描述可能展示给消费者，请认真输入...",
+        "collection": "自领取",
+        "effective": "有效",
+        "activityCrowd": "活动人群",
+        "limitedPerPerson": "每人限领",
+        "zhang": "张",
+        "loan": "实际借款金额满",
+        "nothreshold": "无门槛",
+        "interestReduction": "利息减",
+        "interest": "利息享"
+      },
+      "type": {
+        "day": "天",
+        "week": "周",
+        "month": "月",
+        "year": "年"
+      },
+      "crowd": {
+        "allUser": "全部用户",
+        "newUser": "新用户",
+        "oldUser": "老用户"
+      },
+      "prompt": {
+        "selectCrowd": "选择人群",
+        "receiveType": "领取类型",
+        "offerType": "优惠类型",
+        "allActivities": "全部活动"
+      },
+      "status": {
+        "noStarted": "未开始",
+        "ongoing": "进行中",
+        "ended": "已结束",
+        "suspended": "暂停中"
+      },
+      "offertips": {
+        "payMoney": "借款金额",
+        "interestReduction": "借款利率减",
+        "dayFree": "天免息",
+        "dailyInterestRate": "借款日利率",
+        "lendRateMoney": "借款利息"
+      },
+      "ruleInfo": {
+        "CouponList": {
+          "desc": "优惠券管理列表",
+          "info": {
+            "one": "新建优惠券活动完成之后，紧急暂停按钮，默认关闭",
+            "two": "优惠券列表，根据创建日期降序",
+            "three": "活动状态“未开始”“进行中”“已结束”，打开紧急暂停按钮，“进行中”变为“暂停中”"
+          }
+        },
+        "preferentialConditions": {
+          "desc": "优惠条件",
+          "info": {
+            "amount": "优惠金额",
+            "remarks": "备注"
+          }
+        },
+        "display": {
+          "desc": "优惠券展示、领取规则",
+          "info": {
+            "a": "状态ID",
+            "b": "优惠券类型",
+            "c": "展示形式",
+            "d": "有效时间",
+            "e": "暂停按钮",
+            "f": "剩余优惠券",
+            "g": "APP展示",
+            "h": "领取按钮",
+            "i": "使用状态",
+            "j": "领券列表样式",
+            "k": "提示"
+          },
+          "notArrived": "未到",
+          "vouchers": "领券列表",
+          "inside": "内",
+          "passed": "已过",
+          "shutDown": "关闭",
+          "open": "开启",
+          "visible": "可见",
+          "invisible": "不可见",
+          "clickable": "可点击",
+          "notClickable": "不可点击",
+          "notActive": "未生效",
+          "effective": "有效",
+          "invalid": "失效",
+          "pendingNormal": "待领取-正常",
+          "haveFinished": "已领完",
+          "expired": "已过期",
+          "stats": "领取成功/失败"
+        },
+        "directionalPush": {
+          "desc": "定向推送",
+          "discountPopup": "优惠弹窗"
+        },
+        "usageRules": {
+          "desc": "使用规则",
+          "info": {
+            "a": "一笔订单只可使用一张",
+            "b": "在提现详情页面，根据满足的条件使用",
+            "c": "借款完成之后可在订单详情查看"
+          }
+        }
+      }
+    }
+  },
+  "channel": {
+    "title": "渠道邀请码推广管理",
+    "h5Title": "渠道H5推广管理",
+    "prompt": {
+      "channelCode": "请输入邀请码前两位",
+      "channelName": "请输入渠道名称",
+      "channelProvider": "请输入渠道商",
+      "channelBranchName": "请输入渠道分支名称",
+      "invitationCode": "请输入邀请码",
+      "Id": "请输入渠道编号",
+      "link": "请输入链接",
+      "contactNumber": "请输入联系人电话",
+      "channelId": "请输入渠道ID",
+      "streetAddress": "请输入街道地址",
+      "contact": "请输入联系人",
+      "error": "渠道编号重复，请重新输入",
+      "unusedInvitationCode": "未使用邀请码",
+      "generateNumber": "生成数量",
+      "piece": "个",
+      "generate": "请输入生成数量"
+    },
+    "tabData": {
+      "channelId": "渠道ID",
+      "channelProvider": "渠道商",
+      "channelNumber": "渠道编号",
+      "channelStatus": "渠道状态",
+      "link": "链接"
+    },
+    "channelList": {
+      "name": "渠道名称",
+      "id": "渠道编号",
+      "selectChannelBranch": "查看渠道分支"
+    },
+    "channelStatus": {
+      "disable": "停用",
+      "open": "开启"
+    },
+    "btn": {
+      "reset": "重置",
+      "add": "新增渠道"
+    },
+    "channelBranch": {
+      "status": "渠道分支状态",
+      "streetAddress": "街道地址",
+      "btn": {
+        "add": "新增渠道分支",
+        "generate": "快速生成邀请码",
+        "export": "批量导出",
+        "ex": "导出",
+        "import": "批量导入"
+      },
+      "tabData": {
+        "invitationCode": "邀请码",
+        "name": "渠道分支名称",
+        "contact": "联系人",
+        "contactNumber": "联系人电话",
+        "status": "渠道状态"
+      }
+    }
+  },
+  "reportModule": {
+    "channeldata": {
+      "channelType": [
+        {
+          "name": "渠道统计-邀请码",
+          "value": 1
+        },
+        {
+          "name": "渠道统计-H5",
+          "value": 2
+        }
+      ],
+      "startDate": "开始日期",
+      "endDate": "结束日期",
+      "table": {
+        "id": "渠道ID",
+        "name": "渠道商",
+        "channelName": "渠道名称",
+        "channelBranchName": "渠道分支名称",
+        "invitationCode": "邀请码",
+        "download": "下载人数",
+        "registered": "注册人数",
+        "link": "渠道链接",
+        "firstLoanApplication": "首贷申请人数",
+        "firstLoanReviewPassed": "首贷审核通过人数",
+        "firstLoanWithdrawal": "首贷提现人数",
+        "completeTheFirstLoan": "完成首贷人数",
+        "completeTheSecondLoan": "完成二贷人数",
+        "completeMultiLoan": "完成多贷人数",
+        "successfulRepayment": "还款成功订单数",
+        "firstLoanOverdue": "首贷逾期人数",
+        "M1IsOverdue": "M1逾期订单数",
+        "M2IsOverdue": "M2逾期订单数",
+        "M3IsOverdue": "M3逾期订单数"
+      }
+    }
+  },
+  "productCenter": {
+    "product": {
+      "inputPrompt": "请输入贷款产品名称",
+      "title": "贷款产品设置",
+      "add": "新增贷款产品",
+      "take": "以",
+      "day": "天",
+      "month": "月",
+      "increment": "递增",
+      "msg": {
+        "amount": "请按照规则输入正确的借款额度",
+        "period": "请按照规则输入正确的借款期限"
+      },
+      "input": [
+        {
+          "desc": "产品ID",
+          "value": "id"
+        },
+        {
+          "desc": "产品名称",
+          "value": "name"
+        }
+      ],
+      "prompt": "请输入内容...",
+      "list": {
+        "id": "贷款产品ID",
+        "name": "贷款产品名称",
+        "type": "贷款产品类型",
+        "creationTime": "创建时间",
+        "updateTime": "更新时间",
+        "amount": "借款额度",
+        "period": "借款期限",
+        "loanRate": "借款利率",
+        "latePayment": "逾期滞纳金",
+        "deferredFee": "逾期每月延期费用",
+        "state": "状态",
+        "lendRate": "借款日利率",
+        "lendRate1": "借款月利率",
+        "annualRate": "年化利率",
+        "annualRate1": "年利率",
+        "technology": "每月技术服务费率",
+        "review": "每月审核服务费率",
+        "day": "免息天数"
+      },
+      "type1": [
+        {
+          "desc": "一次性还本付息",
+          "value": 1,
+          "time": "天",
+          "interestRate":"日利率"
+        },
+        {
+          "desc": "分期-等额还款",
+          "value": 2,
+          "time": "月",
+          "interestRate":"月利率"
+        }
+      ],
+      "type": [
+        {
+          "desc": "一次性还本付息",
+          "value": 1,
+          "time": "天"
+        }
+      ],
+      "state": [
+        {
+          "desc": "开启",
+          "value": 1
+        },
+        {
+          "desc": "暂停",
+          "value": 2
+        }
+      ]
+    },
+    "userLevel": {
+      "title": "用户等级设置",
+      "add": "新增用户等级",
+      "input": [
+        {
+          "desc": "用户等级ID",
+          "value": "id"
+        },
+        {
+          "desc": "用户等级名称",
+          "value": "name"
+        }
+      ],
+      "prompt": "请输入内容...",
+      "list": {
+        "id": "用户等级ID",
+        "name": "用户等级名称",
+        "creationTime": "创建时间",
+        "updateTime": "更新时间",
+        "rule": "规则",
+        "period": "借款期限",
+        "month": "借款月利率",
+        "product": "适用的贷款产品",
+        "state": "状态"
+      },
+      "state": [
+        {
+          "desc": "使用中",
+          "value": 1
+        },
+        {
+          "desc": "暂停",
+          "value": 2
+        }
+      ]
+    }
+  },
+  "reviewRiskList": {
+    "searchModule": {
+      "effectTime": "生效日期",
+      "orderNo": "信审订单号",
+      "lv": "用户等级",
+      "excel": "导出成Excel",
+      "reviewListAll": "信审列表"
+    },
+    "manageModule": {
+      "goAttendance": "查看考勤",
+      "allot": "分配",
+      "common": "信审人员",
+      "chooseCommon": "请选择信审人员",
+      "functionName": "功能名称",
+      "tips": "备注",
+      "status": "当前状态",
+      "riskSetting": "业务参数设置",
+      "isopen": "是否开启",
+      "uncheck": "免检天数",
+      "open": "开启",
+      "close": "关闭"
+    },
+    "tableModule": {
+      "applyDateStr": "申请日期",
+      "creditOrderNo": "信审订单号",
+      "userPhone": "手机号",
+      "userGrade": "用户等级",
+      "approveAmount": "一次性还款付清额度",
+      "approveDate": "一次性还款付清期限",
+      "fapproveAmount": "分期等额还款额度",
+      "fapproveDate": "分期等额还款期限",
+      "approveDays": "信审有效期",
+      "approveEffectDay": "信审生效日期",
+      "approveExpDay": "信审到期日期",
+      "adminName": "信审管理员",
+      "commonName": "信审人员",
+      "creditIdea": "信审意见",
+      "status": "订单状态"
+    },
+    "riskReportTable":{
+          "auditDate": "审核日期",
+          "auditOrderTotal": "信审订单总笔数",
+          "applyNumberToday": "当日申请笔数",
+          "rejectNumberMachine": "机审拒绝笔数",
+          "passNumberManul": "人工审核通过笔数",
+          "rejectNumberManul": "人工审核拒绝笔数",
+          "totalAuditManul": "人工审核总笔数",
+          "auditWorkers": "审核工作人数",
+          "totalworkingHours": "总工时",
+          "perCapitalAudit": "人均审核笔数/时",
+          "auditedNumberToday": "当日完成审核笔数",
+          "auditingNumberToday": "当日未完成审核笔数"
+        },
+    "recordModule": {
+      "operationType": "订单操作",
+      "operationResult": "操作",
+      "stringOperationTime": "操作时间",
+      "operationRemark": "备注",
+      "operationEmployeeName": "操作人"
+    },
+    "passModule": {
+      "userLv": "用户等级",
+      "minAccount": "最低额度",
+      "maxAccount": "最高额度",
+      "productType": "产品类型",
+      "passTitle": "通过审核",
+      "relustTitle": "审核拒绝",
+      "resetTitle": "审核撤回",
+      "err1": "审核额度大于产品额度上限",
+      "err2": "审核额度小于产品额度下限",
+      "err3": "审核额度最小值大于最大值",
+      "twoProductList": [
+        {
+          "name": "贷款产品名称",
+          "reject": "loanProductName"
+        },
+        {
+          "name": "产品类型",
+          "reject": "loanProductTypeStr"
+        },
+        {
+          "name": "借款额度(REAL)",
+          "reject": "loanQuotaStr"
+        },
+        {
+          "name": "额度递增倍数",
+          "reject": "loanQuotaIncrease"
+        },
+        {
+          "name": "借款期限",
+          "reject": "loanTermStr"
+        },
+        {
+          "name": "天数递增倍数",
+          "reject": "loanTermIncrease"
+        },
+        {
+          "name": "借款月利率",
+          "reject": "loanRate"
+        },
+        {
+          "name": "滞纳金",
+          "reject": "overDueFine"
+        },
+        {
+          "name": "延期费用",
+          "reject": "overDueFineDelay"
+        }
+      ],
+      "oneProductList": [
+        {
+          "name": "贷款产品名称",
+          "reject": "loanProductName"
+        },
+        {
+          "name": "产品类型",
+          "reject": "loanProductTypeStr"
+        },
+        {
+          "name": "借款额度(REAL)",
+          "reject": "loanQuotaStr"
+        },
+        {
+          "name": "额度递增倍数",
+          "reject": "loanQuotaIncrease"
+        },
+        {
+          "name": "借款期限",
+          "reject": "loanTermStr"
+        },
+        {
+          "name": "天数递增倍数",
+          "reject": "loanTermIncrease"
+        },
+        {
+          "name": "借款日利率",
+          "reject": "loanRate"
+        },
+        {
+          "name": "逾期日利率",
+          "reject": "overDueFineDelay"
+        }
+      ]
+    }
+  },
+  "collectionBusiness":{
+    "title":"催收阶段配置",
+    "add":"新增催收阶段",
+    "edit":"编辑催收阶段",
+    "state":[
+      {
+        "desc":"激活",
+        "value":"ACTIVATE"
+      },
+      {
+        "desc":"关闭",
+        "value":"CLOSE"
+      }
+    ],
+    "tabData":{
+      "id":"ID",
+      "name":"阶段名称",
+      "fromTime":"从逾期时间",
+      "toTime":"到逾期时间",
+      "days":"留存天数",
+      "flowMode":"流转模式",
+      "freeLoanTerm":"免催贷款期限",
+      "state":"状态"
+    },
+    "prompt":{
+      "name":"请输入阶段名称",
+      "fromTime":"请输入从逾期时间",
+      "toTime":"请输入到逾期时间",
+      "days":"请输入留存天数",
+      "flowMode":"请选择流转模式",
+      "state":"请选择状态",
+      "select":"请选择...",
+      "freeLoanTerm":"请输入免催贷款期限",
+      "center":"请输入内容..."
+    },
+    "flowMode":[
+      {
+        "desc":"公司内部流转",
+        "value":"INTERIOR"
+      },
+      {
+        "desc":"权重流转",
+        "value":"WEIGHT"
+      }
+    ],
+    "operator":[
+      {
+        "desc":"大于等于",
+        "value":">="
+      },
+      {
+        "desc":"大于",
+        "value":">"
+      },
+      {
+        "desc":"等于",
+        "value":"=="
+      },
+      {
+        "desc":"小于等于",
+        "value":"<="
+      },
+      {
+        "desc":"小于",
+        "value":"<"
+      }
+    ]
+  },
+  "collectionManagement":{
+    "report":{
+      "reportType":[
+        {
+          "desc":"催收案件报表",
+          "value":1
+        },
+        {
+          "desc":"催收小组报表",
+          "value":2
+        }
+      ],
+      "unit": {
+        "0": "天",
+        "1": "月"
+      },
+      "type": [
+        {
+          "desc": "一次性还本付息",
+          "value": 0
+        },
+        {
+          "desc": "分期-等额还款",
+          "value": 1
+        }
+      ],
+      "data":{
+        "productType":"产品类型",
+        "loanTerm":"借款期限",
+        "time":"催收日期",
+        "day":"天",
+        "year":"年",
+        "LoanAmount":"借款金额",
+        "unit":"雷亚尔",
+        "userLevel":"用户等级",
+        "group":"催收小组",
+        "commissioner":"催收专员"
+      },
+      "prompt":{
+        "select":"请选择. . .",
+        "productType":"请选择产品类型",
+        "loanTerm":"请输入借款期限",
+        "LoanAmount":"请输入借款金额",
+        "userLevel":"请选择用户等级",
+        "group":"请选择催收小组",
+        "commissioner":"请选择催收专员",
+        "prompt":"请精准选择检索条件"
+      },
+      "statement": {
+        "currentOughtRepayCount": "当前应还笔数：",
+        "currentOughtRepayAmount": "当前应还总额：",
+        "currentPayMoneyAmount": "含借款本金：",
+        "currentOverdueCount": "当前逾期笔数：",
+        "currentOverdueRepayAmount": "当前逾期总额：",
+        "currentOverduePaymentAmount": "含借款本金：",
+        "currentOverdueBetween0To3Count": "3天内逾期笔数：",
+        "currentOverdueBetween0To3Amount": "3天内逾期总额：",
+        "currentOverdueBetween0To3principal": "含借款本金：",
+        "currentOverdueBetween4To10Count": "4-10天内逾期笔数：",
+        "currentOverdueBetween4To10Amount": "4-10天内逾期总额：",
+        "currentOverdueBetween4To10principal": "含借款本金：",
+        "currentOverdueBetween11To30Count": "11-30天内逾期笔数：",
+        "currentOverdueBetween11To30Amount": "11-30天内逾期总额：",
+        "currentOverdueBetween11To30principal": "含借款本金：",
+        "currentOverdueBetween31To90Count": "31-90天内逾期笔数：",
+        "currentOverdueBetween31To90Amount": "31-90天内逾期总额：",
+        "currentOverdueBetween31To90principal": "含借款本金：",
+        "currentOverdueBetween91ToMaxCount": "90天以上逾期笔数：",
+        "currentOverdueBetween91ToMaxAmount": "90天以上逾期总额：",
+        "currentOverdueBetween91ToMaxprincipal": "含借款本金：",
+
+        "currentMonthFinishedCount":"本月催回笔数：",
+        "currentMonthFinishedAmount":"本月催回总额：",
+        "oughtRepayFinishedCount":"应还催回笔数：",
+        "oughtRepayFinishedAmont":"应还催回总额：",
+        "overdueRepayFinishedCount":"逾期催回笔数：",
+        "overdueRepayFinishedAmont":"逾期催回总额：",
+        "overdueRepayFinishedIn0To3Count":"3天内逾期催回笔数：",
+        "overdueRepayFinishedIn0To3Amont":"3天内逾期催回总额：",
+        "overdueRepayFinishedIn4To10Count":"4-10天内逾期催回笔数：",
+        "overdueRepayFinishedIn4To10Amont":"4-10天内逾期催回总额：",
+        "overdueRepayFinishedIn11To30Count":"11-30天内逾期催回笔数：",
+        "overdueRepayFinishedIn11To30Amont":"11-30天内逾期催回总额：",
+        "overdueRepayFinishedIn31To90Count":"31-90天内逾期催回笔数：",
+        "overdueRepayFinishedIn31To90Amont":"31-90天内逾期催回总额：",
+        "overdueRepayFinishedIn91ToMaxCount":"90天以上逾期催回笔数：",
+        "overdueRepayFinishedIn91ToMaxAmont":"90天以上逾期催回总额：",
+        "currentDayFinishedCount":"今日催回笔数：",
+        "currentDayFinishedAmount":"今日催回总额："
+      },
+      "groupStatement":{
+        "finishCaseCount":"催回案件数：",
+        "finishCaseAmount":"催回案件总额：",
+        "todayFinishCaseCount":"今日催回案件数：",
+        "todayFinishCaseAmount":"今日催回案件总额：",
+        "currentAllocationCaseCount":"当前分配案件数：",
+        "currentAllocationCaseAmount":"当前分配案件总额："
+      },
+      "operator":[
+        {
+          "desc":"大于等于",
+          "value":"1"
+        },
+        {
+          "desc":"大于",
+          "value":"2"
+        },
+        {
+          "desc":"等于",
+          "value":"3"
+        },
+        {
+          "desc":"小于等于",
+          "value":"4"
+        },
+        {
+          "desc":"小于",
+          "value":"5"
+        }
+      ],
+      "table":{
+        "date":"催收日期",
+        "account":"催收人员账户",
+        "name":"催收人员真实姓名",
+        "group":"所属小组",
+        "casesNumber":"催回案件数",
+        "recallTotal":"催回案件总额",
+        "casesNumberToday":"今日催回案件数",
+        "recallTotalToday":"今日催回案件总额",
+        "addCasesNumberToday":"今日新增案件数",
+        "addRecallTotalToday":"今日新增案件总额",
+        "currentCasesNumber":"当前分配待催案件数",
+        "currentRecallTotal":"当前分配待催案件总额",
+        "retainCasesNumber":"留存案件数",
+        "retainRecallTotal":"留存案件总额",
+        "failCasesNumber":"失败案件数",
+        "failRecallTotal":"失败案件总额"
+      }
+    },
+    "caseManagement":{
+      "retain":"留存",
+      "cancelRetain":"取消留存",
+      "personnelType": {
+        "2": "催收管理岗",
+        "1": "催收专员岗"
+      },
+      "logType":{
+        "1":"拨号无应答",
+        "2":"延后还款",
+        "3":"拒绝还款",
+        "4":"空号",
+        "5":"停机",
+        "6":"展期"
+      },
+      "day":"(天)",
+      "month":"(月)",
+      "keep": {
+        "1":"是",
+        "2": "否"
+      },
+      "stats":{
+        "1": "待还款",
+        "2": "坏账",
+        "3": "部分还款",
+        "4": "已还已结清",
+        "5": "逾期未结清",
+        "6": "逾期已结清"
+      },
+      "distribution":"分配",
+      "commissioner":"催收专员",
+      "caseManagementType":[
+        {
+          "desc":"待还款案件",
+          "value":1
+        },
+        {
+          "desc":"逾期案件",
+          "value":2
+        }
+      ],
+      "orderType": [
+        {
+          "desc": "一次性还本付息",
+          "value": 0
+        },
+        {
+          "desc": "分期-等额还款",
+          "value": 1
+        }
+      ],
+      "searchModel":{
+        "shouldDate":"应还日期",
+        "days":"逾期天数",
+        "stage":"催收阶段",
+        "personnel":"催收人员",
+        "reminderTime":"提醒时间",
+        "orderType":"订单类型",
+        "userLevel":"用户等级",
+        "orderNo":"借款订单编号",
+        "phoneNumber":"手机号",
+        "name":"用户姓名"
+      },
+      "prompt":{
+        "commissioner":"请选择催收专员",
+        "days":"请输入逾期天数",
+        "stage":"请选择催收阶段",
+        "personnel":"请选择催收人员",
+        "orderType":"请选择订单类型",
+        "userLevel":"请选择用户等级",
+        "orderNo":"请输入借款订单编号",
+        "phoneNumber":"请输入手机号",
+        "name":"请输入用户姓名"
+      },
+      "tabData":{
+        "selectAll":"全选",
+        "letterReview": "信审订单编号",
+        "orderNo": "借款订单编号",
+        "recruiter":"催收员",
+        "collectionLog":"催收日志",
+        "updateTime":"日志更新时间",
+        "reminderTime":"预约提醒时间",
+        "retain":"是否留存",
+        "createTime": "借款订单创建日期",
+        "userNo": "用户账户",
+        "userName": "用户姓名",
+        "applyCash": "借款金额(R$)",
+        "limit": "借款期限",
+        "repayMoneyShould": "应还金额(R$)",
+        "financingAmount": "融资金额（R$）",
+        "interest": "利息（R$）",
+        "overdueFee": "逾期费用（R$）",
+        "RepayTimeShould": "应还日期",
+        "dueDay": "逾期天数",
+        "realRepayMoney": "实际还款金额",
+        "repaymentDate": "最近还款日期",
+        "orderStatus": "订单状态"
+      }
+    },
+    "record":{
+      "recordType": [
+        {
+          "desc": "通话记录",
+          "value": 1
+        },
+        {
+          "desc": "短信记录",
+          "value": 2
+        }
+      ],
+      "searchModel":{
+        "collectionTime":"催收时间",
+        "callNumber":"呼叫号码",
+        "callingSeat":"主叫席坐号",
+        "send":"发送对象"
+      },
+      "prompt":{
+        "collectionTime":"催收时间",
+        "callNumber":"请输入呼叫号码",
+        "callingSeat":"请输入主叫席坐号",
+        "send":"请输入发送对象"
+      },
+      "callRecords":{
+        "id":"通话呼叫ID",
+        "callingSeat":"主叫席坐号",
+        "callNumber":"呼叫号码",
+        "callStartTime":"呼叫开始时间",
+        "callEndTime":"呼叫结束时间",
+        "callDuration":"通话时长（分）",
+        "recordingFiles":"录音文件"
+      },
+      "smsRecord":{
+        "id":"ID",
+        "sender":"发送人",
+        "send":"发送对象",
+        "content":"短信内容",
+        "sendTime":"短信发送时间",
+        "sendResult":"发送结果"
+      }
+    },
+    "management":{
+      "personnelAdd":"新增催收人员",
+      "groupAdd":"新增催收小组",
+      "companyAdd":"新增催收公司",
+      "personnelEdit":"编辑催收人员",
+      "groupEdit":"编辑催收小组",
+      "companyEdit":"编辑催收公司",
+      "commissioner":"催收专员岗",
+      "managementType": [
+        {
+          "desc": "催收人员管理",
+          "value": 1
+        },
+        {
+          "desc": "催收小组管理",
+          "value": 2
+        },
+        {
+          "desc": "催收公司管理",
+          "value": 3
+        }
+      ],
+      "freed": [
+        {
+          "desc": "是",
+          "value": 1
+        },
+        {
+          "desc": "否",
+          "value": 2
+        }
+      ],
+      "status": [
+        {
+          "desc": "激活",
+          "value": 2
+        },
+        {
+          "desc": "停用",
+          "value": 1
+        }
+      ],
+      "status1": [
+        {
+          "desc": "激活",
+          "value": 2
+        },
+        {
+          "desc": "停用",
+          "value": 1
+        }
+      ],
+      "type": [
+        {
+          "desc": "内部催收",
+          "value": 1
+        },
+        {
+          "desc": "委派外部催收",
+          "value": 2
+        }
+      ],
+      "searchModel":{
+        "group":"催收小组",
+        "type":"类型",
+        "company":"所属公司",
+        "stage":"催收阶段",
+        "status": "状态",
+        "personnelName":"人员名称",
+        "phoneNumber":"手机号",
+        "collectionTeamName":"催收小组名称",
+        "companyName":"公司名称"
+      },
+      "model":{
+        "actualName":"真实姓名",
+        "accountName":"账户名称",
+        "accountPassword":"账户密码",
+        "weights":"权重",
+        "freed":"是否释放案件",
+        "introduction":"简介",
+        "companyIntroduction":"公司简介"
+      },
+      "prompt":{
+        "companyIntroduction":"请输入公司简介",
+        "introduction":"请输入简介",
+        "freed":"请选择是否释放案件",
+        "weights":"请选择权重",
+        "accountName":"请输入账户名称",
+        "accountPassword":"请输入账户密码",
+        "actualName":"请输入真实姓名",
+        "group":"请选择催收小组",
+        "type":"请选择类型",
+        "company":"请选择所属公司",
+        "stage":"请选择催收阶段",
+        "status": "请选择状态",
+        "personnelName":"请输入人员名称",
+        "phoneNumber":"请输入手机号",
+        "collectionTeamName":"请输入催收小组名称",
+        "companyName":"请输入公司名称"
+      },
+      "personnelType":[
+        {
+          "desc": "催收管理岗",
+          "value": 2
+        },
+        {
+          "desc": "催收专员岗",
+          "value": 1
+        }
+      ],
+      "personnel":{
+        "id":"编号",
+        "name":"催收人员名称",
+        "phoneNumber":"手机号",
+        "group":"催收小组",
+        "groupType":"小组类型",
+        "company":"所属公司",
+        "stage":"催收阶段",
+        "weights":"权重",
+        "status":"状态",
+        "freed":"是否释放案件"
+      },
+      "group":{
+        "id":"ID",
+        "name":"催收小组名称",
+        "introduction":"简介",
+        "company":"所属公司",
+        "type":"类型",
+        "stage":"催收阶段",
+        "weights":"权重",
+        "status":"状态",
+        "freed":"是否释放案件"
+      },
+      "companyType":[
+        {
+          "desc": "内部催收",
+          "value": 1
+        },
+        {
+          "desc": "委派外部催收",
+          "value": 2
+        }
+      ],
+      "company":{
+        "id":"公司ID",
+        "name":"公司名称",
+        "introduction":"公司简介",
+        "type":"类型",
+        "status":"状态",
+        "freed":"是否释放案件"
+      }
+    }
+  },
+  "collectBench": {
+    "dataTotal": "数据统计",
+    "teamData": "小组绩效",
+    "onlineHeadcount": "小组在线工作人数/总人数",
+    "todayPushBackOrderNum": "小组今日催回案件数/已分配催收案件总数",
+    "todayPushBackMoney": "小组今日催回金额/催回总额",
+    "pushBackNumRanking": "当月同阶段催回笔数排名",
+    "pushBackTotalMoneyRnaking": "当月同阶段催回总额排名",
+    "teamcollectList": "小组催收列表",
+    "teamcollectSuccList": "小组催回列表",
+    "shouldRepayDay": "应还日期:",
+    "looDay": "逾期天数:",
+    "stageId": "催收阶段:",
+    "staffId": "催收人员:",
+    "tipDate": "提醒日期:",
+    "orderType1": "一次性还本付息",
+    "orderType2": "分期等额还款",
+    "userGrade": "用户等级:",
+    "orderNo": "借款订单编号:",
+    "phonenum": "手机号:",
+    "username": "用户姓名:",
+    "allot": "分配",
+    "riskEmployees": "催收人员",
+    "tableTranslate": {
+      "choose": "选择",
+      "creditOrderNo": "信审订单编号",
+      "orderNo": "借款订单编号",
+      "staffName": "催收员",
+      "overdueLog": "催收日志",
+      "overdueLogTime": "日志更新时间",
+      "remindTime": "预约提醒时间",
+      "keep": "是否留存",
+      "orderCreateTime": "借款订单创建日期",
+      "userIdNo": "用户账户",
+      "userName": "用户姓名",
+      "payMoney": "借款金额（雷亚尔）",
+      "loanDays": "借款期限",
+      "currentRepay": "应还金额（雷亚尔）",
+      "financingMoney": "融资金额",
+      "interestMoney": "利息",
+      "overDueFine": "逾期费用",
+      "realRepaymentDate": "应还日期",
+      "dueDays": "逾期天数",
+      "realRepaymentMoney": "实际还款金额",
+      "overdueLogTime2": "最近还款日期",
+      "status": "订单状态",
+      "liucun": "留存",
+      "quxiaoliucun": "取消留存",
+      "collectList": "催收列表"
+    },
+    "OOOOOOOOOO": "OOOOOOOO"
+  }
+}

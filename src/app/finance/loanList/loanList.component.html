@@ -1,0 +1,228 @@
+<div class="c-content-wrap">
+    <div class="c-search-wrap">
+        <div class="c-search-group c-search-border">
+            <div class="c-search-itemLeft" style="padding-top: 5px">
+                {{ "financeModule.list.classify" | translate}}:
+            </div>
+            <div class="c-search-itemRight">
+                <ul class="sectionList c-flex-row-start" style="flex-wrap:wrap;height: auto;">
+                    <li
+                        *ngFor = 'let item of statusEnum'
+                        (click) = 'changeStatus(item["value"])'
+                        [ngClass]='{"active-tag" : (item.value == searchModel.status)}'
+                        style="white-space:nowrap;margin-bottom: 10px;">
+                        {{ item['desc'] }}
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="c-search-group">
+            <div class="c-search-item">
+                <div class="c-search-itemLeft">
+                    {{ "financeModule.list.detail.type" | translate}}:
+                    <nz-select style="padding-left: 10px;width: 200px" [(ngModel)]="searchModel.withdrawDepositEnum" [nzPlaceHolder]=' "financeModule.list.loanType" | translate '>
+                      <nz-option *ngFor="let option of inputData;" [nzLabel]="option['desc']" [nzValue]="option['name']"></nz-option>
+                    </nz-select>
+                </div>
+                <div class="c-search-itemRight">
+                  {{ "financeModule.list.table.cashTime" | translate}}:
+                  <nz-date-picker
+                    style="padding-left: 10px;width: 150px"
+                    [nzShowToday]="'false'"
+                    [nzDisabledDate]=""
+                    [(ngModel)]="searchModel.startTime"
+                    [nzFormat]="'dd-MM-yyyy'"
+                  ></nz-date-picker>
+                  <span style="color:#999"> ~ </span>
+                  <nz-date-picker
+                    style="width: 150px"
+                    [nzShowToday]="'false'"
+                    [nzDisabledDate]=""
+                    [(ngModel)]="searchModel.endTime"
+                    [nzFormat]="'dd-MM-yyyy'"
+                  ></nz-date-picker>
+                </div>
+            </div>
+        </div>
+      <div class="c-search-group">
+        <div class="c-search-item">
+          <div class="c-search-itemLeft">
+            <nz-select
+              [(ngModel)]="selectModel"
+              (nzOpenChange)="change()"
+              style="width: 200px"
+            >
+              <div *ngFor = 'let item of serchEnum ,let idx = index'>
+                <nz-option
+                  [nzValue]="item['value']"
+                  [nzLabel]="item['name']"
+                >
+                </nz-option>
+              </div>
+            </nz-select>
+          </div>
+          <div class="c-search-itemRight">
+            <input nz-input [(ngModel)]="inputContent" [placeholder] = ' "financeModule.list.center" | translate ' style="width: 200px">
+          </div>
+        </div>
+      </div>
+      <div class="c-search-btnGroup">
+            <button nz-button nzType="primary"  (click) = 'search() '>
+                {{ "common.search" | translate}}
+            </button>
+            <button style="margin-left: 20px;" nz-button (click) = 'reset() '>
+                {{ "common.reset" | translate}}
+            </button>
+      </div>
+    </div>
+
+    <c-table [tableData] = 'tableData'>
+    </c-table>
+    <div class="c-pag">
+        <nz-pagination [nzShowTotal]="totalTemplate" (nzPageIndexChange)='pageChange($event , "page")' (nzPageSizeChange) = 'pageChange($event , "size")' [nzPageIndex]="searchModel.currentPage"  [nzTotal]="totalSize" nzShowSizeChanger nzShowQuickJumper></nz-pagination>
+        <ng-template #totalTemplate let-total>
+            <span>
+                {{ "common.total" | translate }}
+            </span>
+            <span>
+                {{ totalSize }}
+            </span>
+            <span>
+                {{ "common.pageUnit" | translate }}
+            </span>
+        </ng-template>
+    </div>
+</div>
+
+<nz-modal [(nzVisible)]="makeLoanMark" [nzTitle]="modalTitle" [nzFooter]="modalFooter" [nzContent]="modalContent" (nzOnCancel)="makeLoanMark = false">
+
+    <ng-template #modalTitle>
+        <span>
+            {{ "financeModule.list.model.title" | translate}}?
+        </span>
+    </ng-template>
+
+    <ng-template #modalContent>
+        <form nz-form [nzLayout]="'inline'" [formGroup]="validateForm">
+            <nz-form-item class='c-formSec'>
+                <nz-form-label [nzSm]="7" nzRequired nzFor="paymentResult">
+                    {{ "financeModule.list.model.status" | translate }}
+                </nz-form-label>
+                <nz-form-control [nzSm]="16"  [nzOffset]='1'>
+                    <nz-select
+                        [nzPlaceHolder] = '"financeModule.list.model.choseType" | translate'
+                        formControlName="paymentResult"
+                        id="paymentResult"
+                        (nzOpenChange)="change()"
+                    >
+                        <div *ngFor = 'let item of tradingStatus ,let idx = index'>
+                            <nz-option
+                                [nzValue]="item['value']"
+                                [nzLabel]="item['desc']"
+                            >
+                            </nz-option>
+                        </div>
+                    </nz-select>
+                    <nz-form-explain *ngIf="validateForm.get('paymentResult').dirty && validateForm.get('paymentResult').errors">
+                        <span>
+                            {{ "financeModule.list.model.repayType" | translate }}
+                        </span>
+                        <span>
+                            {{ "common.validator.notEmpty" | translate }}
+                        </span>
+                    </nz-form-explain>
+                </nz-form-control>
+            </nz-form-item>
+            <!-- 放款时间 -->
+            <nz-form-item class='c-formSec' [hidden]="hidden">
+                <nz-form-label nzRequired [nzSm]="7"  nzFor="payDate">
+                    {{ "financeModule.list.model.payDate" | translate }}
+                </nz-form-label>
+                <nz-form-control [nzSm]="16" [nzOffset]='1'>
+                    <nz-date-picker [nzStyle]="{'width':'220px'}" [nzFormat]="'dd-MM-yyyy'" formControlName="payDate" id="payDate"></nz-date-picker>
+                    <nz-form-explain *ngIf="validateForm.get('payDate').dirty && validateForm.get('payDate').errors">
+                        <span>
+                            {{ "financeModule.list.model.payDate" | translate}}
+                        </span>
+                        <span>
+                            {{ "common.validator.notEmpty" | translate }}
+                        </span>
+                    </nz-form-explain>
+                </nz-form-control>
+            </nz-form-item>
+            <!-- 放款金额 -->
+            <nz-form-item class='c-formSec' [hidden]="hidden">
+                <nz-form-label nzRequired [nzSm]="7"  nzFor="payMoney">
+                    {{ "financeModule.list.model.payMoney" | translate }}
+                </nz-form-label>
+                <nz-form-control [nzSm]="16"  [nzOffset]='1'>
+                    <input readonly nz-input formControlName="payMoney" id="payMoney" [placeholder] = ' "financeModule.list.model.inputPayMoney" | translate '>
+                    <p style="margin-left: 230px;margin-top: -40px;width:100px">{{"common.unit" | translate}}</p>
+                    <nz-form-explain *ngIf="validateForm.get('payMoney').dirty && validateForm.get('payMoney').errors">
+                        <span>
+                            {{ "financeModule.list.model.payMoney" | translate}}
+                        </span>
+                        <span>
+                            {{ "common.validator.notEmpty" | translate }}
+                        </span>
+                    </nz-form-explain>
+                </nz-form-control>
+            </nz-form-item>
+
+            <!-- 备注 -->
+            <nz-form-item class='c-formSec'>
+                <nz-form-label *ngIf="hidden==true" nzRequired [nzSm]="7"  nzFor="option">
+                    {{ "financeModule.list.model.remark" | translate }}
+                </nz-form-label>
+                <nz-form-label *ngIf="hidden==false" [nzSm]="7"  nzFor="option">
+                  {{ "financeModule.list.model.remark" | translate }}
+                </nz-form-label>
+                <nz-form-control [nzSm]="16"  [nzOffset]='1'>
+                    <textarea nz-input formControlName="option" cols = '6' rows="4" autosize maxlength="200" [placeholder] = ' "financeModule.list.model.remarkPrompt" | translate ' id="option"></textarea>
+                    <nz-form-explain *ngIf="validateForm.get('option').dirty && validateForm.get('option').errors">
+                        <span>
+                            {{ "financeModule.list.model.remark" | translate}}
+                        </span>
+                        <span>
+                            {{ "common.validator.notEmpty" | translate }}
+                        </span>
+                    </nz-form-explain>
+                </nz-form-control>
+            </nz-form-item>
+
+        </form>
+    </ng-template>
+    <ng-template #modalFooter>
+      <button nz-button nzType="primary" [disabled]="!validateForm.valid" (click)='makeNew($event)'>
+        {{ "common.operate.sure" | translate }}
+      </button>
+      <button nz-button nzType="default" (click)='makeLoanMark = false'>
+        {{ "common.operate.close" | translate }}
+      </button>
+    </ng-template>
+</nz-modal>
+
+
+<!--<nz-modal [(nzVisible)]="orderDetail" [nzTitle]="modalTitle" [nzFooter]="noteFooter" [nzContent]="modalContent" (nzOnCancel)="orderDetail = false">-->
+
+  <!--<ng-template #modalTitle>-->
+        <!--<span>-->
+            <!--{{ "financeModule.list.orderDetail" | translate}}?-->
+        <!--</span>-->
+  <!--</ng-template>-->
+
+  <!--<ng-template #modalContent>-->
+    <!--<p>{{ "financeModule.list.table.loanMount" | translate}} :-->
+    <!--</p>-->
+    <!--<p>{{ "financeModule.list.table.shouldRepay" | translate}} :</p>-->
+    <!--<p>{{ "financeModule.list.table.orderNo" | translate}} :</p>-->
+    <!--<p>{{ "financeModule.list.table.applyDate" | translate}} :</p>-->
+    <!--<p>{{ "financeModule.list.table.limit" | translate}} :</p>-->
+    <!--<p>{{ "financeModule.list.model.remark" | translate}} :</p>-->
+  <!--</ng-template>-->
+  <!--<ng-template #noteFooter>-->
+    <!--<button nz-button nzType="default" (click)='orderDetail = false'>-->
+      <!--{{ "common.operate.close" | translate }}-->
+    <!--</button>-->
+  <!--</ng-template>-->
+<!--</nz-modal>-->

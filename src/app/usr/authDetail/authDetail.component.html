@@ -1,0 +1,22 @@
+<!-- 订单相关信息 -->
+<div *ngIf="orderTableData">
+  <img class="c-img-res img-info" style="visibility: hidden;height:0;" [src]="orderTableData.front" alt=""  data-magnify="gallery" [attr.data-src]="orderTableData.front">
+  <img class="c-img-res img-info" style="visibility: hidden;height:0;" [src]="orderTableData.reverse" alt=""  data-magnify="gallery" [attr.data-src]="orderTableData.reverse">
+</div>
+<div class="auth-table-wrap" *ngIf='orderTableData'>
+  <p class="th-title">{{'newOrderDetail.title' | translate}}</p>
+  <table>
+    <tbody *ngIf="orderTableData">
+      <tr *ngFor="let item of ('orderModule.record.basicUserInfo' | translate)">
+        <td>{{item.name}}</td>
+        <td>{{orderTableData[item.reflect] || 'no'}}</td>
+      </tr>
+      <tr *ngFor="let item of ('orderModule.record.basicUserCPFInfo' | translate);let i = index;">
+        <td>{{item.name}}</td>
+        <td *ngIf=" item.reflect!='front' && item.reflect!='reverse' " >{{orderTableData[item.reflect] || 'no'}}</td>
+        <td *ngIf="item.reflect=='front'" style="cursor:pointer;color:blue;" (click)='showImg(0)'>{{ 'common.clickShow' | translate }}</td>
+        <td *ngIf="item.reflect=='reverse'" style="cursor:pointer;color:blue;" (click)='showImg(1)'>{{ 'common.clickShow' | translate }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

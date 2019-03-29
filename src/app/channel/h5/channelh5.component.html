@@ -1,0 +1,103 @@
+<div class="c-content-wrap">
+  <div class="half-block">
+    <div class="title">
+      {{ "channel.h5Title" | translate }}
+      <div class="c-btnGroup">
+        <button nz-button  (click) = 'add() '>
+          {{ "channel.btn.add" | translate}}
+        </button>
+      </div>
+    </div>
+
+    <div class="c-search-Group">
+      <span>{{ "channel.tabData.channelId" | translate}}</span>
+      <input nz-input type="text" class="left" [(ngModel)] = 'searchModel.id' [placeholder] = '"channel.prompt.channelId" | translate' maxlength="2" >
+      <span class="left">{{ "channel.tabData.channelProvider" | translate}}</span>
+      <input nz-input type="text" class="left" [(ngModel)] = 'searchModel.name' [placeholder] = '"channel.prompt.channelProvider" | translate' >
+      <div class="c-btn-Group">
+        <button nz-button  nzType="primary" (click) = 'search() '>
+          {{ "common.search" | translate}}
+        </button>
+        <button nz-button class="left" (click) = 'reset() '>
+          {{ "channel.btn.reset" | translate}}
+        </button>
+      </div>
+    </div>
+  </div>
+  <c-table [tableData] = 'tableData' style="margin-top: 20px">
+  </c-table>
+  <div class="c-pag">
+  <nz-pagination [nzShowTotal]="totalTemplate" (nzPageIndexChange)='pageChange($event , "page")' (nzPageSizeChange) = 'pageChange($event , "size")' [nzPageIndex]="searchModel.currentPage"  [nzTotal]="totalSize" nzShowSizeChanger nzShowQuickJumper></nz-pagination>
+  <ng-template #totalTemplate let-total>
+  <span>
+  {{ "common.total" | translate }}
+  </span>
+  <span>
+  {{ totalSize }}
+  </span>
+  <span>
+  {{ "common.pageUnit" | translate }}
+  </span>
+  </ng-template>
+  </div>
+  <nz-modal
+    [(nzVisible)]="isVisible"
+    [nzTitle]='"channel.btn.add" | translate'
+    [nzOkText]='"common.setting" | translate'
+    [nzCancelText]='"common.operate.cancel" | translate'
+    (nzOnOk)="handleOk()"
+    (nzOnCancel)="handleCancel()"
+    [nzOkLoading]="isOkLoading"
+  >
+    <div class="formChannel">
+      <form nz-form [nzLayout]="'block'" [formGroup]="validForm">
+        <nz-form-item class='formSec'>
+          <nz-form-control>
+            <p>
+              <span class="label">*{{ "channel.tabData.channelProvider" | translate}}</span>
+              <input
+                type="text"
+                nz-input
+                formControlName="name"
+                id="name"
+                [placeholder] = '"channel.prompt.channelProvider" | translate'
+                style="width: 200px"
+                class="left"
+              >
+            </p>
+            <nz-form-explain *ngIf="validForm.get('name').dirty && validForm.get('name').errors">
+            </nz-form-explain>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item class='formSec' style="margin-top: -10px">
+          <nz-form-control>
+            <p>
+              <span class="label">*{{ "channel.tabData.link" | translate}}</span>
+              <input
+                type="text"
+                nz-input
+                formControlName="link"
+                id="link"
+                [placeholder] = '"channel.prompt.link" | translate'
+                style="width: 200px"
+                class="left"
+              >
+            </p>
+            <nz-form-explain *ngIf="validForm.get('link').dirty && validForm.get('link').errors">
+            </nz-form-explain>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item class='formSec'>
+          <nz-form-control>
+            <p>
+              <span class="label">*{{ "channel.tabData.channelStatus" | translate}}</span>
+              <nz-select formControlName="state" class="left" style="width: 200px;" id="state">
+                <nz-option *ngFor="let option of channelStatus;let i = index" [nzLabel]="option" [nzValue]="i"></nz-option>
+              </nz-select>
+            </p>
+          </nz-form-control>
+        </nz-form-item>
+      </form>
+    </div>
+  </nz-modal>
+</div>

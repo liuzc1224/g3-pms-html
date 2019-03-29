@@ -1,0 +1,461 @@
+<div>
+  <!-- <nz-collapse [nzBordered]="false" *ngIf="photoInfo">
+    <nz-collapse-panel [nzHeader]=' "orderModule.order.auth.photo.title" | translate '>
+      <div class="card-img-box">
+        <img class="c-img-res img-info" [src]="photoInfo.front" alt="">
+        <img class="c-img-res img-info" [src]="photoInfo.reverse" alt="">
+        <img class="c-img-res img-info" [src]="photoInfo.hand" alt="">
+        <img class="c-img-res img-info" [src]="photoInfo.incomeProof" alt="">
+      </div>
+    </nz-collapse-panel>
+  </nz-collapse> -->
+  <div class="card-img-box" *ngIf="photoInfo">
+
+    <div>
+      <div style="margin: 0 5px">
+        {{ "orderModule.order.auth.photo.front" | translate }}
+      </div>
+      <img class="c-img-res img-info" [src]="photoInfo.front" alt=""  data-magnify="gallery" [attr.data-src]="photoInfo.front">
+      <!-- <img class="c-img-res img-info" [src]="photoInfo.front" alt=""> -->
+    </div>
+
+    <div>
+      <div style="margin: 0 5px">
+        {{ "orderModule.order.auth.photo.back" | translate }}
+      </div>
+      <img class="c-img-res img-info" [src]="photoInfo.reverse" alt=""  data-magnify="gallery" [attr.data-src]="photoInfo.reverse">
+      <!-- <img class="c-img-res img-info" [src]="photoInfo.reverse" alt=""> -->
+    </div>
+
+    <div *ngIf="photoInfo.faceCompareButton != 1">
+      <div style="margin: 0 5px">
+        {{ "orderModule.order.auth.photo.hand" | translate }}
+      </div>
+      <!-- <img (click) = 'showImg()' data-magnify="gallery" [attr.data-src] = "'/assets/img/table.jpg'" [src]="'/assets/img/table.jpg'"> -->
+      <img class="c-img-res img-info" [src]="photoInfo.hand" alt=""  data-magnify="gallery" [attr.data-src]="photoInfo.hand">
+
+    </div>
+
+    <div *ngIf="photoInfo.faceCompareButton == 1">
+      <div style="margin: 0 5px">
+        最佳全景照
+      </div>
+      <!-- <img (click) = 'showImg()' data-magnify="gallery" [attr.data-src] = "'/assets/img/table.jpg'" [src]="'/assets/img/table.jpg'"> -->
+      <img class="c-img-res img-info" [src]="photoInfo.imageBest" alt=""  data-magnify="gallery" [attr.data-src]="photoInfo.imageBest">
+
+    </div>
+
+    <div>
+      <div style="margin: 0 5px">
+        {{ "orderModule.order.auth.photo.income" | translate }}
+      </div>
+      <img *ngIf="photoInfo.incomeProof" class="c-img-res img-info" [src]="photoInfo.incomeProof" alt=""  data-magnify="gallery" [attr.data-src]="photoInfo.incomeProof">
+      <p *ngIf="!photoInfo.incomeProof">no</p>
+      <!-- <img class="c-img-res img-info" [src]="photoInfo.incomeProof" alt=""> -->
+    </div>
+
+  </div>
+  <!-- 位置定位 -->
+  <div class="auth-table-wrap" >
+    <p class="th-title">{{ "authModule.userDetailLoginVO.title" | translate }}</p>
+    <table>
+      <tbody>
+        <tr>
+          <td class="tr-tlt" *ngFor="let item of ('authModule.userDetailLoginVO.list' | translate)">{{item.name}}</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr *ngIf='detailinfo && detailinfo["userDetailLoginVO"]'>
+          <td>{{detailinfo.userDetailLoginVO.stringCreateTime}}</td>
+          <td>{{"common.Long" | translate}}:{{detailinfo.userDetailLoginVO.longitude === "null" ? "no" : detailinfo.userDetailLoginVO.longitude}}<br>{{"common.Lat" | translate}}:{{detailinfo.userDetailLoginVO.latitude === "null" ? "no" : detailinfo.userDetailLoginVO.latitude}}</td>
+          <td>{{detailinfo.userDetailLoginVO.ipAddress}}</td>
+          <td>{{detailinfo.userDetailLoginVO.deviceId}}</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr *ngIf='!(detailinfo && detailinfo["userDetailLoginVO"])'>
+          <td>no</td>
+          <td>no</td>
+          <td>no</td>
+          <td>no</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!--  历史信审订单 -->
+  <div class="sectionInfo_Wrap">
+      <div class="c-title">
+        {{"financeModule.list.table.historyRecordOrder"| translate}}
+      </div>
+      <c-table [tableData]='recordTableData'>
+      </c-table>
+    </div>
+   <!--  历史借款订单 -->
+   <div class="sectionInfo_Wrap">
+    <div class="c-title">
+      {{"financeModule.list.table.historyOrder"| translate}}
+    </div>
+    <c-table [tableData]='tableData'>
+    </c-table>
+  </div>
+  <!-- 征信基本信息对比 -->
+  <div class="auth-table-wrap" *ngIf='detailinfo'>
+    <p class="th-title">{{'authModule.userDetailCreditInfoVO.title' | translate}}</p>
+    <table>
+      <tbody>
+        <tr>
+          <td colspan='2' class="tr-tlt" *ngFor="let item of ('authModule.userDetailCreditInfoVO.list' | translate)">{{item.name}}</td>
+        </tr>
+        <tr *ngIf="detailinfo['userDetailCreditInfoVO']">
+          <td>{{detailinfo.userDetailCreditInfoVO.username || "no"}}</td>
+          <td class="spf-info">{{detailinfo.userDetailCreditInfoVO.spcUsername || "no"}}</td>
+
+          <td>{{detailinfo.userDetailCreditInfoVO.cpf || "no"}}</td>
+          <td class="spf-info">{{detailinfo.userDetailCreditInfoVO.spcCpf || "no"}}</td>
+
+          <td>{{ detailinfo.userDetailCreditInfoVO.gender | SexPipe }}</td>
+          <td class="spf-info">{{detailinfo.userDetailCreditInfoVO.spcGender || "no"}}</td>
+
+          <td>{{detailinfo.userDetailCreditInfoVO.stringBirthday || "no"}}</td>
+          <td class="spf-info">{{(detailinfo.userDetailCreditInfoVO.stringSpcBirthday) || "no"}}</td>
+        </tr>
+        <tr *ngIf="!detailinfo['userDetailCreditInfoVO']">
+          <td>no</td>
+          <td class="spf-info">no</td>
+
+          <td>no</td>
+          <td class="spf-info">no</td>
+
+          <td>no</td>
+          <td class="spf-info">no</td>
+
+          <td>no</td>
+          <td class="spf-info">no</td>
+        </tr>
+        <tr>
+            <td colspan='2' class="tr-tlt" *ngFor="let item of ('authModule.userDetailCreditInfoVO.list2' | translate)">{{item.name}}</td>
+        </tr>
+        <tr *ngIf="detailinfo['userDetailCreditInfoVO']">
+          <td>{{detailinfo.userDetailCreditInfoVO.age || "no"}}</td>
+          <td class="spf-info">{{detailinfo.userDetailCreditInfoVO.spcAge || "no"}}</td>
+
+          <td>{{detailinfo.userDetailCreditInfoVO.motherName || "no"}}</td>
+          <td class="spf-info">{{detailinfo.userDetailCreditInfoVO.spcMotherName || "no"}}</td>
+
+          <td>{{detailinfo.userDetailCreditInfoVO.currentResidential}}--{{detailinfo.userDetailCreditInfoVO.block}}--{{detailinfo.userDetailCreditInfoVO.city}}--{{detailinfo.userDetailCreditInfoVO.state}}</td>
+          <td class="spf-info">{{detailinfo.userDetailCreditInfoVO.spcCurrentResidential || "no"}}</td>
+
+          <td>{{detailinfo.userDetailCreditInfoVO.residentialPostcode || "no"}}</td>
+          <td class="spf-info">{{detailinfo.userDetailCreditInfoVO.spcResidentialPostcode || "no"}}</td>
+        </tr>
+        <tr *ngIf="!detailinfo['userDetailCreditInfoVO']">
+          <td>no</td>
+          <td class="spf-info">no</td>
+
+          <td>no</td>
+          <td class="spf-info">no</td>
+
+          <td>no</td>
+          <td class="spf-info">no</td>
+
+          <td>no</td>
+          <td class="spf-info">no</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- 其他基本信息 -->
+  <div class="auth-table-wrap" *ngIf='detailinfo'>
+    <p class="th-title">{{'authModule.userDetailOtherInfoVO.title' | translate}}</p>
+    <table>
+      <tbody>
+        <tr>
+          <td class="tr-tlt" *ngFor="let item of ('authModule.userDetailOtherInfoVO.list' | translate)">{{item.name}}</td>
+        </tr>
+        <tr *ngIf="detailinfo['userDetailOtherInfoVO']">
+          <td>{{detailinfo.userDetailOtherInfoVO.usernameShort || "no"}}</td>
+          <td>{{detailinfo.userDetailOtherInfoVO.fatherName || "no"}}</td>
+          <td>{{detailinfo.userDetailOtherInfoVO.phoneNumber || "no"}}</td>
+          <td>{{detailinfo.userDetailOtherInfoVO.educationBackground | EduPipe}}</td>
+          <td>{{detailinfo.userDetailOtherInfoVO.birthplace || "no"}}</td>
+          <td>{{detailinfo.userDetailOtherInfoVO.homeTelephoneAreaCode }} {{detailinfo.userDetailOtherInfoVO.homeTelephone}}</td>
+          <td>{{detailinfo.userDetailOtherInfoVO.residentialDuration | wellPipe}}</td>
+          <td>{{detailinfo.userDetailOtherInfoVO.maritalStatus | MarryPipe}}</td>
+        </tr>
+        <tr *ngIf="!detailinfo['userDetailOtherInfoVO']">
+          <td>no</td>
+          <td>no</td>
+          <td>no</td>
+          <td>no</td>
+          <td>no</td>
+          <td>no</td>
+          <td>no</td>
+          <td>no</td>
+        </tr>
+        <tr>
+          <td class="tr-tlt" *ngFor="let item of ('authModule.userDetailOtherInfoVO.list2' | translate)">{{item.name}}</td>
+        </tr>
+        <tr *ngIf="detailinfo['userDetailOtherInfoVO']">
+          <td>{{detailinfo.userDetailOtherInfoVO.email || "no"}}</td>
+          <td>{{detailinfo.userDetailOtherInfoVO.idNumber || "no"}}</td>
+          <td style="cursor: pointer;color: blue;" (click)='showImg(0)'  >{{ 'common.clickShow' | translate }}</td>
+          <td style="cursor: pointer;color: blue;" (click)='showImg(1)' >{{ 'common.clickShow' | translate }}</td>
+          <td style="cursor: pointer;color: blue;" (click)='showImg(2)' >{{ 'common.clickShow' | translate }}</td>
+          <td class="spf-info" style="border-right:1px solid  #fff;">{{detailinfo.userDetailOtherInfoVO.voterNumber || "no"}}</td>
+          <td class="spf-info" style="border-right:1px solid  #fff;">{{detailinfo.userDetailOtherInfoVO.cpfIssuingAddress || "no"}}</td>
+          <td class="spf-info" style="border-right:1px solid  #fff;">{{detailinfo.userDetailOtherInfoVO.stringCpfModificationTime || "no"}}</td>
+        </tr>
+        <tr *ngIf="!detailinfo['userDetailOtherInfoVO']">
+          <td>no</td>
+          <td>no</td>
+          <td>no</td>
+          <td>no</td>
+          <td>no</td>
+          <td>no</td>
+          <td>no</td>
+          <td>no</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- 紧急联系人 -->
+  <div class="auth-table-wrap" *ngIf='detailinfo'>
+    <p class="th-title">{{'authModule.userDetailContactVOS.title' | translate}}</p>
+    <table>
+      <tbody>
+        <tr>
+          <td class="tr-tlt" *ngFor="let item of ('authModule.userDetailContactVOS.list' | translate);index as i">{{ i == 0 ? (item.name + '1') : item.name }}</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>{{detailinfo && detailinfo["userDetailContactVOS"]["length"] ? (detailinfo.userDetailContactVOS[0].contactName) : "no"}}</td>
+          <td>{{detailinfo && detailinfo["userDetailContactVOS"]["length"] ? (detailinfo.userDetailContactVOS[0].relation | RelationPipe) : "no"}}</td>
+          <td>{{detailinfo && detailinfo["userDetailContactVOS"]["length"] ? (detailinfo.userDetailContactVOS[0].contactPhone) : "no"}}</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td class="tr-tlt" *ngFor="let item of ('authModule.userDetailContactVOS.list' | translate);index as i">{{ i == 0 ? (item.name + '2') : item.name }}</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>{{detailinfo && detailinfo["userDetailContactVOS"]["length"] ? (detailinfo.userDetailContactVOS[1].contactName) : "no"}}</td>
+          <td>{{detailinfo && detailinfo["userDetailContactVOS"]["length"] ? (detailinfo.userDetailContactVOS[1].relation | RelationPipe) : "no"}}</td>
+          <td>{{detailinfo && detailinfo["userDetailContactVOS"]["length"] ? (detailinfo.userDetailContactVOS[1].contactPhone) : "no"}}</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td class="tr-tlt" *ngFor="let item of ('authModule.userDetailContactVOS.list' | translate);index as i">{{ i == 0 ? (item.name + '3') : item.name }}</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>{{detailinfo && detailinfo["userDetailContactVOS"]["length"] ? (detailinfo.userDetailContactVOS[2].contactName) : "no"}}</td>
+          <td>{{detailinfo && detailinfo["userDetailContactVOS"]["length"] ? (detailinfo.userDetailContactVOS[2].relation | RelationPipe) : "no"}}</td>
+          <td>{{detailinfo && detailinfo["userDetailContactVOS"]["length"] ? (detailinfo.userDetailContactVOS[2].contactPhone) : "no"}}</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- 工作情况 -->
+  <div class="auth-table-wrap" *ngIf='detailinfo && detailinfo["userDetailWorkVO"]'>
+    <p class="th-title">{{'authModule.userDetailWorkVO.title' | translate}}</p>
+    <table>
+      <tbody>
+        <tr>
+          <td class="tr-tlt" *ngFor="let item of ('authModule.userDetailWorkVO.list' | translate)">{{item.name}}</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>{{detailinfo.userDetailWorkVO.socialIdentityCode | SocialRolePipe }}</td>
+          <td>{{detailinfo.userDetailWorkVO.incomeSourceCode | IncSouPipe }}{{detailinfo.userDetailWorkVO.incomeSourceCode == 6 ? "——" + detailinfo.userDetailWorkVO.otherIncomeSource : "" }}</td>
+          <td>{{detailinfo.userDetailWorkVO.monthlyIncome}}</td>
+          <td>{{detailinfo.userDetailWorkVO.payrollPaymentTypeCode | PayMoneyPipe}}</td>
+          <td>{{detailinfo.userDetailWorkVO.payrollPaymentDate}}</td>
+          <td style="cursor: pointer;color: blue;" (click)='showImg(3)' >{{ 'common.clickShow' | translate }}</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- 借款信息 -->
+  <div class="auth-table-wrap">
+    <p class="th-title">{{'authModule.userDetailBorrowInfoVO.title' | translate}}</p>
+    <table>
+      <tbody>
+        <tr>
+          <td class="tr-tlt" *ngFor="let item of ('authModule.userDetailBorrowInfoVO.list' | translate)">{{item.name}}</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr *ngIf='detailinfo && detailinfo["userDetailBorrowInfoVO"]'>
+          <td>{{detailinfo.userDetailBorrowInfoVO.userFor}}</td>
+          <td>{{detailinfo.userDetailBorrowInfoVO.applyMoney}}</td>
+          <td>{{detailinfo.userDetailBorrowInfoVO.loanDays}}</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr *ngIf='!(detailinfo && detailinfo["userDetailBorrowInfoVO"])'>
+          <td>no</td>
+          <td>no</td>
+          <td>no</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- 征信违约信息 -->
+  <div class="auth-table-wrap" *ngIf='detailinfo' >
+    <p class="th-title">{{'authModule.creditDefaultVOS.title' | translate}}</p>
+    <table>
+      <tbody>
+        <tr>
+          <td class="tr-tlt" *ngFor="let item of ('authModule.creditDefaultVOS.list' | translate)">{{item.name}}</td>
+        </tr>
+        <tr *ngFor="let item of detailinfo.creditDefaultVOS">
+          <td>{{item.stringDataInclusao}}</td>
+          <td>{{item.stringDataVencimento}}</td>
+          <td>{{item.contrato}}</td>
+          <td>{{item.compradorFiadorAvalista}}</td>
+          <td>{{item.valor}}</td>
+          <td>{{item.nomeAssociado}}</td>
+          <td>{{item.city}}</td>
+          <td>{{item.registroInstituicaoFinanceira}}</td>
+        </tr>
+        <tr *ngIf='!detailinfo["creditDefaultVOS"]["length"]'>
+          <td>no</td>
+          <td>no</td>
+          <td>no</td>
+          <td>no</td>
+          <td>no</td>
+          <td>no</td>
+          <td>no</td>
+          <td>no</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- 征信访问次数 -->
+  <div class="auth-table-wrap" *ngIf='detailinfo'>
+    <p class="th-title">{{'authModule.consultaRealizadaVO.title' | translate}}</p>
+    <table>
+      <tbody>
+        <tr>
+          <td class="tr-tlt" *ngFor="let item of ('authModule.consultaRealizadaVO.list' | translate)">{{item.name}}</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr *ngFor="let item of detailinfo.consultaRealizadaVO">
+          <td>{{item.stringDataconsulta}}</td>
+          <td>{{item.nomeassociado}}</td>
+          <td>{{item.city}}</td>
+          <td>{{item.nomeentidadeorigem}}</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr *ngIf='!detailinfo["consultaRealizadaVO"]["length"]'>
+          <td>no</td>
+          <td>no</td>
+          <td>no</td>
+          <td>no</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- 征信信用 -->
+  <div class="auth-table-wrap" *ngIf='detailinfo'>
+    <p class="th-title">{{'authModule.spcScoreVO.title' | translate}}</p>
+    <table>
+      <tbody>
+        <tr>
+          <td class="tr-tlt" *ngFor="let item of ('authModule.spcScoreVO.list' | translate)">{{item.name}}</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr *ngFor="let item of detailinfo.spcScoreVO">
+          <td>{{item.score}}</td>
+          <td>{{item.classe}}</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr *ngIf="!detailinfo.spcScoreVO['length']">
+          <td>no</td>
+          <td>no</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- <div class="address-list-wrap" *ngIf=" isShowCall ">
+    <nz-list [nzDataSource]="friendInfo.callList" nzBordered [nzRenderItem]="item">
+      <ng-template #item let-item>
+        <p class="call-list">
+          <span>{{item.contactName}}</span>
+          <span>{{item.contactPhone}}</span>
+        </p>
+      </ng-template>
+    </nz-list>
+  </div> -->
+
+</div>
+<div class="call-mask" *ngIf=" isShowCall || isBigImg " (click)="hideMask()"></div>

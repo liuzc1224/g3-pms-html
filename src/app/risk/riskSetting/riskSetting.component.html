@@ -1,0 +1,59 @@
+<div class="c-content-wrap">
+
+    <c-table [tableData] = 'tableData'>
+    </c-table>
+</div>
+
+
+
+<nz-modal [(nzVisible)]="riskSetMark" [nzTitle]="modalTitle" [nzFooter]="modalFooter" [nzContent]="modalContent" (nzOnCancel)="riskSetMark = false">
+
+    <ng-template #modalTitle>
+        <span>
+            {{"reviewRiskList.manageModule.riskSetting" | translate }}
+        </span>
+    </ng-template>
+
+    <ng-template #modalContent>
+        <form nz-form [nzLayout]="'inline'" [formGroup]="validateForm">
+            <!-- 是否开启 -->
+            <nz-form-item class='c-formSec'>
+                <nz-form-label [nzSm]="7" nzRequired>
+                    {{"reviewRiskList.manageModule.isopen" | translate }} 
+                </nz-form-label>
+                <nz-form-control [nzSm]="16"  [nzOffset]='1'>
+                    <nz-select
+                        formControlName="status"
+                        id="status"
+                    >
+                        <div>
+                            <nz-option [nzValue]="1" [nzLabel]=" 'reviewRiskList.manageModule.open' | translate "></nz-option>
+                            <nz-option [nzValue]="0" [nzLabel]=" 'reviewRiskList.manageModule.close' | translate "></nz-option>
+                            {{validateForm.value.id}}
+                        </div>
+                    </nz-select>
+                </nz-form-control>
+            </nz-form-item>
+            <!-- 免检天数 -->
+            <nz-form-item class='c-formSec' [hidden]="hidden">
+                <nz-form-label nzRequired [nzSm]="7"  nzFor="exemptionDays">
+                    {{"reviewRiskList.manageModule.uncheck" | translate }} 
+                </nz-form-label>
+                <nz-form-control [nzSm]="16"  [nzOffset]='1'>
+                    <input nz-input formControlName="exemptionDays" id="exemptionDays" >
+                    <span style="position: absolute;top: -10px; margin-left: 5px">天</span>
+                </nz-form-control>
+            </nz-form-item>
+
+        </form>
+    </ng-template>
+    <ng-template #modalFooter>
+        <button nz-button nzType="primary" (click)='makeNew($event)'>
+        {{ "common.operate.sure" | translate }}
+        </button>
+        <button nz-button nzType="default" (click)='riskSetMark = false'>
+        {{ "common.operate.close" | translate }}
+        </button>
+    </ng-template>
+</nz-modal>
+    
